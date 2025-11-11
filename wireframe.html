@@ -2,19 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>LitBot — Wireframe</title>
+  <title>LitBot — Chat Interface Wireframe</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #ffffff;
-      --ink: #0f172a;
-      --muted: #9ca3af;
+      --bg: #f3f4f6;
+      --panel: #ffffff;
+      --sidebar: #0f172a;
+      --sidebar-soft: #111827;
       --accent: #7c3aed;
+      --accent-soft: #a855f7;
       --border: #e5e7eb;
-      --radius: 16px;
-      --shadow: 0 10px 30px rgba(15,23,42,.10);
-      --font: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, -apple-system, sans-serif;
+      --muted: #9ca3af;
+      --ink: #111827;
+      --radius: 14px;
+      --font: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      --shadow-soft: 0 14px 40px rgba(15,23,42,.16);
     }
     * { box-sizing: border-box; }
     body {
@@ -23,170 +27,235 @@
       font-family: var(--font);
       background: var(--bg);
       color: var(--ink);
+      height: 100vh;
+      overflow: hidden;
     }
     a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 14px 5%;
-      backdrop-filter: blur(10px);
-      background: rgba(255,255,255,.95);
-      border-bottom: 1px solid #f3f4f6;
-    }
-    .brand {
-      font-weight: 800;
-      font-size: 1.4rem;
-      background: linear-gradient(to right,#7c3aed,#2563eb);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 18px;
-      margin: 0;
-      padding: 0;
-      font-weight: 500;
-      font-size: 0.95rem;
+    .app {
+      display: grid;
+      grid-template-columns: 260px minmax(0,1fr);
+      height: 100vh;
     }
 
-    .page {
-      max-width: 1120px;
-      margin: 32px auto 48px;
-      padding: 0 5%;
+    /* Sidebar (like ChatGPT left panel) */
+    .sidebar {
+      background: var(--sidebar);
+      color: #e5e7eb;
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      padding: 14px 10px;
+      gap: 10px;
+      border-right: 1px solid rgba(148,163,253,0.06);
     }
-
-    .wf-label {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: .14em;
-      color: var(--muted);
-      margin-bottom: 6px;
+    .sb-brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
     }
-
-    .block {
-      border-radius: var(--radius);
-      border: 1px dashed var(--border);
-      background: #f9fafb;
-      padding: 18px 20px;
-      box-shadow: var(--shadow);
-    }
-
-    .block-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .gray-box {
-      background: #e5e7eb;
-      border-radius: 12px;
-      height: 40px;
-      margin-bottom: 8px;
-    }
-
-    .pill {
-      display: inline-block;
-      padding: 4px 10px;
+    .sb-logo {
+      width: 26px;
+      height: 26px;
       border-radius: 999px;
-      border: 1px solid #d1d5db;
+      background: radial-gradient(circle at 30% 0%, #a855f7, #2563eb);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      color: #fff;
+      font-weight: 700;
+    }
+    .sb-title {
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: .01em;
+    }
+    .sb-sub {
       font-size: 0.7rem;
+      color: #9ca3af;
+    }
+
+    .sb-btn {
+      margin: 6px 6px 4px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid rgba(148,163,253,0.3);
+      color: #e5e7eb;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      cursor: pointer;
+      background: rgba(15,23,42,0.96);
+      transition: background .15s, transform .15s, box-shadow .15s;
+    }
+    .sb-btn span.icon {
+      width: 16px;
+      height: 16px;
+      border-radius: 999px;
+      background: linear-gradient(to right,#7c3aed,#2563eb);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+    }
+    .sb-btn:hover {
+      background: #111827;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(15,23,42,0.45);
+    }
+
+    .sb-label {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: .18em;
       color: #6b7280;
-      margin-right: 4px;
-      margin-bottom: 4px;
+      padding: 4px 10px 0;
     }
 
-    @media (max-width: 768px) {
-      .block-row { grid-template-columns: 1fr; }
-      nav ul { display: none; }
+    .sb-list {
+      flex: 1;
+      overflow-y: auto;
+      padding: 4px 4px 6px;
+      font-size: 0.78rem;
     }
-  </style>
-</head>
-<body>
-<nav>
-  <div class="brand">LitBot 📚</div>
-  <ul>
-    <li><a href="index.html">Overview</a></li>
-    <li><a href="landing.html">Product landing</a></li>
-    <li><a href="milestones/m2.html">Milestone M2</a></li>
-  </ul>
-</nav>
+    .sb-item {
+      padding: 7px 8px;
+      margin: 2px 2px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #9ca3af;
+      cursor: default;
+      border: 1px solid transparent;
+    }
+    .sb-item span.dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #6b7280;
+    }
+    .sb-item.active {
+      background: radial-gradient(circle at 0 0, rgba(124,58,237,0.14), transparent);
+      border-color: rgba(124,58,237,0.45);
+      color: #e5e7eb;
+    }
 
-<main class="page">
-  <section class="block">
-    <div class="wf-label">Hero section</div>
-    <div class="gray-box"></div>
-    <div class="pill">Logo / Nav</div>
-    <div class="pill">Headline: “Understand, don’t memorize for Bac la Română”</div>
-    <div class="pill">Subtext: short value prop</div>
-    <div class="pill">Primary CTA: “Try LitBot”</div>
-    <div class="pill">Secondary CTA: “See how it works”</div>
-  </section>
+    .sb-footer {
+      padding: 8px 8px 6px;
+      font-size: 0.65rem;
+      color: #6b7280;
+      border-top: 1px solid rgba(75,85,99,0.65);
+    }
+    .sb-footer a {
+      color: #9ca3af;
+    }
 
-  <section class="block">
-    <div class="wf-label">How it works (3 steps)</div>
-    <div class="block-row">
-      <div>
-        <div class="gray-box"></div>
-        <div class="pill">Choose literary work</div>
-        <div class="pill">Upload / select text</div>
-      </div>
-      <div>
-        <div class="gray-box"></div>
-        <div class="pill">Guided questions</div>
-        <div class="pill">Build your own analysis</div>
-      </div>
-      <div>
-        <div class="gray-box"></div>
-        <div class="pill">Feedback + structure</div>
-        <div class="pill">Export outline</div>
-      </div>
-    </div>
-  </section>
+    /* Main chat area */
+    .chat-wrap {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
 
-  <section class="block">
-    <div class="wf-label">Key benefits</div>
-    <div class="block-row">
-      <div>
-        <div class="gray-box"></div>
-        <div class="pill">For students</div>
-        <p>Less memorizing, more confidence + exam-style structure.</p>
-      </div>
-      <div>
-        <div class="gray-box"></div>
-        <div class="pill">For teachers</div>
-        <p>Coach mode only, no essay dumping; curriculum aligned.</p>
-      </div>
-      <div>
-        <div class="gray-box"></div>
-        <div class="pill">For parents</div>
-        <p>Affordable alternative to tutoring; track progress.</p>
-      </div>
-    </div>
-  </section>
+    .chat-header {
+      padding: 10px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      backdrop-filter: blur(10px);
+      background: rgba(249,250,251,0.96);
+      border-bottom: 1px solid var(--border);
+    }
+    .chat-header-left {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .chat-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .chat-subtitle {
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+    .chat-header-tags {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .tag {
+      font-size: 0.6rem;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: #2563eb;
+    }
 
-  <section class="block">
-    <div class="wf-label">Social proof</div>
-    <div class="gray-box"></div>
-    <p>Placeholder area: student quotes, teacher quote, early pilot numbers.</p>
-  </section>
+    .chat-main {
+      flex: 1;
+      padding: 18px 22px 90px;
+      overflow-y: auto;
+    }
 
-  <section class="block">
-    <div class="wf-label">Pricing & CTA</div>
-    <div class="gray-box"></div>
-    <div class="pill">Free tier: limited chats</div>
-    <div class="pill">Premium: full access, outlines, Exam Mode</div>
-    <div class="pill">“Join early access” button</div>
-  </section>
-</main>
-</body>
-</html>
+    .msg {
+      max-width: 720px;
+      padding: 10px 12px;
+      margin-bottom: 10px;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      line-height: 1.55;
+      display: flex;
+      gap: 8px;
+      box-shadow: 0 2px 8px rgba(15,23,42,0.04);
+    }
+    .msg-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--muted);
+      margin-bottom: 2px;
+    }
+    .msg.user {
+      margin-left: auto;
+      background: #111827;
+      color: #e5e7eb;
+      border-bottom-right-radius: 4px;
+    }
+    .msg.bot {
+      margin-right: auto;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-bottom-left-radius: 4px;
+    }
+    .msg.bot .msg-label {
+      color: var(--accent);
+    }
+    .msg.user .msg-label {
+      color: #9ca3af;
+    }
+
+    .hint-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 4px;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+    .hint-pill {
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px dashed #cbd5f5;
+      background: #f9fafb;
+      font-size: 0.72rem;
+      color: #6b7280;
+    }
+
+    /* Input ar*
