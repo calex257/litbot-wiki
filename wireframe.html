@@ -258,4 +258,225 @@
       color: #6b7280;
     }
 
-    /* Input ar*
+    /* Input area */
+    .chat-input-wrap {
+      position: fixed;
+      left: 260px;
+      right: 0;
+      bottom: 0;
+      padding: 10px 22px 14px;
+      background: linear-gradient(to top,rgba(243,244,246,1),rgba(243,244,246,0.9));
+      border-top: 1px solid var(--border);
+    }
+    .input-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .input-box {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 10px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      box-shadow: 0 8px 26px rgba(148,163,253,0.16);
+    }
+    .input-box input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 0.9rem;
+      color: var(--ink);
+      background: transparent;
+    }
+    .input-box input::placeholder {
+      color: var(--muted);
+    }
+    .input-send {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: linear-gradient(to right,var(--accent),var(--accent-soft));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: #fff;
+      cursor: default;
+    }
+    .input-hint {
+      margin-top: 4px;
+      font-size: 0.65rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .app {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        display: none;
+      }
+      .chat-input-wrap {
+        left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="app">
+
+  <!-- Sidebar: conversation list + CTAs -->
+  <aside class="sidebar">
+    <div class="sb-brand">
+      <div class="sb-logo">Lb</div>
+      <div>
+        <div class="sb-title">LitBot</div>
+        <div class="sb-sub">Bac Literature Coach</div>
+      </div>
+    </div>
+
+    <button class="sb-btn">
+      <span class="icon">＋</span>
+      <span>New study session</span>
+    </button>
+
+    <div class="sb-label">Recent sessions</div>
+    <div class="sb-list">
+      <div class="sb-item active">
+        <span class="dot"></span>
+        <span>Bacovia - “Plumb” analysis</span>
+      </div>
+      <div class="sb-item">
+        <span class="dot"></span>
+        <span>Eminescu - Romanticism summary</span>
+      </div>
+      <div class="sb-item">
+        <span class="dot"></span>
+        <span>“Moara cu noroc” — conflict</span>
+      </div>
+      <div class="sb-item">
+        <span class="dot"></span>
+        <span>Exam simulation — argumentation</span>
+      </div>
+    </div>
+
+    <div class="sb-footer">
+      <div>Wireframe view — layout only.</div>
+      <div>
+        <a href="index.html">← Back to overview</a> ·
+        <a href="landing.html">Product landing</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main chat column -->
+  <section class="chat-wrap">
+    <header class="chat-header">
+      <div class="chat-header-left">
+        <div class="chat-title">Bacovia - “Plumb” guided analysis</div>
+        <div class="chat-subtitle">LitBot helps the student construct their own interpretation for the Bac exam.</div>
+        <div class="chat-header-tags">
+          <div class="tag">Coach mode</div>
+          <div class="tag">No full essays</div>
+          <div class="tag">Curriculum aligned</div>
+        </div>
+      </div>
+    </header>
+
+    <div class="chat-main">
+      <!-- Bot welcome -->
+      <div class="msg bot">
+        <div>
+          <div class="msg-label">LitBot</div>
+          <div>
+            Hi! I’m LitBot, your assistant for Bac la Limba și Literatura Română.  
+            Let’s work on <strong>“Plumb” by George Bacovia</strong>.  
+            In 3–5 steps I’ll help you build an exam-ready outline <em>in your own words</em>, not a memorized model.
+          </div>
+        </div>
+      </div>
+
+      <!-- Hint pills (wireframe) -->
+      <div class="hint-row">
+        <div class="hint-pill">Explain the atmosphere in the poem</div>
+        <div class="hint-pill">Identify 2–3 key symbols</div>
+        <div class="hint-pill">Connect to Bac symbolism & themes</div>
+      </div>
+
+      <!-- Bot question -->
+      <div class="msg bot">
+        <div>
+          <div class="msg-label">LitBot</div>
+          <div>
+            First question: <strong>What is the general mood of “Plumb” for you?</strong>  
+            Don’t search a model answer. Just tell me how it feels in 1–2 sentences.
+          </div>
+        </div>
+      </div>
+
+      <!-- User reply -->
+      <div class="msg user">
+        <div>
+          <div class="msg-label">Student</div>
+          <div>
+            It feels heavy and empty, like nothing has meaning and everything is closed.
+          </div>
+        </div>
+      </div>
+
+      <!-- Bot turning it into structure -->
+      <div class="msg bot">
+        <div>
+          <div class="msg-label">LitBot</div>
+          <div>
+            Great, that’s a strong starting point.  
+            We can turn this into an exam-style idea:
+            <ul>
+              <li>Atmosphere of <strong>claustrophobia</strong> and <strong>existential fatigue</strong>.</li>
+              <li>Image of the <strong>coffin</strong> + repetition of “plumb” suggests weight and inevitability.</li>
+            </ul>
+            Next, I’ll ask about one symbol we can use to support this. 👇
+          </div>
+        </div>
+      </div>
+
+      <!-- Bot follow-up -->
+      <div class="msg bot">
+        <div>
+          <div class="msg-label">LitBot</div>
+          <div>
+            Choose one image that seems important to you (coffin, graveyard, “flori de plumb”, etc.)  
+            and tell me briefly why it feels important.
+          </div>
+        </div>
+      </div>
+
+      <!-- Placeholder for more -->
+      <div class="hint-row">
+        <div class="hint-pill">[Wireframe] Future: Exam Mode timer</div>
+        <div class="hint-pill">[Wireframe] Save outline</div>
+        <div class="hint-pill">[Wireframe] Teacher review toggle</div>
+      </div>
+    </div>
+
+    <!-- Input area (non-functional in wireframe) -->
+    <div class="chat-input-wrap">
+      <div class="input-inner">
+        <div class="input-box">
+          <input type="text"
+                 placeholder="Type your answer here... LitBot will guide you with the next step." />
+          <div class="input-send">⮞</div>
+        </div>
+        <div class="input-hint">
+          Wireframe only — this is how students will chat with LitBot to build interpretations instead of memorizing essays.
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
