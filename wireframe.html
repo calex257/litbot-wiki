@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>LitBot — Wireframe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --ink: #0f172a;
+      --muted: #9ca3af;
+      --accent: #7c3aed;
+      --border: #e5e7eb;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(15,23,42,.10);
+      --font: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--ink);
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 5%;
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,.95);
+      border-bottom: 1px solid #f3f4f6;
+    }
+    .brand {
+      font-weight: 800;
+      font-size: 1.4rem;
+      background: linear-gradient(to right,#7c3aed,#2563eb);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 18px;
+      margin: 0;
+      padding: 0;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 32px auto 48px;
+      padding: 0 5%;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .wf-label {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .block {
+      border-radius: var(--radius);
+      border: 1px dashed var(--border);
+      background: #f9fafb;
+      padding: 18px 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .block-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .gray-box {
+      background: #e5e7eb;
+      border-radius: 12px;
+      height: 40px;
+      margin-bottom: 8px;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid #d1d5db;
+      font-size: 0.7rem;
+      color: #6b7280;
+      margin-right: 4px;
+      margin-bottom: 4px;
+    }
+
+    @media (max-width: 768px) {
+      .block-row { grid-template-columns: 1fr; }
+      nav ul { display: none; }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="brand">LitBot 📚</div>
+  <ul>
+    <li><a href="index.html">Overview</a></li>
+    <li><a href="landing.html">Product landing</a></li>
+    <li><a href="milestones/m2.html">Milestone M2</a></li>
+  </ul>
+</nav>
+
+<main class="page">
+  <section class="block">
+    <div class="wf-label">Hero section</div>
+    <div class="gray-box"></div>
+    <div class="pill">Logo / Nav</div>
+    <div class="pill">Headline: “Understand, don’t memorize for Bac la Română”</div>
+    <div class="pill">Subtext: short value prop</div>
+    <div class="pill">Primary CTA: “Try LitBot”</div>
+    <div class="pill">Secondary CTA: “See how it works”</div>
+  </section>
+
+  <section class="block">
+    <div class="wf-label">How it works (3 steps)</div>
+    <div class="block-row">
+      <div>
+        <div class="gray-box"></div>
+        <div class="pill">Choose literary work</div>
+        <div class="pill">Upload / select text</div>
+      </div>
+      <div>
+        <div class="gray-box"></div>
+        <div class="pill">Guided questions</div>
+        <div class="pill">Build your own analysis</div>
+      </div>
+      <div>
+        <div class="gray-box"></div>
+        <div class="pill">Feedback + structure</div>
+        <div class="pill">Export outline</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wf-label">Key benefits</div>
+    <div class="block-row">
+      <div>
+        <div class="gray-box"></div>
+        <div class="pill">For students</div>
+        <p>Less memorizing, more confidence + exam-style structure.</p>
+      </div>
+      <div>
+        <div class="gray-box"></div>
+        <div class="pill">For teachers</div>
+        <p>Coach mode only, no essay dumping; curriculum aligned.</p>
+      </div>
+      <div>
+        <div class="gray-box"></div>
+        <div class="pill">For parents</div>
+        <p>Affordable alternative to tutoring; track progress.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wf-label">Social proof</div>
+    <div class="gray-box"></div>
+    <p>Placeholder area: student quotes, teacher quote, early pilot numbers.</p>
+  </section>
+
+  <section class="block">
+    <div class="wf-label">Pricing & CTA</div>
+    <div class="gray-box"></div>
+    <div class="pill">Free tier: limited chats</div>
+    <div class="pill">Premium: full access, outlines, Exam Mode</div>
+    <div class="pill">“Join early access” button</div>
+  </section>
+</main>
+</body>
+</html>
