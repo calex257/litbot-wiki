@@ -5,6 +5,30 @@
   <title>LitBot — Understand, Don’t Memorize the Bac</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script>
+      !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){
+          function g(t,e){var o=e.split(".");
+          2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){
+              t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}
+              (p=t.createElement("script")).type="text/javascript",
+              // p.crossOrigin="anonymous",
+              p.async=!0,
+              p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",
+              (r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);
+          var u=e;
+          for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){
+              var e="posthog";
+              return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){
+                  return u.toString(1)+".people (stub)"},
+                  o="init Rr Mr fi Cr Ar ci Tr Fr capture Mi calculateEventProperties Lr register register_once register_for_session unregister unregister_for_session Hr getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Ur jr createPersonProfile zr kr Br opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing Dr debug M Nr getPageViewId captureTraceFeedback captureTraceMetric $r".split(" "),n=0;n<o.length;n++)g(u,o[n]);
+                  e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+      posthog.init('phc_1Db8KFRqM9Rri2Ymlzg6W009h9zTrXZxfWJ4rGQRySN', {
+          api_host: 'https://us.i.posthog.com',
+          defaults: '2025-11-30',
+          person_profiles: 'always', // or 'always' to create profiles for anonymous users as well
+      })
+      posthog.capture("landing_page", { page: "landing_page" });
+    </script>
   <style>
     :root {
       --bg: #ffffff;
@@ -386,14 +410,39 @@
   <section id="cta" class="section">
     <h2>Join the LitBot early access list</h2>
     <p>Be among the first students and teachers to shape how LitBot works. Share feedback, get perks, and help us fight rote memorization together.</p>
-    <form action="https://formspree.io/f/your-id" method="POST" style="margin-top:12px; display:flex; flex-wrap:wrap; gap:10px;">
-      <input type="email" name="email" required
-             placeholder="Enter your email"
-             style="padding:10px 12px; min-width:220px; border-radius:999px; border:1px solid #d1d5db; font-size:0.9rem; flex:0 0 auto;">
-      <button type="submit" class="btn btn-primary">Get early access link</button>
+    
+    <form action="https://formspree.io/f/xanrjlwj" method="POST">
+      
+      <!-- Email input -->
+      <input 
+        type="email" 
+        name="email" 
+        placeholder="Enter your email" 
+        required
+        style="padding:10px; width:250px; border-radius:8px; border:1px solid #ccc;"
+        oninput="posthog.capture('email_typing', {location:'email_input_field'})"
+      >
+
+      <br><br>
+      <!-- Checkbox input -->
+      <label style="font-size:0.9rem;">
+        <input type="checkbox" name="Subscription" value="yes"
+              onclick="posthog.capture('newsletter_subscription', {checked: this.checked});">
+        I want to receive updates about LitBot.
+      </label>
+
+      <br><br>
+
+      <!-- Submit button -->
+      <button type="submit" 
+              onclick="posthog.capture('email_submission', {location:'submit_button'})"
+              style="padding:12px 26px; border:none; background:#4a56e2; color:white; border-radius:8px; cursor:pointer;">
+        Get Early Access
+      </button>
+
     </form>
-    <p style="margin-top:6px;font-size:0.75rem;color:#9ca3af;">We’ll only use your email to contact you about LitBot. You can opt out anytime.</p>
   </section>
+
 </main>
 
 <footer class="footer">
