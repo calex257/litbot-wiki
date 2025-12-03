@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LitBot — Milestone 5: Lead Generation Campaign</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#ffffff; --text:#0f172a; --muted:#475569; --border:#e5e7eb;
+      --accent:#2563eb; --accent-ink:#ffffff; --card:#ffffff; --shadow:0 10px 30px rgba(2,6,23,.10);
+      --radius:16px; --maxw:1200px; --font: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.65}
+    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+    .nav{position:sticky; top:0; z-index:10; backdrop-filter:saturate(1.2) blur(6px); background:rgba(255,255,255,0.75); border-bottom:1px solid var(--border);}
+    .nav-inner{max-width:var(--maxw);margin:0 auto;display:flex;gap:20px;align-items:center;justify-content:space-between;padding:12px 20px}
+    .brand{font-weight:800;letter-spacing:.2px}
+    .header{max-width:var(--maxw); margin:24px auto 0; padding:24px 20px 0;}
+    h1{font-size:2.25rem; line-height:1.2; margin:0 0 12px; letter-spacing:.2px}
+    h2{font-size:1.35rem; margin:0}
+    h3{font-size:1.1rem; margin:16px 0 6px; color:var(--muted)}
+    p{margin:12px 0} ul{margin:10px 0 16px 22px} li{margin:6px 0}
+    .page{max-width:var(--maxw); margin:0 auto; padding:16px 20px 60px; display:grid; grid-template-columns: 280px 1fr; gap:24px}
+    @media (max-width: 960px){.page{grid-template-columns: 1fr}.sidebar{position:relative; top:auto}}
+    .sidebar{position:sticky; top:80px; height:fit-content; background:#ffffff; border:1px solid var(--border); border-radius:16px; box-shadow:var(--shadow); padding:16px;}
+    .sidebar h4{margin:0 0 8px 0; font-size:1rem; color:var(--muted)}
+    .sidebar ul{list-style:none; margin:0; padding:0} .sidebar li{margin:6px 0} .sidebar a{display:block; padding:8px 10px; border-radius:10px; border:1px solid transparent}
+    .sidebar a:hover{background:#f8fafc; border-color:var(--border); text-decoration:none}
+    .section-card{background:var(--card); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; margin:26px 0 !important;}
+    .section-header{display:flex; align-items:center; justify-content:space-between; background:var(--grad); padding:16px 18px; color:#ffffff;}
+    .section-header h2{color:#ffffff} .chip{display:inline-block; padding:6px 10px; border-radius:999px; background:rgba(255,255,255,.15); color:#fff; border:1px solid rgba(255,255,255,.35); font-weight:600; text-decoration:none;}
+    .chip:hover{background:rgba(255,255,255,.25); text-decoration:none} .section-body{padding:20px 22px}
+    .badge{display:inline-block; background:var(--accent); color:var(--accent-ink); padding:6px 10px; border-radius:999px; font-weight:600; font-size:.85rem;}
+    .footer{max-width:var(--maxw); margin:40px auto; padding:0 20px 40px; color:var(--muted); font-size:.9rem}
+    .screenshot{width:100%; border:1px solid var(--border); border-radius:12px; margin:12px 0; box-shadow:var(--shadow);}
+    .screenshot-placeholder{width:100%; height:300px; background:#f1f5f9; border:2px dashed var(--border); border-radius:12px; display:flex; align-items:center; justify-content:center; color:var(--muted); font-weight:600; margin:12px 0;}
+    .comparison-table{width:100%; border-collapse:collapse; margin:16px 0;}
+    .comparison-table th, .comparison-table td{padding:12px; text-align:left; border-bottom:1px solid var(--border);}
+    .comparison-table th{background:#f8fafc; font-weight:600;}
+    .metric-card{background:#f8fafc; border:1px solid var(--border); border-radius:12px; padding:16px; margin:12px 0;}
+    .metric-card h4{margin:0 0 8px 0; color:var(--accent);}
+    .metric-card .value{font-size:2rem; font-weight:800; color:var(--text);}
+    .metric-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:16px; margin:16px 0;}
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="brand">LitBot</div>
+      <a class="button" href="#top">Back to top</a>
+    </div>
+  </nav>
+
+  <header class="header" id="top">
+    <span class="badge">Milestone 5</span>
+    <h1>LitBot — Lead Generation Campaign Report</h1>
+  </header>
+
+  <div class="page">
+    <aside class="sidebar">
+      <h4>Contents</h4>
+      <ul>
+        <li><a href="#overview">1. Campaign Overview</a></li>
+        <li><a href="#analytics">2. Analytics Integration</a></li>
+        <li><a href="#lead-collection">3. Lead Collection Setup</a></li>
+        <li><a href="#analytics-insights">4. Analytics Insights</a></li>
+        </ul>
+    </aside>
+
+    <main>
+      <article class="section-card" id="overview" style="--grad:linear-gradient(135deg, #2563eb, #06b6d4)">
+        <div class="section-header">
+          <h2>1. Campaign Overview</h2>
+          <a class="chip" href="#top" title="Back to top">↑</a>
+        </div>
+        <div class="section-body">
+          <p><strong>Goal:</strong> Generate early adopter interest and collect email leads for LitBot's launch</p>
+          <p><strong>Target Audience:</strong> Romanian high school students (grades 11-12), teachers, and parents preparing for the Baccalaureate exam</p>
+          
+          <div class="metric-grid">
+            <div class="metric-card">
+              <h4>Total Leads</h4>
+              <div class="value">21</div>
+            </div>
+            <div class="metric-card">
+              <h4>Landing Page Views</h4>
+              <div class="value">17</div>
+            </div>
+            <div class="metric-card">
+              <h4>Conversion Rate</h4>
+              <div class="value">61.9%</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="section-card" id="analytics" style="--grad:linear-gradient(135deg, #7c3aed, #22d3ee)">
+        <div class="section-header">
+          <h2>2. Analytics Integration (PostHog)</h2>
+          <a class="chip" href="#top" title="Back to top">↑</a>
+        </div>
+        <div class="section-body">
+          <h3>PostHog Setup</h3>
+          <p>PostHog analytics was integrated into the main page, the landing page, and the wireframe page to track:</p>
+          <ul>
+            <li><strong>Web Analytics:</strong> Page views, visitor sessions</li>
+            <li><strong>Product Analytics:</strong> Conversion funnel tracking for email submissions</li>
+            <li><strong>Session Replay:</strong> User behavior observation and interaction patterns</li>
+          </ul>
+
+          <h3>Tracked Events</h3>
+            <p>
+                To understand how users progress through the LitBot lead-generation flow, several key interaction events were tracked throughout the session. These events give insight into how far users get, where they hesitate, and where drop-offs occur.
+            </p>
+
+            <ul>
+                <li><strong>Index page view:</strong> The initial entry point for all users.</li>
+                <li><strong>Landing page view:</strong> The main call-to-action screen introducing LitBot.</li>
+                <li><strong>Wireframe page view:</strong> The optional mid-funnel step showcasing the UI prototype.</li>
+                <li><strong>Email field typing:</strong> Indicates intent to engage or convert.</li>
+                <li><strong>Newsletter checkbox interaction:</strong> Measures micro-engagement and trust.</li>
+                <li><strong>Form submission:</strong> Final conversion event, completing the signup flow.</li>
+            </ul>
+
+            <img class="complete_funel" src="../images/complete_funel.png" width="800">
+
+            <h3>Conversion Funnel</h3>
+                <p>
+                Below is the funnel representing how users move from their first interaction toward conversion.
+                This funnel helps visualize both engagement depth and friction points.
+                </p>
+
+                <ol>
+                    <li><strong>Landing page visit:</strong> Users enter the lead-generation flow.</li>
+                    <li><strong>Email field interaction:</strong> Demonstrates stronger intent to sign up.</li>
+                    <li><strong>Newsletter subscription:</strong> Optional step that validates additional interest.</li>
+                    <li><strong>Form submission:</strong> Completion of the funnel and successful conversion.</li>
+                </ol>
+
+            <img class="small_funel" src="../images/small_funel.png" width="600">
+        </div>
+      </article>
+
+      <article class="section-card" id="lead-collection" style="--grad:linear-gradient(135deg, #16a34a, #06b6d4)">
+        <div class="section-header">
+          <h2>3. Lead Collection Setup</h2>
+          <a class="chip" href="#top" title="Back to top">↑</a>
+        </div>
+        <div class="section-body">
+          <h3>Formspree Integration</h3>
+          <p>The lead collection form uses Formspree for backend handling, integrated at the bottom of the landing page.</p>
+
+          <h3>Form Fields</h3>
+          <ul>
+            <li><strong>Email:</strong> Required field for contact</li>
+            <li><strong>Newsletter subscription:</strong> Optional checkbox for updates</li>
+          </ul>
+
+          <img class="formspree" src="../images/formspree.png" width="600">
+        </div>
+      </article>
+    
+      <article class="section-card" id="analytics-insights" style="--grad:linear-gradient(135deg, #06b6d4, #8b5cf6)">
+        <div class="section-header">
+          <h2>4. PostHog Analytics Insights</h2>
+          <a class="chip" href="#top" title="Back to top">↑</a>
+        </div>
+        <div class="section-body">
+          <h3>Conversion Funnel Analysis</h3>
+          <ul>
+            <li>Index page → Landing page: 80.95% proceeded</li>
+            <li>Landing page → Email typing: 94.11% proceeded</li>
+            <li>Email typing → Form submission: 81.25% converted</li>
+          </ul>
+
+          <h3>Session Replay Insights</h3>
+          <video controls style="width: 100%; max-width: 600px;">
+            <source src="../images/session_replay.mp4" type="video/mp4">
+          </video>
+          <p><strong>Key observations:</strong></p>
+          <ul>
+            <li>Users spend an average of 14.8 seconds reading the landing section before scrolling or clicking.</li>
+            <li>63% of users scroll down to the “How It Works” section, indicating moderate engagement with the content below the fold.</li>
+            <li>The most common hesitation point occurs on the newsletter subscription step, where many users pause for several seconds before deciding whether to continue.</li>
+          </ul>
+        </div>
+      </article>
+
+    </main>
+  </div>
+
+  <footer class="footer">
+    @2025 LitBot • <a href="../index.html">Back to main site</a>
+  </footer>
+</body>
+</html>
