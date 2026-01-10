@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LitBot – User Feedback</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#ffffff; --text:#0f172a; --muted:#475569; --border:#e5e7eb;
+      --accent:#2563eb; --accent-ink:#ffffff; --card:#ffffff; --shadow:0 10px 30px rgba(2,6,23,.10);
+      --radius:16px; --maxw:800px; --font: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:linear-gradient(135deg, #f0f9ff, #faf5ff);color:var(--text);font-family:var(--font);line-height:1.65}
+    a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
+    .nav{position:sticky; top:0; z-index:10; backdrop-filter:saturate(1.2) blur(6px); background:rgba(255,255,255,0.95); border-bottom:1px solid var(--border);}
+    .nav-inner{max-width:var(--maxw);margin:0 auto;display:flex;gap:20px;align-items:center;justify-content:space-between;padding:12px 20px}
+    .brand{font-weight:800;letter-spacing:.2px; font-size:1.2rem;}
+    .container{max-width:var(--maxw); margin:40px auto; padding:0 20px;}
+    .header-box{background:linear-gradient(135deg, #7c3aed, #2563eb); padding:32px 28px; border-radius:var(--radius); color:white; text-align:center; margin-bottom:32px; box-shadow:var(--shadow);}
+    .header-box h1{margin:0 0 8px; font-size:2rem;}
+    .header-box p{margin:0; opacity:0.9; font-size:1.05rem;}
+    .form-card{background:white; padding:32px; border-radius:var(--radius); box-shadow:var(--shadow);}
+    .form-group{margin-bottom:24px;}
+    .form-group label{display:block; font-weight:600; margin-bottom:8px; color:var(--text);}
+    .form-group input, .form-group select, .form-group textarea{width:100%; padding:12px 14px; border:1px solid var(--border); border-radius:8px; font-family:var(--font); font-size:0.95rem;}
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus{outline:none; border-color:var(--accent); box-shadow:0 0 0 3px rgba(37,99,235,0.1);}
+    .form-group textarea{min-height:100px; resize:vertical;}
+    .radio-group{display:flex; gap:16px; flex-wrap:wrap;}
+    .radio-label{display:flex; align-items:center; gap:6px; cursor:pointer;}
+    .radio-label input{width:auto; margin:0;}
+    .submit-btn{width:100%; padding:14px; background:linear-gradient(135deg, #7c3aed, #2563eb); color:white; border:none; border-radius:999px; font-weight:700; font-size:1.05rem; cursor:pointer; box-shadow:0 4px 12px rgba(124,58,237,0.3); transition:transform 0.2s, box-shadow 0.2s;}
+    .submit-btn:hover{transform:translateY(-2px); box-shadow:0 6px 16px rgba(124,58,237,0.4);}
+    .note{background:#fffbeb; border-left:4px solid #f59e0b; padding:12px 16px; border-radius:8px; margin-bottom:24px; font-size:0.9rem;}
+    .back-link{display:inline-block; margin-top:24px; color:var(--muted); font-size:0.9rem;}
+    .required{color:#ef4444;}
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="brand">LitBot 📚</div>
+      <a href="m7_8.html">← Back to M7 & M8</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="header-box">
+      <h1>Help Us Improve LitBot! 💡</h1>
+      <p>Your feedback shapes the future of literature learning in Romania</p>
+    </div>
+
+    <div class="note">
+      <strong>Thank you for testing LitBot!</strong> Your honest feedback is invaluable. This form takes ~3 minutes to complete and helps us build a better product for all students.
+    </div>
+
+    <div class="form-card">
+      <form action="https://formspree.io/f/xlggrpnn" method="POST">
+        
+        <!-- Name -->
+        <div class="form-group">
+          <label for="name">Your Name <span class="required">*</span></label>
+          <input type="text" id="name" name="name" placeholder="e.g., Alexandru Popescu" required>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">Email Address <span class="required">*</span></label>
+          <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+        </div>
+
+        <!-- Class/Year -->
+        <div class="form-group">
+          <label for="class">Class / Year <span class="required">*</span></label>
+          <select id="class" name="class" required>
+            <option value="">Select your class...</option>
+            <option value="9">Clasa a 9-a</option>
+            <option value="10">Clasa a 10-a</option>
+            <option value="11">Clasa a 11-a</option>
+            <option value="12">Clasa a 12-a</option>
+            <option value="graduate">Absolvent/Student</option>
+            <option value="teacher">Profesor</option>
+            <option value="parent">Părinte</option>
+            <option value="other">Altceva</option>
+          </select>
+        </div>
+
+        <!-- User Type -->
+        <div class="form-group">
+          <label>How did you use LitBot? <span class="required">*</span></label>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" name="user_type" value="student" required>
+              <span>As a student preparing for Bac</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="user_type" value="curious">
+              <span>Just curious / exploring</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="user_type" value="teacher">
+              <span>As a teacher evaluating the tool</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="user_type" value="parent">
+              <span>As a parent checking for my child</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- What You Liked -->
+        <div class="form-group">
+          <label for="liked">What did you like about LitBot? <span class="required">*</span></label>
+          <textarea id="liked" name="liked" placeholder="What features or aspects did you find most helpful? Be specific!" required></textarea>
+        </div>
+
+        <!-- What Should Be Improved -->
+        <div class="form-group">
+          <label for="improve">What should be improved? <span class="required">*</span></label>
+          <textarea id="improve" name="improve" placeholder="What frustrated you? What's missing? What could work better?" required></textarea>
+        </div>
+
+        <!-- Overall Experience -->
+        <div class="form-group">
+          <label for="experience">How would you rate your overall experience? <span class="required">*</span></label>
+          <select id="experience" name="experience" required>
+            <option value="">Select rating...</option>
+            <option value="5">⭐⭐⭐⭐⭐ Excellent - Exceeded expectations</option>
+            <option value="4">⭐⭐⭐⭐ Good - Met my needs well</option>
+            <option value="3">⭐⭐⭐ Average - It's okay</option>
+            <option value="2">⭐⭐ Below Average - Needs work</option>
+            <option value="1">⭐ Poor - Very disappointed</option>
+          </select>
+        </div>
+
+        <!-- Understanding Improvement -->
+        <div class="form-group">
+          <label for="understanding">Did LitBot help you understand literature better? <span class="required">*</span></label>
+          <select id="understanding" name="understanding" required>
+            <option value="">Select...</option>
+            <option value="much_better">Yes, much better than before</option>
+            <option value="somewhat">Somewhat - I understand a bit more</option>
+            <option value="same">About the same as other resources</option>
+            <option value="not_really">Not really - didn't help much</option>
+            <option value="worse">No - I'm more confused now</option>
+          </select>
+        </div>
+
+        <!-- Would Pay? -->
+        <div class="form-group">
+          <label>Would you pay 25 RON/month for LitBot with premium features? <span class="required">*</span></label>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input type="radio" name="would_pay" value="yes_definitely" required>
+              <span>Yes, definitely</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="would_pay" value="yes_maybe">
+              <span>Maybe, depends on features</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="would_pay" value="too_expensive">
+              <span>No, too expensive</span>
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="would_pay" value="want_free">
+              <span>No, I prefer free tools</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- Fair Price -->
+        <div class="form-group">
+          <label for="fair_price">What would be a fair monthly price for you?</label>
+          <select id="fair_price" name="fair_price">
+            <option value="">Select...</option>
+            <option value="0">0 RON (should be free)</option>
+            <option value="10">10 RON/month</option>
+            <option value="15">15 RON/month</option>
+            <option value="20">20 RON/month</option>
+            <option value="25">25 RON/month</option>
+            <option value="30">30 RON/month</option>
+            <option value="40">40+ RON/month</option>
+          </select>
+        </div>
+
+        <!-- Most Wanted Feature -->
+        <div class="form-group">
+          <label for="wanted_feature">What feature would make you most likely to pay for premium?</label>
+          <select id="wanted_feature" name="wanted_feature">
+            <option value="">Select...</option>
+            <option value="essay_outlines">Essay outline generator</option>
+            <option value="mobile_app">Mobile app</option>
+            <option value="offline_mode">Offline mode</option>
+            <option value="other">Other (describe below)</option>
+          </select>
+        </div>
+
+        <!-- Likelihood to Recommend -->
+        <div class="form-group">
+          <label for="recommend">How likely are you to recommend LitBot to a friend? (0-10) <span class="required">*</span></label>
+          <select id="recommend" name="recommend" required>
+            <option value="">Select...</option>
+            <option value="10">10 - Extremely likely</option>
+            <option value="9">9</option>
+            <option value="8">8</option>
+            <option value="7">7</option>
+            <option value="6">6</option>
+            <option value="5">5 - Neutral</option>
+            <option value="4">4</option>
+            <option value="3">3</option>
+            <option value="2">2</option>
+            <option value="1">1</option>
+            <option value="0">0 - Not at all likely</option>
+          </select>
+        </div>
+
+        <!-- Additional Feedback -->
+        <div class="form-group">
+          <label for="other_feedback">Any other feedback, suggestions, or ideas?</label>
+          <textarea id="other_feedback" name="other_feedback" placeholder="Anything else you'd like us to know? Feature requests, bugs you found, comparison with other tools you've tried..."></textarea>
+        </div>
+
+        <!-- Permission to Follow Up -->
+        <div class="form-group">
+          <label class="radio-label" style="cursor:pointer;">
+            <input type="checkbox" name="follow_up" value="yes">
+            <span>You can contact me for a follow-up interview (I might get early premium access!)</span>
+          </label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-btn">
+          Submit Feedback 🚀
+        </button>
+      </form>
+    </div>
+
+    <a href="m7.html" class="back-link">← Back to Milestone M7</a>
+  </div>
+
+</body>
+</html>
