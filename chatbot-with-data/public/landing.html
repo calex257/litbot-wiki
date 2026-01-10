@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>LitBot — Understand, Don’t Memorize the Bac</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script>
+      !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){
+          function g(t,e){var o=e.split(".");
+          2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){
+              t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}
+              (p=t.createElement("script")).type="text/javascript",
+              // p.crossOrigin="anonymous",
+              p.async=!0,
+              p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",
+              (r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);
+          var u=e;
+          for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){
+              var e="posthog";
+              return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){
+                  return u.toString(1)+".people (stub)"},
+                  o="init Rr Mr fi Cr Ar ci Tr Fr capture Mi calculateEventProperties Lr register register_once register_for_session unregister unregister_for_session Hr getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Ur jr createPersonProfile zr kr Br opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing Dr debug M Nr getPageViewId captureTraceFeedback captureTraceMetric $r".split(" "),n=0;n<o.length;n++)g(u,o[n]);
+                  e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+      posthog.init('phc_1Db8KFRqM9Rri2Ymlzg6W009h9zTrXZxfWJ4rGQRySN', {
+          api_host: 'https://us.i.posthog.com',
+          defaults: '2025-11-30',
+          person_profiles: 'always', // or 'always' to create profiles for anonymous users as well
+      })
+      posthog.capture("landing_page", { page: "landing_page" });
+    </script>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --ink: #0f172a;
+      --muted: #6b7280;
+      --accent1: #7c3aed;
+      --accent2: #2563eb;
+      --border: #e5e7eb;
+      --radius: 18px;
+      --shadow: 0 16px 40px rgba(15,23,42,.12);
+      --font: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font);
+      background: radial-gradient(circle at top left,#eef2ff,#ffffff);
+      color: var(--ink);
+    }
+    a { color: var(--accent1); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 6%;
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,.96);
+      border-bottom: 1px solid #f3f4f6;
+    }
+    .brand {
+      font-weight: 800;
+      font-size: 1.5rem;
+      background: linear-gradient(to right, var(--accent1), var(--accent2));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 18px;
+      margin: 0;
+      padding: 0;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    nav ul a {
+      color: #111827;
+      padding-bottom: 2px;
+    }
+    nav ul a:hover {
+      color: var(--accent1);
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-weight: 600;
+      border: 1px solid transparent;
+      cursor: pointer;
+      font-size: 0.95rem;
+      white-space: nowrap;
+      text-decoration: none;
+      transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+    }
+    .btn:hover {
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: linear-gradient(to right,var(--accent1),var(--accent2));
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 50px rgba(124,58,237,.4);
+    }
+    .btn-ghost {
+      border-color: #cbd5f5;
+      color: var(--accent1);
+      background: #ffffff;
+    }
+    .btn-ghost:hover {
+      background: #eff6ff;
+      border-color: var(--accent1);
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 24px auto 48px;
+      padding: 0 6%;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0,1.6fr) minmax(260px,1.4fr);
+      gap: 32px;
+      align-items: center;
+      margin-top: 32px;
+    }
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      background: #eef2ff;
+      color: var(--accent1);
+    }
+    .hero h1 {
+      font-size: clamp(2.1rem, 3.1vw, 2.9rem);
+      margin: 14px 0 10px;
+    }
+    .hero p {
+      margin: 6px 0 16px;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+    .hero-metrics {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+      font-size: 0.8rem;
+      color: #9ca3af;
+    }
+    .hero-card {
+      background: #ffffff;
+      border-radius: var(--radius);
+      border: 1px solid #e5e7eb;
+      box-shadow: var(--shadow);
+      padding: 14px 14px 12px;
+      font-size: 0.8rem;
+    }
+    .hero-card strong {
+      display:block;
+      font-size:1.8rem;
+      margin-bottom:2px;
+    }
+
+    .section {
+      margin-top: 42px;
+    }
+    .section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+    .section p {
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 18px;
+      margin-top: 22px;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 16px 14px 14px;
+      box-shadow: 0 10px 26px rgba(15,23,42,.06);
+      font-size: 0.9rem;
+    }
+    .card h3 {
+      margin: 0 0 4px;
+      font-size: 1rem;
+    }
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .pill {
+      display:inline-block;
+      padding:2px 7px;
+      border-radius:999px;
+      background:#eff6ff;
+      color:#2563eb;
+      font-size:0.7rem;
+      margin-top:4px;
+    }
+
+    .steps {
+      display:grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap:16px;
+      margin-top:20px;
+    }
+    .steps-item {
+      background:#ffffff;
+      border-radius:14px;
+      border:1px dashed #d4d4d8;
+      padding:12px;
+      font-size:0.9rem;
+    }
+    .steps-item span {
+      display:inline-flex;
+      width:22px;height:22px;
+      border-radius:999px;
+      align-items:center;justify-content:center;
+      margin-bottom:6px;
+      font-size:0.75rem;
+      color:#fff;
+      background:linear-gradient(to right,var(--accent1),var(--accent2));
+    }
+
+    .pricing {
+      display:flex;
+      flex-wrap:wrap;
+      gap:18px;
+      margin-top:18px;
+    }
+    .price-card {
+      flex:1 1 220px;
+      background:#ffffff;
+      border-radius:var(--radius);
+      border:1px solid var(--border);
+      padding:16px 14px 14px;
+      box-shadow:0 12px 30px rgba(15,23,42,.06);
+      font-size:0.9rem;
+    }
+    .price-card h3 {
+      margin:0 0 4px;
+      font-size:1rem;
+    }
+    .price-tag {
+      font-size:1.4rem;
+      font-weight:700;
+      margin:4px 0 4px;
+    }
+
+    .footer {
+      max-width:1120px;
+      margin:40px auto 24px;
+      padding:0 6%;
+      font-size:0.8rem;
+      color:#9ca3af;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      .grid-3, .steps {
+        grid-template-columns: 1fr;
+      }
+      nav ul {
+        display:none;
+      }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <div class="brand">LitBot 📚</div>
+  <ul>
+    <li><a href="/home.html">Overview</a></li>
+    <li><a href="#how-it-works">How it works</a></li>
+    <li><a href="#for-whom">For whom</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="/wireframe.html">Wireframe</a></li>
+    <li><a href="/milestones/m2.html">Milestone M2</a></li>
+  </ul>
+  <a href="/chat" class="btn btn-primary">🤖 Try LitBot</a>
+</nav>
+
+<main>
+  <!-- Hero -->
+  <section class="hero">
+    <div>
+      <div class="hero-label">
+        <span>New</span>
+        <span>AI coach for Bac la Română</span>
+      </div>
+      <h1>Understand literature, don’t just memorize it.</h1>
+      <p>LitBot is your AI study partner for the Romanian Baccalaureate in Literature. It guides you with questions, structures your ideas, and helps you build your own analysis — without dumping ready-made essays.</p>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap; align-items: center;">
+        <a href="/chat" class="btn btn-primary" style="font-size: 1rem;">🤖 Try LitBot Now</a>
+        <a href="#how-it-works" class="btn btn-ghost">See how it works</a>
+      </div>
+      <div class="hero-metrics">
+        <span>✔ Coach mode only — no plagiarism</span>
+        <span>✔ Curriculum-aligned explanations</span>
+        <span>✔ Designed with teachers & students</span>
+      </div>
+    </div>
+    <div class="hero-card">
+      <strong>LitBot chat preview</strong>
+      <p><b>LitBot:</b> “What does Bacovia’s atmosphere in <em>Plumb</em> make you feel, in your own words?”</p>
+      <p><b>Student:</b> “It feels heavy and empty at the same time.”</p>
+      <p><b>LitBot:</b> “Great. Let’s turn that into an exam-ready idea together ⟶”</p>
+      <div style="display: flex; gap: 6px; flex-wrap: wrap; margin: 8px 0;">
+        <span class="pill">Guided prompts</span>
+        <span class="pill">Outline generation</span>
+        <span class="pill">Instant feedback</span>
+      </div>
+      <a href="/chat" class="btn btn-primary" style="margin-top: 10px; width: 100%; text-align: center;">Try it now →</a>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how-it-works" class="section">
+    <h2>How LitBot helps you study smarter</h2>
+    <p>Instead of pasting a model essay, LitBot walks you through the thinking process step by step.</p>
+    <div class="steps">
+      <div class="steps-item">
+        <span>1</span>
+        <strong>Pick your work & topic</strong>
+        <p>Select a Bac-approved text or theme. LitBot loads key criteria and expectations.</p>
+      </div>
+      <div class="steps-item">
+        <span>2</span>
+        <strong>Answer focused questions</strong>
+        <p>LitBot asks short, targeted questions to extract your understanding and examples.</p>
+      </div>
+      <div class="steps-item">
+        <span>3</span>
+        <strong>Get a clean exam-ready outline</strong>
+        <p>You receive a structured outline you can write in your own words — plus feedback if something is off.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- For whom -->
+  <section id="for-whom" class="section">
+    <h2>Built for students, trusted by teachers, approved by parents</h2>
+    <div class="grid-3">
+      <div class="card">
+        <h3>For students</h3>
+        <p>Turn chaos into structure. Practice under time constraints, with hints instead of spoilers.</p>
+        <span class="pill">Exam Mode</span>
+        <span class="pill">Progress tracking</span>
+      </div>
+      <div class="card">
+        <h3>For teachers</h3>
+        <p>Use LitBot as homework assistant. See students’ reasoning steps, not just final text.</p>
+        <span class="pill">Coach mode only</span>
+        <span class="pill">Curriculum aligned</span>
+      </div>
+      <div class="card">
+        <h3>For parents</h3>
+        <p>Affordable, focused support instead of another distraction. Designed to reduce pre-exam stress.</p>
+        <span class="pill">From ~25 RON / month</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="section">
+    <h2>Early access pricing</h2>
+    <p>Special pricing for the first pilot cohort. No credit card required to join the waitlist.</p>
+    <div class="pricing">
+      <div class="price-card">
+        <h3>Free</h3>
+        <div class="price-tag">0 RON</div>
+        <p>Limited daily questions, a few works unlocked, basic outlines.</p>
+      </div>
+      <div class="price-card">
+        <h3>Student Premium</h3>
+        <div class="price-tag">25 RON / month*</div>
+        <p>All Bac works covered, Exam Mode, saved notes, personalized feedback.</p>
+        <p style="font-size:0.75rem;color:#9ca3af;">*Pilot pricing for early users.</p>
+      </div>
+      <div class="price-card">
+        <h3>Class / Center</h3>
+        <p class="price-tag">Contact us</p>
+        <p>For schools & after-school centers who want LitBot for a group.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta" class="section">
+    <h2>Join the LitBot early access list</h2>
+    <p>Be among the first students and teachers to shape how LitBot works. Share feedback, get perks, and help us fight rote memorization together.</p>
+    
+    <form action="https://formspree.io/f/xanrjlwj" method="POST">
+      
+      <!-- Email input -->
+      <input 
+        type="email" 
+        name="email" 
+        placeholder="Enter your email" 
+        required
+        style="padding:10px; width:250px; border-radius:8px; border:1px solid #ccc;"
+        oninput="posthog.capture('email_typing', {location:'email_input_field'})"
+      >
+
+      <br><br>
+      <!-- Checkbox input -->
+      <label style="font-size:0.9rem;">
+        <input type="checkbox" name="Subscription" value="yes"
+              onclick="posthog.capture('newsletter_subscription', {checked: this.checked});">
+        I want to receive updates about LitBot.
+      </label>
+
+      <br><br>
+
+      <!-- Submit button -->
+      <button type="submit" 
+              onclick="posthog.capture('email_submission', {location:'submit_button'})"
+              style="padding:12px 26px; border:none; background:#4a56e2; color:white; border-radius:8px; cursor:pointer;">
+        Get Early Access
+      </button>
+
+    </form>
+  </section>
+
+</main>
+
+<footer class="footer">
+  @2025 LitBot
+</footer>
+</body>
+</html>

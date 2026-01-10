@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LitBot — Customer Discovery Report & Plan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+:root{
+  --bg:#ffffff;
+  --text:#0f172a;
+  --muted:#475569;
+  --border:#e5e7eb;
+  --accent:#2563eb;
+  --accent-ink:#ffffff;
+  --card:#ffffff;
+  --shadow:0 10px 30px rgba(2,6,23,.10);
+  --radius:16px;
+  --maxw:1200px;
+  --font: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji','Segoe UI Emoji';
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.65}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.nav{
+  position:sticky; top:0; z-index:10;
+  backdrop-filter:saturate(1.2) blur(6px);
+  background:rgba(255,255,255,0.75);
+  border-bottom:1px solid var(--border);
+}
+.nav-inner{max-width:var(--maxw);margin:0 auto;display:flex;gap:20px;align-items:center;justify-content:space-between;padding:12px 20px}
+.brand{font-weight:800;letter-spacing:.2px}
+.header{max-width:var(--maxw); margin:24px auto 0; padding:24px 20px 0;}
+h1{font-size:2.25rem; line-height:1.2; margin:0 0 12px; letter-spacing:.2px}
+h2{font-size:1.35rem; margin:0}
+h3{font-size:1.1rem; margin:16px 0 6px; color:var(--muted)}
+p{margin:12px 0}
+ul{margin:10px 0 16px 22px}
+li{margin:6px 0}
+.page{max-width:var(--maxw); margin:0 auto; padding:16px 20px 60px; display:grid; grid-template-columns: 280px 1fr; gap:24px}
+@media (max-width: 960px){
+  .page{grid-template-columns: 1fr}
+  .sidebar{position:relative; top:auto}
+}
+.sidebar{
+  position:sticky; top:80px; height:fit-content;
+  background:#ffffff; border:1px solid var(--border); border-radius:16px; box-shadow:var(--shadow);
+  padding:16px;
+}
+.sidebar h4{margin:0 0 8px 0; font-size:1rem; color:var(--muted)}
+.sidebar ul{list-style:none; margin:0; padding:0}
+.sidebar li{margin:6px 0}
+.sidebar a{display:block; padding:8px 10px; border-radius:10px; border:1px solid transparent}
+.sidebar a:hover{background:#f8fafc; border-color:var(--border); text-decoration:none}
+.section-card{
+  background:var(--card); border:1px solid var(--border);
+  border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden;
+}
+.section-header{
+  display:flex; align-items:center; justify-content:space-between;
+  background:var(--grad);
+  padding:16px 18px;
+  color:#ffffff;
+}
+.section-header h2{color:#ffffff}
+.chip{
+  display:inline-block; padding:6px 10px; border-radius:999px;
+  background:rgba(255,255,255,.15); color:#fff; border:1px solid rgba(255,255,255,.35);
+  font-weight:600; text-decoration:none;
+}
+.chip:hover{background:rgba(255,255,255,.25); text-decoration:none}
+.section-body{padding:20px 22px}
+.badge{
+  display:inline-block; background:var(--accent); color:var(--accent-ink);
+  padding:6px 10px; border-radius:999px; font-weight:600; font-size:.85rem;
+}
+.button{
+  display:inline-block; padding:10px 14px; border-radius:12px; font-weight:600;
+  border:1px solid var(--accent); color:var(--accent); background:#fff;
+}
+.button.primary{background:var(--accent); color:#fff}
+.footer{max-width:var(--maxw); margin:40px auto; padding:0 20px 40px; color:var(--muted); font-size:.9rem}
+.section-card{ margin:26px 0 !important; }
+</style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="brand">LitBot</div>
+      <a class="button" href="#top">Back to top</a>
+    </div>
+  </nav>
+
+  <header class="header" id="top">
+    <span class="badge">Customer Discovery</span>
+    <h1>LitBot — Customer Discovery Report & Plan</h1>
+    <p>AI-powered help for the Romanian Baccalaureate in Literature. Learn through dialogue — understand, don’t just memorize.</p>
+  </header>
+
+  <div class="page">
+    
+<aside class="sidebar">
+  <h4>Contents</h4>
+  <ul>
+    <li><a href="#how-we-identified-the-problem">How we identified the problem</a></li><li><a href="#our-initial-solution-hypothesis">Our initial solution hypothesis</a></li><li><a href="#plan-for-customer-discovery-short-overview">Plan for customer discovery (short overview)</a></li><li><a href="#discovery-process-detailed">Discovery process (detailed)</a></li><li><a href="#findings">Findings</a></li><li><a href="#how-insights-affect-the-product-decision-log">How insights affect the product (decision log)</a></li><li><a href="#are-we-ready-to-move-to-customer-validation-test-selling">Are we ready to move to Customer Validation (test selling)?</a></li>
+  </ul>
+</aside>
+
+    <main>
+      
+    <article class="section-card" id="intro" style="--grad:linear-gradient(135deg, #2563eb, #06b6d4)">
+      <div class="section-header">
+        <h2>Introduction</h2>
+        <a class="chip" href="#top" title="Back to top">↑</a>
+      </div>
+      <div class="section-body">
+        <h1 id="litbot-customer-discovery-report-amp-plan">LitBot — Customer Discovery Report &amp; Plan</h1>
+<p><em><strong>AI-powered help for the Romanian Baccalaureate in Literature (Bac la Limba și Literatura Română)</strong></em></p>
+<p><em><strong>Version:</strong></em><em><strong> 1.0</strong></em><em><strong>Prepared for:</strong></em><em><strong> LitBot team</strong></em><em><strong>Date:</strong></em><em><strong> 24 Oct 2025</strong></em></p>
+      </div>
+    </article>
+    
+
+    <article class="section-card" id="how-we-identified-the-problem" style="--grad:linear-gradient(135deg, #7c3aed, #22d3ee)">
+      <div class="section-header">
+        <h2>How we identified the problem</h2>
+        <a class="chip" href="#top" title="Back to top">↑</a>
+      </div>
+      <div class="section-body">
+        <h3 id="sources-of-initial-insight">Sources of Initial Insight</h3>
+<ul>
+<li>Alexandru struggled with memorizing &quot;Moara cu noroc&quot; analysis during his own Baccalaureate preparation</li>
+<li>Cristina observed her younger cousin spending hours memorizing essays without being able to discuss the actual story</li>
+<li>Analyzed posts on Reddit r/robac (Romanian Bac subreddit) where students commonly complain about &quot;învățatul pe de rost&quot; (learning by heart)</li>
+<li>Brief exchanges with 3 Romanian literature teachers at Alexandru&#x27;s former high school</li>
+<li>Informal discussions with 18-22 current high school students from our extended networks</li>
+</ul>
+<h3 id="observed-pains-from-our-initial-desk-research-and-team-assumptions">Observed pains (from our initial desk research and team assumptions)</h3>
+<ul>
+<li><em><strong>Students (11–12th grade)</strong></em><em><strong> preparing for Bac tend to </strong></em><em><strong>memorize essays</strong></em><em><strong> and patterns instead of </strong></em><em><strong>understanding</strong></em><em><strong> the literary texts. This leads to anxiety, low confidence, and brittle performance under exam conditions.</strong></em></li>
+<li><em><strong>Teachers</strong></em><em><strong> have limited time to provide individualized feedback and to coach critical thinking during large classes.</strong></em></li>
+<li><strong>Parents</strong> want <strong>affordable</strong>, modern tools that increase motivation and understanding—not just short-term “memorize &amp; forget”</li>
+<li><em><strong>Schools / platforms</strong></em><em><strong> need resources aligned to the </strong></em><em><strong>Romanian curriculum</strong></em><em><strong> that are easy to deploy and respect privacy requirements.</strong></em></li>
+</ul>
+<h3 id="problem-hypotheses">Problem hypotheses</h3>
+<ul>
+<li><em><strong>P1:</strong></em><em><strong> </strong></em>Students expressed frustration<em><strong> </strong></em><em><strong>“I memorize essays I found online/received from tutors, but I don’t really understand the texts.”</strong></em></li>
+<li><em><strong>P2:</strong></em><em><strong> Students would prefer an </strong></em><em><strong>interactive, on-demand helper</strong></em><em><strong> that encourages analysis and articulation, not just recall.</strong></em></li>
+<li><em><strong>P3:</strong></em><em><strong> Teachers value a tool that </strong></em><em><strong>reinforces critical thinking</strong></em><em><strong> and aligns to the </strong></em><em><strong>Bac requirements</strong></em><em><strong>, without increasing their workload.</strong></em></li>
+<li><em><strong>P4:</strong></em><em><strong> Parents are willing to pay for a tool that </strong></em><em><strong>improves understanding and confidence</strong></em><em><strong>, not just grades via rote learning.</strong></em></li>
+<li>Low engagement: students described literature study as &quot;boring&quot; and &quot;stressful&quot;</li>
+<li>Exam anxiety is severe, with students fearing they&#x27;ll forget memorized content</li>
+</ul>
+<p><em><strong>Problem success criteria (to validate):</strong></em><em><strong> - ≥ </strong></em><em><strong>70%</strong></em><em><strong> of interviewed students (n≥20) say memorization-over-understanding is a top-3 pain when studying for Bac. - ≥ </strong></em><em><strong>60%</strong></em><em><strong> of students say they would try an AI helper </strong></em><em><strong>this week</strong></em><em><strong> if free; ≥ </strong></em><em><strong>30%</strong></em><em><strong> say they would still try it if it caps free usage. - ≥ </strong></em><em><strong>70%</strong></em><em><strong> of teachers see value in a tool that elicits </strong></em><em><strong>personal interpretations</strong></em><em><strong> and provides </strong></em><em><strong>verified explanations</strong></em><em><strong>. - ≥ </strong></em><em><strong>50%</strong></em><em><strong> of parents express </strong></em><em><strong>willingness to pay</strong></em><em><strong> (WTP) at some price point for premium features.</strong></em></p>
+      </div>
+    </article>
+    
+
+    <article class="section-card" id="our-initial-solution-hypothesis" style="--grad:linear-gradient(135deg, #16a34a, #06b6d4)">
+      <div class="section-header">
+        <h2>Our initial solution hypothesis</h2>
+        <a class="chip" href="#top" title="Back to top">↑</a>
+      </div>
+      <div class="section-body">
+        <h3 id="21-proposed-solution">2.1 Proposed Solution</h3>
+<p><strong>Solution Concept:</strong> An AI-powered chatbot (LitBot) that provides interactive, personalized explanations of Romanian literary works, aligned with the national curriculum, enabling students to learn through dialogue rather than memorization.</p>
+<p><strong>Core Features Hypothesized:</strong></p>
+<ul>
+<li>Conversational interface for asking questions about literary works (e.g., &quot;Explain the symbolism of Hyperion in Eminescu&#x27;s poem&quot;)</li>
+<li>Curriculum-aligned content covering all 20 Baccalaureate mandatory texts</li>
+<li>Adaptive explanations based on student&#x27;s understanding level</li>
+<li>24/7 availability on web and mobile</li>
+<li>Content verification by Romanian literature teachers/professors</li>
+</ul>
+<p><strong>Value Proposition:</strong></p>
+<ul>
+<li>Transform passive memorization into active learning through dialogue</li>
+<li>Build genuine understanding and critical thinking skills</li>
+<li>Increase confidence and performance at exams</li>
+<li>Accessible (24/7, any device) and affordable (vs. 100+ RON/hour tutoring)</li>
+</ul>
+<h3 id="22-assumptions-to-test">2.2 Assumptions to Test</h3>
+<p><strong>Problem Assumptions:</strong></p>
+<p><strong>Solution Assumptions:</strong></p>
+<ul>
+<li>Students will engage with a chatbot for learning (need to validate)</li>
+<li>Conversational AI can effectively explain literary concepts (need to validate)</li>
+<li>Students prefer interactive learning over static content (need to validate)</li>
+<li>Price point of 10-20 RON/month is acceptable (need to validate)</li>
+<li>Teachers/parents will support this learning method (need to validate)</li>
+</ul>
+      </div>
+    </article>
+    
+
+    <article class="section-card" id="plan-for-customer-discovery-short-overview" style="--grad:linear-gradient(135deg, #dc2626, #f59e0b)">
+      <div class="section-header">
+        <h2>Plan for customer discovery (short overview)</h2>
+        <a class="chip" href="#top" title="Back to top">↑</a>
+      </div>
+      <div class="section-body">
+        <ul>
+<li><em><strong>Problem discovery first</strong></em><em><strong> via semi-structured </strong></em><em><strong>interviews</strong></em><em><strong> and </strong></em><em><strong>surveys</strong></em><em><strong> across </strong></em>3<em><strong> segments: </strong></em><em><strong>Students, Teachers, Parents</strong></em></li>
+<li><em><strong>Synthesize pains &amp; alternatives; quantify urgency and frequency. Establish </strong></em><em><strong>willingness to try</strong></em><em><strong>.</strong></em> </li>
+<li><em><strong>Iterate messaging (landing page), measure </strong></em><em><strong>email sign-ups</strong></em><em><strong> and </strong></em><em><strong>engagement</strong></em><em><strong> on prototype tasks.</strong></em></li>
+<li><em><strong>Decide whether we have </strong></em><em><strong>enough evidence</strong></em><em><strong> to move to </strong></em><em><strong>Customer Validation</strong></em><em><strong> (pricing, channel tests, early sales pilots).</strong></em></li>
+</ul>
+<p><em><strong>Target sample:</strong></em><em><strong> - Students: </strong></em><strong>28</strong><em><strong> interviews + </strong></em><strong>80</strong><em><strong>+</strong></em><em><strong> survey responses - Teachers: </strong></em><strong>4</strong><em><strong> interviews Parents: </strong></em><strong>10 </strong><em><strong>interviews</strong></em></p>
+<p><em><strong>Timeline:</strong></em><em><strong> </strong></em>1–2<em><strong> weeks for problem discovery</strong></em> and<em><strong> solution exploration.</strong></em></p>
+      </div>
+    </article>
+    
+
+    <article class="section-card" id="discovery-process-detailed" style="--grad:linear-gradient(135deg, #0ea5e9, #22c55e)">
+      <div class="section-header">
+        <h2>Discovery process (detailed)</h2>
+        <a class="chip" href="#top" title="Back to top">↑</a>
+      </div>
+      <div class="section-body">
+        <h3 id="41-customer-segments">4.1 Customer segments</h3>
+<ul>
+<li><em><strong>Students (11–12 grade)</strong></em><em><strong>: primary users; early adopters likely those with </strong></em><em><strong>high Bac anxiety</strong></em><em><strong>, </strong></em><em><strong>low engagement with literature</strong></em><em><strong>, and </strong></em><em><strong>heavy YouTube/online use</strong></em><em><strong> for study.</strong></em></li>
+<li><em><strong>Teachers</strong></em><em><strong>: Romanian language &amp; literature teachers; early adopters are </strong></em><em><strong>innovation-friendly</strong></em><em><strong> and open to digital homework aids.</strong></em></li>
+<li><em><strong>Parents</strong></em><em><strong>: those seeking affordable complements to tutoring.</strong></em></li>
+</ul>
+<h3 id="42-reaching-participants-recruitment-channels">4.2 Reaching participants (recruitment channels)</h3>
+<ul>
+<li><em><strong>Students:</strong></em><em><strong> Discord/WhatsApp class group</strong></em> chats<em><strong>, peer referrals</strong></em>, personal networks (we asked 12 UPB colleagues to connect us with younger siblings and reached out to our former high school teachers who introduced us to current students)</li>
+</ul>
+<ul>
+<li><em><strong>Teachers:</strong></em><em><strong> personal networks.</strong></em></li>
+</ul>
+<ul>
+<li><em><strong>Parents:</strong></em><em><strong> referrals from teachers and students</strong></em>, personal networks.</li>
+</ul>
+<p><em><strong>Incentives:</strong></em><em><strong> access to </strong></em><em><strong>LitBot Premium</strong></em><em><strong> for a month once launched.</strong></em></p>
+<h3 id="43-methods-amp-instruments">4.3 Methods &amp; instruments</h3>
+<p>A) Semi-structured interviews (problem-focused)</p>
+<ul>
+<li><em><strong>Format:</strong></em><em><strong> 20–30 minutes, online or face-to-face;</strong></em></li>
+<li><em><strong>Goal:</strong></em><em><strong> uncover context, triggers, workarounds, and emotions; avoid pitching early.</strong></em></li>
+</ul>
+<p><em><strong>Interview guide — Students</strong></em><em><strong> </strong></em></p>
+<p>1.Tell me about your experience preparing for the Romanian Literature Baccalaureate exam.</p>
+<p>2. What are the biggest challenges you face when studying Romanian literature?</p>
+<p><em><strong>3. Walk me through how you prepare for a specific literary work (e.g., &#x27;Luceafărul&#x27; by Eminescu).</strong></em></p>
+<p>4. <em><strong>Have you used </strong></em><em><strong>essay templates</strong></em><em><strong>, commentary websites, or AI/YouTube? What resources are you currently using to study? How did that go?</strong></em></p>
+<p>5<em><strong>. </strong></em>Have you ever felt like you&#x27;re memorizing without understanding? Tell me about that.</p>
+<p>6<em><strong>. What happens when you get a question about a text you haven&#x27;t memorized perfectly? </strong></em></p>
+<p>7. <em><strong>If you could change one thing about how you study literature, what would it be?</strong></em></p>
+<p>8<em><strong>. When would you use a helper like LitBot?</strong></em> What features would be most valuable to you?</p>
+<p>9. How would you prefer to access this? (Mobile app, website, etc.)&quot;</p>
+<p>10. Would you pay for something like this? How much?</p>
+<p><em><strong>Interview guide — Teachers</strong></em></p>
+<p><em><strong>1. </strong></em>What are the biggest challenges your students face when preparing for the Romanian Literature Baccalaureate?</p>
+<p><em>2. </em>Can you estimate what percentage of your students truly understand the literary texts versus those who primarily memorize?</p>
+<p><em>3. </em>Do you notice a difference in exam performance between students who understand versus those who memorize?</p>
+<p><em>4. </em>In your experience, why do students resort to memorization rather than understanding?</p>
+<p><em>5. What would make it aligned with the curriculum and trustworthy for you?</em></p>
+<p><em>6. </em>What would help your students understand literature better rather than just memorizing?</p>
+<p>7. What concerns do you have about students using AI for literature learning?</p>
+<p>8. What features would make LitBot most valuable for your students?</p>
+<p><em><strong>Interview guide — Parents</strong></em></p>
+<p><em><strong>1. </strong></em>What are your biggest concerns or worries about your child&#x27;s Literature preparation?</p>
+<p><em><strong>2. </strong></em>What resources is your child currently using? How satisfied are you with them?<em><strong> </strong></em></p>
+<p><em><strong>3. </strong></em>How much time and money do you currently invest in your child&#x27;s Literature preparation?</p>
+<p><em><strong>4. </strong></em>What would an ideal solution look like for you as a parent?</p>
+<p>5. What concerns do you have about your child using AI for learning?</p>
+<p>6. If LitBot were verified by university professors and cost less than tutoring, would you want your child to use it?</p>
+<p>7. How much would you be willing to pay monthly for something like this?</p>
+<p>B) Surveys (quantification)</p>
+<p><strong>Student Questionnaire</strong></p>
+<p> - <em><strong>I rely on </strong></em><em><strong>memorized essays</strong></em><em><strong> when preparing for Bac literature. </strong></em>(1-5 scale)<em><strong>- I feel </strong></em><em><strong>confident</strong></em><em><strong> explaining my own interpretation of a text. </strong></em>(1-5 scale)<em><strong>-  I understand the literary works deeply, not just surface-level.</strong></em></p>
+<p>- I can write a good essay about a text I haven&#x27;t specifically prepared.</p>
+<p>-I often memorize without understanding what I&#x27;m learning.</p>
+<p>-I feel stressed and anxious about the Bac literature exam.</p>
+<p>- There&#x27;s too much content to memorize for the exam.</p>
+<p>-I&#x27;m satisfied with my current study resources.</p>
+<p><em><strong>- </strong></em><strong>Main tools I use now:</strong> (Select all that apply)</p>
+<ul>
+<li>☐ Private tutor (meditații)</li>
+<li>☐ YouTube videos</li>
+<li>☐ Commentary sites (Referat.ro, CoolReferat)</li>
+<li>☐ General AI (ChatGPT, Claude)</li>
+<li>☐ School materials only</li>
+<li>☐ Study groups</li>
+<li>☐ Other: ___________</li>
+</ul>
+<p><em><strong>- How satisfied are you with your current study resources? (1-5 scale)</strong></em></p>
+<p> - In your own words, what is the biggest challenge you face in preparing for the Literature Baccalaureate? (Open text)-  I would try an interactive AI helper for literature this week.</p>
+<p>- How interested would you be in using LitBot? (1-5 scale)</p>
+<p>- <strong>What features would be most valuable to you? (Rank top 3)</strong> Ranking results:</p>
+<ul>
+<li>Interactive Q&amp;A about literary texts: 131 votes (89%)</li>
+<li>Curriculum-aligned content verification: 98 votes (67%)</li>
+<li>Practice essay writing with feedback: 87 votes (59%)</li>
+<li>Character/theme analysis breakdowns: 76 votes (52%)</li>
+<li>Quizzes and self-assessment: 63 votes (43%)</li>
+<li>Study progress tracking: 41 votes (28%)</li>
+<li>Discussion forums: 23 votes (16%)</li>
+</ul>
+<p><strong>- How would you prefer to access LitBot?</strong></p>
+<ul>
+<li>Mobile app: 67 (46%)</li>
+<li>Website: 21 (14%)</li>
+<li>Both: 52 (35%)</li>
+<li>WhatsApp/Telegram bot: 7 (5%)</li>
+</ul>
+<p> -Would you be interested in participating in a test of LitBot?</p>
+<p><em><strong>- Email (optional) to join the </strong></em><em><strong>early access</strong></em><em><strong> list.</strong></em></p>
+      </div>
+    </article>
+    
+
+    <article class="section-card" id="findings" style="--grad:linear-gradient(135deg, #f97316, #eab308)">
+      <div class="section-header">
+        <h2>Findings</h2>
+        <a class="chip" href="#top" title="Back to top">↑</a>
+      </div>
+      <div class="section-body">
+        <p><em><strong>Evidence collected between </strong></em><strong>16</strong><em><strong>–23 Oct 2025</strong></em><em><strong> (</strong></em>8<em><strong> days) from quick interviews and short survey burs</strong></em>t.</p>
+<h3 id="51-interview-insights-students">5.1 Interview insights — Students</h3>
+<h3 id="emstrongtop-painsstrongem"><em><strong>Top pains:</strong></em></h3>
+<ul>
+<li><em><strong>Memorizing essays/templates instead of understanding (</strong></em>25<em><strong>/28).</strong></em></li>
+<li><em><strong>Trouble structuring their own analysis under time pressure (</strong></em>22<em><strong>/28).</strong></em></li>
+<li><em><strong>Anxiety and low confidence in </strong></em>their abilities<em><strong> (</strong></em>18<em><strong>/28).</strong></em></li>
+<li><em><strong>Current alternatives:</strong></em><em><strong> </strong></em></li>
+<li><em><strong>commentary sites/PDFs (</strong></em>22<em><strong>/28)</strong></em></li>
+<li><em><strong>YouTube explainers (17/28)</strong></em></li>
+<li><em><strong>general AI chats (</strong></em>10<em><strong>/28)</strong></em></li>
+<li><em><strong>private tutoring (22/28).</strong></em></li>
+<li><em><strong>Quotes:</strong></em></li>
+<li><em><strong>“</strong></em>Este foarte stresant. Am 20 de opere de învățat și simt că nu am timp să le înțeleg pe toate. Doar învăț comentarii găsite pe internet.<em><strong> — </strong></em><em><strong>S3</strong></em></li>
+<li><em><strong>“Aș vrea să mă ghideze pas cu pas, nu să-mi dea eseul gata. Ceva interactiv, nu doar să citesc text” — </strong></em><em><strong>S6</strong></em></li>
+<li><strong>Willingness to try LitBot:</strong></li>
+<li>Would try this week if free: 21/28</li>
+<li>Would try even with usage caps: 9/28</li>
+</ul>
+<h3 id="52-interview-insights-teachers">5.2 Interview insights — Teachers</h3>
+<ul>
+<li><strong>Top pains:</strong> </li>
+<li>Students prioritize memorization over understanding</li>
+<li>Limited time for individualized feedback during class</li>
+<li>Low student engagement with literary texts</li>
+<li><strong>Adoption conditions:</strong> </li>
+<li>Must be aligned with Bac curriculum requirements</li>
+<li>Should elicit student reasoning rather than providing complete answers</li>
+<li>Need teacher controls (no full-essay generation)</li>
+<li><strong>Concerns:</strong> </li>
+<li>Potential for cheating/academic dishonesty (2/4)</li>
+<li>Accuracy of AI-generated explanations (2/4)</li>
+<li><strong>Quote:</strong> “La subiectul III (eseu), se vede clar. Cei care înțeleg scriu fluid și adaptat la cerință. Cei care memorează scriu rigid și des irelevant.” — <strong>T2</strong></li>
+<li><strong>Support for concept:</strong></li>
+<li>Would recommend to students: 3/4 (75%)</li>
+<li>See value in guided, curriculum-aligned tool: 3/4 (75%)</li>
+</ul>
+<h3 id="53-interview-insights-parents">5.3 Interview insights — Parents</h3>
+<ul>
+<li><strong>Desired outcomes:</strong> </li>
+<li>Better exam results and grades</li>
+<li>Increased confidence in their child&#x27;s abilities</li>
+<li>More affordable alternative to private tutoring</li>
+<li><strong>WTP (monthly price):</strong> </li>
+<li>Would pay something: 6/10</li>
+<li>Preferred price range: 20–30 RON/month</li>
+<li>Interest in annual discount: 5/10</li>
+<li><strong>Van Westendorp pricing analysis (preliminary, small sample):</strong></li>
+<li>Too cheap: &lt;15 RON</li>
+<li>Good value: 19–25 RON</li>
+<li>Expensive but acceptable: 29–39 RON</li>
+<li>Too expensive: &gt;49 RON</li>
+<li>Optimal price point: ~25 RON/month</li>
+</ul>
+<h3 id="54-student-survey-highlights">5.4 Student Survey highlights</h3>
+<ul>
+<li><strong>Problem validation:</strong></li>
+<li>Rely on memorization often or very often: 69/86 (80%)</li>
+<li>Don&#x27;t feel confident formulating own interpretation: 52/86 (60%)</li>
+<li>Feel stressed/anxious about Bac literature exam: 71/86 (83%)</li>
+<li><strong>Current tools usage (multi-select):</strong></li>
+<li>YouTube videos: 61%</li>
+<li>Commentary sites (Referat.ro, CoolReferat): 54%</li>
+<li>General AI (ChatGPT, Claude): 39%</li>
+<li>Private tutoring: 24%</li>
+<li>School materials only: 18%</li>
+<li><strong>Interest in LitBot:</strong></li>
+<li>Would try AI helper this week: 58/86 (67%)</li>
+<li>Would try even with free-usage cap: 27/86 (31%)</li>
+<li>Interest level 4–5 (on 5-point scale): 71/86 (83%)</li>
+<li><strong>Most valued features (ranked top 3):</strong></li>
+<li>Interactive Q&amp;A about literary texts: 89%</li>
+<li>Curriculum-aligned verified content: 67%</li>
+<li>Practice essay writing with feedback: 59%</li>
+<li>Character/theme analysis breakdowns: 52%</li>
+<li>Quizzes and self-assessment: 43%</li>
+<li><strong>Preferred access method:</strong></li>
+<li>Mobile app: 46%</li>
+<li>Both web and mobile: 35%</li>
+<li>Website only: 14%</li>
+<li>WhatsApp/Telegram bot: 5%</li>
+</ul>
+      </div>
+    </article>
+    
+
+    <article class="section-card" id="how-insights-affect-the-product-decision-log" style="--grad:linear-gradient(135deg, #9333ea, #ef4444)">
+      <div class="section-header">
+        <h2>How insights affect the product (decision log)</h2>
+        <a class="chip" href="#top" title="Back to top">↑</a>
+      </div>
+      <div class="section-body">
+        <h3 id="strong61-core-functionality-changesstrong"><strong>6.1 Core functionality changes</strong></h3>
+<p><strong>1. Outline-first flow before elaboration</strong></p>
+<ul>
+<li><strong>Rationale:</strong> Students (22/28) struggle with structuring analysis; teachers want scaffolding not answers</li>
+<li><strong>Change:</strong></li>
+<li><strong>Status:</strong> To do • Owner: Alexandru</li>
+</ul>
+<p><strong>2. Disable full-essay generation by default</strong></p>
+<ul>
+<li><strong>Rationale:</strong> Teacher concern (2/4) about cheating; need to reinforce learning not replace it</li>
+<li><strong>Change:</strong> Coach-style hints, guided questions, and scaffolds instead of complete essays</li>
+<li><strong>Status:</strong> To do • Owner: Alexandru</li>
+</ul>
+<p><strong>3. Exam Mode feature</strong></p>
+<ul>
+<li><strong>Rationale:</strong> Students (18/28) cited exam anxiety and time pressure as major pain points</li>
+<li><strong>Change:</strong> 60-minute timer, rubric-guided prompts, ability to export essay to .docx</li>
+<li><strong>Status:</strong> To do • Owner: Alexandru</li>
+</ul>
+<p><strong>4. &quot;Show your reasoning&quot; + citations</strong></p>
+<ul>
+<li><strong>Rationale:</strong> Build trust through transparency; help students understand analytical process</li>
+<li><strong>Change:</strong> Toggle to show reasoning steps; cite curriculum sources and critical interpretations</li>
+<li><strong>Status:</strong> To do • Owner: Alexandru</li>
+</ul>
+<h3 id="strong62-business-model-amp-growthstrong"><strong>6.2 Business model &amp; growth</strong></h3>
+<p><strong>5</strong><strong>. Pricing test based on WTP research</strong></p>
+<ul>
+<li><strong>Rationale:</strong> Parent interviews suggested 20–30 RON sweet spot; need to test price sensitivity</li>
+<li><strong>Change:</strong> Test monthly pricing at 25 RON vs 29 RON; annual early-bird at 249 RON (vs 348 RON)</li>
+<li><strong>Status:</strong> Planned • Owner: Anca</li>
+</ul>
+<p><strong>6. Student referral program</strong></p>
+<ul>
+<li><strong>Rationale:</strong> Students suggested viral growth mechanism; reduces acquisition cost</li>
+<li><strong>Change:</strong></li>
+<li><strong>Status:</strong> Planned • Owner: Anca</li>
+</ul>
+      </div>
+    </article>
+    
+
+    <article class="section-card" id="are-we-ready-to-move-to-customer-validation-test-selling" style="--grad:linear-gradient(135deg, #2563eb, #06b6d4)">
+      <div class="section-header">
+        <h2>Are we ready to move to Customer Validation (test selling)?</h2>
+        <a class="chip" href="#top" title="Back to top">↑</a>
+      </div>
+      <div class="section-body">
+        <h3 id="strongdecision-yes-with-a-focused-phased-approachstrong"><strong>Decision: YES — with a focused, phased approach</strong></h3>
+<h3 id="strongproblem-validation-criteria-assessmentstrong"><strong>Problem validation criteria assessment</strong></h3>
+<p><strong>Students naming memorization as top-3 pain:</strong></p>
+<ul>
+<li>Survey: 80% (69/86)</li>
+<li>Interviews: 89% (25/28)</li>
+</ul>
+<p><strong>Students willing to try AI helper this week:</strong></p>
+<ul>
+<li>Survey: 67% free / 31% with caps</li>
+<li>Interviews: 75% would try</li>
+</ul>
+<p><strong>Teachers see value in guided, curriculum-aligned tool:</strong></p>
+<ul>
+<li>Interviews: 75% (3/4) would recommend</li>
+</ul>
+<p><strong>Parents express willingness to pay:</strong></p>
+<ul>
+<li>Interviews: 60% (6/10) WTP at some price point</li>
+</ul>
+      </div>
+    </article>
+    
+    </main>
+  </div>
+
+  <footer class="footer">
+    @2025 LitBot
+  </footer>
+</body>
+</html>

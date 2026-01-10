@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>LitBot — Chat Interface Wireframe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <script>
+      !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){
+          function g(t,e){var o=e.split(".");
+          2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){
+              t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}
+              (p=t.createElement("script")).type="text/javascript",
+              // p.crossOrigin="anonymous",
+              p.async=!0,
+              p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",
+              (r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);
+          var u=e;
+          for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){
+              var e="posthog";
+              return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){
+                  return u.toString(1)+".people (stub)"},
+                  o="init Rr Mr fi Cr Ar ci Tr Fr capture Mi calculateEventProperties Lr register register_once register_for_session unregister unregister_for_session Hr getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Ur jr createPersonProfile zr kr Br opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing Dr debug M Nr getPageViewId captureTraceFeedback captureTraceMetric $r".split(" "),n=0;n<o.length;n++)g(u,o[n]);
+                  e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+      posthog.init('phc_1Db8KFRqM9Rri2Ymlzg6W009h9zTrXZxfWJ4rGQRySN', {
+          api_host: 'https://us.i.posthog.com',
+          defaults: '2025-11-30',
+          person_profiles: 'always', // or 'always' to create profiles for anonymous users as well
+      })
+      posthog.capture("wireframe_page", { page: "wireframe_page" });
+    </script>
+  <style>
+    :root {
+      --bg: #f3f4f6;
+      --panel: #ffffff;
+      --sidebar: #0f172a;
+      --sidebar-soft: #111827;
+      --accent: #7c3aed;
+      --accent-soft: #a855f7;
+      --border: #e5e7eb;
+      --muted: #9ca3af;
+      --ink: #111827;
+      --radius: 14px;
+      --font: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      --shadow-soft: 0 14px 40px rgba(15,23,42,.16);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--ink);
+      height: 100vh;
+      overflow: hidden;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .app {
+      display: grid;
+      grid-template-columns: 260px minmax(0,1fr);
+      height: 100vh;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      background: var(--sidebar);
+      color: #e5e7eb;
+      display: flex;
+      flex-direction: column;
+      padding: 14px 10px;
+      gap: 10px;
+      border-right: 1px solid rgba(148,163,253,0.06);
+    }
+    .sb-brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+    }
+    .sb-logo {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 0%, #a855f7, #2563eb);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      color: #fff;
+      font-weight: 700;
+    }
+    .sb-title {
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: .01em;
+    }
+    .sb-sub {
+      font-size: 0.7rem;
+      color: #9ca3af;
+    }
+
+    .sb-btn {
+      margin: 6px 6px 4px;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid rgba(148,163,253,0.3);
+      color: #e5e7eb;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.78rem;
+      cursor: pointer;
+      background: rgba(15,23,42,0.96);
+      transition: background .15s, transform .15s, box-shadow .15s;
+    }
+
+    .sb-btn span.icon {
+      width: 16px;
+      height: 16px;
+      border-radius: 999px;
+      background: linear-gradient(to right,#7c3aed,#2563eb);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+    }
+
+    .sb-btn:hover {
+      background: #111827;
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(15,23,42,0.45);
+    }
+
+    /* Main chat area */
+    .chat-wrap {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    .chat-header {
+      padding: 10px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      backdrop-filter: blur(10px);
+      background: rgba(249,250,251,0.96);
+      border-bottom: 1px solid var(--border);
+    }
+    .chat-title {
+      font-size: 1rem;
+      font-weight: 600;
+    }
+
+    .chat-main {
+      flex: 1;
+      padding: 18px 22px 90px;
+      overflow-y: auto;
+    }
+
+    /* MESSAGES */
+    .msg {
+      max-width: 720px;
+      padding: 10px 12px;
+      margin-bottom: 10px;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      line-height: 1.55;
+      display: flex;
+      gap: 10px;
+      box-shadow: 0 2px 8px rgba(15,23,42,0.04);
+    }
+
+    .msg .avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+
+    .msg.user {
+      margin-left: auto;
+      background: #111827;
+      color: #e5e7eb;
+      border-bottom-right-radius: 4px;
+    }
+
+    .msg.bot {
+      margin-right: auto;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-bottom-left-radius: 4px;
+    }
+
+    /* Input area */
+    .chat-input-wrap {
+      position: fixed;
+      left: 260px;
+      right: 0;
+      bottom: 0;
+      padding: 10px 22px 14px;
+      background: linear-gradient(to top,rgba(243,244,246,1),rgba(243,244,246,0.9));
+      border-top: 1px solid var(--border);
+    }
+
+    .input-inner {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .input-box {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 10px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+    }
+
+    .input-box input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .app { grid-template-columns: 1fr; }
+      .sidebar { display: none; }
+      .chat-input-wrap { left: 0; }
+    }
+  </style>
+</head>
+
+<body>
+<div class="app">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sb-brand">
+      <div class="sb-logo">Lb</div>
+      <div>
+        <div class="sb-title">LitBot</div>
+        <div class="sb-sub">Literature Chat</div>
+      </div>
+    </div>
+
+    <button class="sb-btn">
+      <span class="icon">＋</span>
+      <span>New Chat</span>
+    </button>
+
+    <div class="sb-label">Recent chats</div>
+    <div class="sb-list">
+      <div class="sb-item active"><span class="dot"></span>General Literature Q&A</div>
+      <div class="sb-item"><span class="dot"></span>Romanul „Ion” — questions</div>
+      <div class="sb-item"><span class="dot"></span>„Moara cu noroc” analysis</div>
+    </div>
+
+    <div class="sb-footer">
+      <div>Wireframe prototype</div>
+      <a href="/home.html">← Back to overview</a>
+    </div>
+  </aside>
+
+  <!-- CHAT -->
+  <section class="chat-wrap">
+
+    <header class="chat-header">
+      <div class="chat-title">LitBot — Literature Assistant</div>
+    </header>
+
+    <div class="chat-main">
+
+      <!-- Bot intro -->
+      <div class="msg bot">
+        <img class="avatar" src="/images/assistant-avatar.png">
+        <div>
+          Salut! Sunt <strong>LitBot</strong>. Îmi poți pune orice întrebare despre operele studiate la Bac.  
+          Întreabă-mă ceva de exemplu:
+          <ul>
+            <li>„Care este tema romanului <em>Ion</em>?”</li>
+            <li>„Ce relație există între Ghiță și Ana în <em>Moara cu noroc</em>?”</li>
+            <li>„Ce element unic are romanul <em>Ion</em> față de alte opere?”</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- User question -->
+      <div class="msg user">
+        <div>Care este tema romanului „Ion”?</div>
+      </div>
+
+      <!-- Bot answer -->
+      <div class="msg bot">
+        <img class="avatar" src="/images/assistant-avatar.png">
+        <div>
+          Tema centrală a romanului <strong>„Ion”</strong> este <em>lupta pentru pământ</em> și conflictul dintre dorința de ascensiune socială și valorile morale.  
+          Dacă vrei, îți pot explica și motivele secundare sau conflictele principale.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Input -->
+    <div class="chat-input-wrap">
+      <div class="input-inner">
+        <div class="input-box">
+          <input type="text" placeholder="Pune o întrebare despre orice operă..." />
+          <div class="input-send">⮞</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </section>
+</div>
+</body>
+</html>

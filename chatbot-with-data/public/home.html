@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ro" class="scroll-smooth">
+    <style>
+    body { font-family: 'Inter', sans-serif; }
+    .anca_poza,
+    .alex_poza,
+    .cristina_poza {
+        width: 500px;
+        height: 500px;
+        object-fit: cover;
+        margin: 0 auto 1rem;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LitBot - AI-Powered Romanian Literature Learning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){
+            function g(t,e){var o=e.split(".");
+            2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){
+                t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}
+                (p=t.createElement("script")).type="text/javascript",
+                // p.crossOrigin="anonymous",
+                p.async=!0,
+                p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",
+                (r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);
+            var u=e;
+            for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){
+                var e="posthog";
+                return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){
+                    return u.toString(1)+".people (stub)"},
+                    o="init Rr Mr fi Cr Ar ci Tr Fr capture Mi calculateEventProperties Lr register register_once register_for_session unregister unregister_for_session Hr getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Ur jr createPersonProfile zr kr Br opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing Dr debug M Nr getPageViewId captureTraceFeedback captureTraceMetric $r".split(" "),n=0;n<o.length;n++)g(u,o[n]);
+                    e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+        posthog.init('phc_1Db8KFRqM9Rri2Ymlzg6W009h9zTrXZxfWJ4rGQRySN', {
+            api_host: 'https://us.i.posthog.com',
+            defaults: '2025-11-30',
+            person_profiles: 'always', // or 'always' to create profiles for anonymous users as well
+        })
+        posthog.capture("index_page", { page: "index_page" });
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-white text-gray-800 overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md px-[5%] py-4 flex justify-between items-center z-50 shadow-sm">
+        <div class="text-3xl font-bold bg-gradient-to-r from-purple-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">
+            LitBot 📚
+        </div>
+        <ul class="hidden md:flex gap-8 list-none font-medium">
+            <li><a href="#problem" class="text-gray-800 hover:text-purple-600 transition-colors">Problem</a></li>
+            <li><a href="#solution" class="text-gray-800 hover:text-purple-600 transition-colors">Solution</a></li>
+            <li><a href="#team" class="text-gray-800 hover:text-purple-600 transition-colors">Team</a></li>
+            <li><a href="#competition" class="text-gray-800 hover:text-purple-600 transition-colors">Competition</a></li>
+            <li><a href="#revenue" class="text-gray-800 hover:text-purple-600 transition-colors">Revenue</a></li>
+            <li><a href="wireframe.html" class="text-gray-800 hover:text-purple-600 transition-colors">Wireframe</a></li>
+            <li><a href="landing.html" class="text-gray-800 hover:text-purple-600 transition-colors">Landing</a></li>
+        </ul>
+        <!-- Try LitBot button -->
+        <a href="/chat" class="hidden md:inline-flex items-center gap-1 px-4 py-2 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 text-white font-semibold hover:shadow-lg hover:-translate-y-0.5 transition-all whitespace-nowrap">
+            🤖 Try LitBot
+        </a>
+        <button id="menuBtn" class="md:hidden p-2 rounded-lg hover:bg-gray-100">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+        </button>
+    </nav>
+
+    <!-- Milestones Bar -->
+    <div class="fixed top-[68px] w-full bg-gray-50 border-b border-gray-200 z-40 hidden md:block">
+        <div class="px-[5%] py-2 flex items-center justify-center gap-3">
+            <span class="text-xs text-gray-500 font-medium">Milestones:</span>
+            <a href="milestones/m2.html" class="px-3 py-1 text-xs font-medium text-purple-700 bg-purple-100 rounded-full hover:bg-purple-200 transition-colors">M2</a>
+            <a href="milestones/m4.html" class="px-3 py-1 text-xs font-medium text-purple-700 bg-purple-100 rounded-full hover:bg-purple-200 transition-colors">M4</a>
+            <a href="milestones/m5.html" class="px-3 py-1 text-xs font-medium text-purple-700 bg-purple-100 rounded-full hover:bg-purple-200 transition-colors">M5</a>
+            <a href="milestones/m6.html" class="px-3 py-1 text-xs font-medium text-purple-700 bg-purple-100 rounded-full hover:bg-purple-200 transition-colors">M6</a>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden fixed top-[72px] w-full bg-white/95 backdrop-blur-md shadow-lg z-40 md:hidden">
+        <ul class="flex flex-col gap-4 p-6 font-medium">
+            <li><a href="#problem" class="text-gray-800 hover:text-purple-600">Problem</a></li>
+            <li><a href="#solution" class="text-gray-800 hover:text-purple-600">Solution</a></li>
+            <li><a href="#team" class="text-gray-800 hover:text-purple-600">Team</a></li>
+            <li><a href="#competition" class="text-gray-800 hover:text-purple-600">Competition</a></li>
+            <li><a href="#revenue" class="text-gray-800 hover:text-purple-600">Revenue</a></li>
+            <li><a href="wireframe.html" class="text-gray-800 hover:text-purple-600">Wireframe</a></li>
+            <li><a href="landing.html" class="text-gray-800 hover:text-purple-600">Landing</a></li>
+            <li><a href="/chat" class="inline-block mt-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-600 to-blue-500 text-white font-semibold">🤖 Try LitBot</a></li>
+            <li class="mt-4 pt-4 border-t border-gray-200">
+                <span class="text-xs text-gray-500 font-medium">Milestones:</span>
+                <div class="flex flex-wrap gap-2 mt-2">
+                    <a href="milestones/m2.html" class="px-3 py-1 text-xs font-medium text-purple-700 bg-purple-100 rounded-full">M2</a>
+                    <a href="milestones/m4.html" class="px-3 py-1 text-xs font-medium text-purple-700 bg-purple-100 rounded-full">M4</a>
+                    <a href="milestones/m5.html" class="px-3 py-1 text-xs font-medium text-purple-700 bg-purple-100 rounded-full">M5</a>
+                    <a href="milestones/m6.html" class="px-3 py-1 text-xs font-medium text-purple-700 bg-purple-100 rounded-full">M6</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen bg-gradient-to-br from-purple-600 via-blue-600 to-purple-600 flex items-center justify-center text-center px-8 overflow-hidden">
+        <div class="absolute inset-0 -z-10 opacity-70">
+            <svg aria-hidden="true" class="absolute -top-16 left-1/2 -translate-x-1/2 rotate-12" width="1200" height="800" viewBox="0 0 1200 800" fill="none">
+                <defs>
+                    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#a855f7"/>
+                        <stop offset="50%" stop-color="#06b6d4"/>
+                        <stop offset="100%" stop-color="#22c55e"/>
+                    </linearGradient>
+                </defs>
+                <g opacity=".25">
+                    <circle cx="200" cy="240" r="220" stroke="url(#g1)" stroke-width="60"/>
+                    <circle cx="900" cy="150" r="180" stroke="url(#g1)" stroke-width="50"/>
+                    <circle cx="650" cy="590" r="260" stroke="url(#g1)" stroke-width="70"/>
+                </g>
+            </svg>
+        </div>
+        
+        <div class="relative z-10 text-white max-w-4xl animate-fade-in-up">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6">
+                LitBot — <span class="bg-gradient-to-r from-fuchsia-300 via-cyan-300 to-emerald-300 bg-clip-text text-transparent">Your Literary Assistant</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-95">
+                AI-powered help for the Romanian Baccalaureate in Literature. Learn through dialogue, understand—not memorize—and feel confident at the exam.
+            </p>
+            <a href="#solution" class="inline-block px-10 py-4 bg-white text-purple-600 rounded-full font-bold text-lg hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
+                Discover More
+            </a>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="problem" class="py-20 px-[5%] bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-purple-600">The Problem</h2>
+            <p class="text-center max-w-4xl mx-auto mb-8 text-lg text-gray-700">
+                Romanian high school students preparing for the Baccalaureate exam in Romanian Literature often struggle with the same issue: they tend to memorize literary essays without truly understanding the texts.
+            </p>
+            <div class="bg-white p-8 rounded-2xl shadow-lg max-w-4xl mx-auto">
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-4 text-lg">
+                        <span class="text-2xl">⚠️</span>
+                        <span>Lack of genuine interest in literature</span>
+                    </li>
+                    <li class="flex items-start gap-4 text-lg">
+                        <span class="text-2xl">⚠️</span>
+                        <span>Difficulty in expressing personal interpretations</span>
+                    </li>
+                    <li class="flex items-start gap-4 text-lg">
+                        <span class="text-2xl">⚠️</span>
+                        <span>Poor engagement and performance at the exam</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="py-20 px-[5%]">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-purple-600">Our Solution</h2>
+            <p class="text-center max-w-4xl mx-auto mb-12 text-lg text-gray-700">
+                LitBot is an AI-powered chatbot that helps students understand Romanian literary works interactively and intuitively. LitBot provides clear, concise, and accurate explanations, tailored to the national curriculum and the student's level of understanding.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-lg hover:-translate-y-3 hover:shadow-2xl transition-all duration-300 text-center border-t-4 border-purple-500">
+                    <h3 class="text-xl font-bold text-purple-600 mb-3">💬 Interactive Learning</h3>
+                    <p class="text-gray-700">Students learn through dialogue, not memorization</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-lg hover:-translate-y-3 hover:shadow-2xl transition-all duration-300 text-center border-t-4 border-blue-500">
+                    <h3 class="text-xl font-bold text-blue-600 mb-3">✓ Verified Explanations</h3>
+                    <p class="text-gray-700">Information checked by experts and AI-assisted</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-lg hover:-translate-y-3 hover:shadow-2xl transition-all duration-300 text-center border-t-4 border-green-500">
+                    <h3 class="text-xl font-bold text-green-600 mb-3">🧠 Critical Thinking</h3>
+                    <p class="text-gray-700">Students are guided to analyze, not just recall</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-lg hover:-translate-y-3 hover:shadow-2xl transition-all duration-300 text-center border-t-4 border-pink-500">
+                    <h3 class="text-xl font-bold text-pink-600 mb-3">⏰ 24/7 Availability</h3>
+                    <p class="text-gray-700">Accessible anytime, anywhere, from any device</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="py-20 px-[5%] bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-4 text-purple-600">Meet the Team 😀</h2>
+            <p class="text-center text-gray-600 mb-12">The talented individuals behind LitBot</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-purple-600 via-blue-600 to-purple-600 p-8 rounded-2xl text-white text-center hover:scale-105 transition-transform duration-300 shadow-xl">
+                    <h3 class="text-2xl font-bold mb-2">Anca-Maria<br>Cîrcioroaba</h3>
+                    <img class="anca_poza" src="/images/anca_poza.jpeg" width="600">
+                    <p class="italic opacity-90 mb-4">Project Manager & Backend Developer</p>
+                    <p class="text-sm opacity-80 mb-4 break-words">anca.circioroaba@stud.acs.upb.ro</p>
+                    <p class="text-sm">Coordinates the LitBot team, defines project milestones, designs and maintains the backend architecture.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-purple-600 via-blue-600 to-purple-600 p-8 rounded-2xl text-white text-center hover:scale-105 transition-transform duration-300 shadow-xl">
+                    <h3 class="text-2xl font-bold mb-2">Alexandru<br>Calciu</h3>
+                    <img class="alex_poza" src="/images/alex_poza.png" width="600">
+                    <p class="italic opacity-90 mb-4">Frontend Developer & Marketing Manager</p>
+                    <p class="text-sm opacity-80 mb-4 break-words">alexandru.calciu@stud.acs.upb.ro</p>
+                    <p class="text-sm">Builds the visual interface and ensures a user-friendly experience. Manages marketing campaigns on social media and educational channels.</p>
+                </div>
+                
+                <div class="bg-gradient-to-br from-purple-600 via-blue-600 to-purple-600 p-8 rounded-2xl text-white text-center hover:scale-105 transition-transform duration-300 shadow-xl">
+                    <h3 class="text-2xl font-bold mb-2">Ionela-Cristina<br>Strîmbeanu</h3>
+                    <img class="cristina_poza" src="/images/cristina_poza.jpeg" width="600">
+                    <p class="italic opacity-90 mb-4">Tester & Data Scientist</p>
+                    <p class="text-sm opacity-80 mb-4 break-words">ionela.strimbeanu@stud.acs.upb.ro</p>
+                    <p class="text-sm">Develops data-driven insights to enhance the user experience. Conducts QA testing, reporting and fixing bugs, and validating data accuracy.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Segments Section -->
+    <section id="customers" class="py-20 px-[5%]">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-purple-600">Customer Segments</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-lg text-center border-l-4 border-purple-500">
+                    <h3 class="text-xl font-bold text-purple-600 mb-3">🎓 Students</h3>
+                    <p class="text-gray-700">High school students in grades 11-12</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-lg text-center border-l-4 border-blue-500">
+                    <h3 class="text-xl font-bold text-blue-600 mb-3">👨‍🏫 Teachers</h3>
+                    <p class="text-gray-700">Romanian language and literature teachers</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-lg text-center border-l-4 border-green-500">
+                    <h3 class="text-xl font-bold text-green-600 mb-3">👨‍👩‍👧 Parents</h3>
+                    <p class="text-gray-700">Parents seeking modern educational tools</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-lg text-center border-l-4 border-pink-500">
+                    <h3 class="text-xl font-bold text-pink-600 mb-3">🏫 Schools</h3>
+                    <p class="text-gray-700">Educational platforms that can integrate LitBot</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competition Section -->
+    <section id="competition" class="py-20 px-[5%] bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-purple-600">Competition Analysis</h2>
+            
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden mb-12">
+                <table class="w-full">
+                    <thead class="bg-gradient-to-r from-purple-600 to-blue-600 text-white">
+                        <tr>
+                            <th class="p-4 text-left font-semibold">Competitor</th>
+                            <th class="p-4 text-left font-semibold">Advantage</th>
+                            <th class="p-4 text-left font-semibold">Weakness</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="p-4 font-medium">Online literary commentary websites</td>
+                            <td class="p-4">Static, text-heavy content</td>
+                            <td class="p-4">No interactivity</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="p-4 font-medium">YouTube educational creators</td>
+                            <td class="p-4">Quick explanations via video</td>
+                            <td class="p-4">No personalized answers</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50 transition-colors">
+                            <td class="p-4 font-medium">General chatbots (e.g., ChatGPT)</td>
+                            <td class="p-4">Can answer broadly</td>
+                            <td class="p-4">Not aligned with Romanian curriculum</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="text-3xl font-bold text-center mb-8 text-purple-600">Our Advantage</h3>
+            <div class="bg-white p-8 rounded-2xl shadow-lg max-w-4xl mx-auto">
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-4 text-lg">
+                        <span class="text-2xl text-purple-600 font-bold">✓</span>
+                        <span>Content aligned with Romanian Baccalaureate requirements</span>
+                    </li>
+                    <li class="flex items-start gap-4 text-lg">
+                        <span class="text-2xl text-purple-600 font-bold">✓</span>
+                        <span>Interactive and adaptive conversation flow</span>
+                    </li>
+                    <li class="flex items-start gap-4 text-lg">
+                        <span class="text-2xl text-purple-600 font-bold">✓</span>
+                        <span>Accurate and structured answers verified by experts</span>
+                    </li>
+                    <li class="flex items-start gap-4 text-lg">
+                        <span class="text-2xl text-purple-600 font-bold">✓</span>
+                        <span>Potential for expansion to other school subjects</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metrics Section -->
+    <section id="metrics" class="py-20 px-[5%]">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-purple-600">Key Metrics</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-lg text-center">
+                    <h3 class="text-xl font-bold text-purple-600 mb-3">📊 Monthly Active Users</h3>
+                    <p class="text-gray-700">Measures adoption rate</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-lg text-center">
+                    <h3 class="text-xl font-bold text-blue-600 mb-3">💬 Conversations per Session</h3>
+                    <p class="text-gray-700">Measures engagement</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-lg text-center">
+                    <h3 class="text-xl font-bold text-green-600 mb-3">⏱️ Average Session Duration</h3>
+                    <p class="text-gray-700">Indicates user interest</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Revenue Section -->
+    <section id="revenue" class="py-20 px-[5%] bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-purple-600">Revenue Streams</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+                <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-purple-500">
+                    <h3 class="text-xl font-bold text-purple-600 mb-3">🆓 Freemium Access</h3>
+                    <p class="text-gray-700">Basic chatbot functions available for free</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-blue-500">
+                    <h3 class="text-xl font-bold text-blue-600 mb-3">⭐ Premium Subscriptions</h3>
+                    <p class="text-gray-700">Advanced explanations, quizzes, and personalized feedback</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-green-500">
+                    <h3 class="text-xl font-bold text-green-600 mb-3">🏫 Institutional Licensing</h3>
+                    <p class="text-gray-700">Integration with schools and e-learning platforms</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-lg border-t-4 border-pink-500">
+                    <h3 class="text-xl font-bold text-pink-600 mb-3">📚 Publishing Partnerships</h3>
+                    <p class="text-gray-700">Collaboration with educational publishers</p>
+                </div>
+            </div>
+
+            <h3 class="text-3xl font-bold text-center mb-8 text-purple-600">Cost Structure</h3>
+            <div class="bg-white p-8 rounded-2xl shadow-lg max-w-4xl mx-auto">
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-4">
+                        <span class="text-purple-600 font-bold">•</span>
+                        <span><strong>Software development:</strong> Hosting, NLP API, maintenance</span>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <span class="text-purple-600 font-bold">•</span>
+                        <span><strong>Educational content creation:</strong> Collaboration with teachers</span>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <span class="text-purple-600 font-bold">•</span>
+                        <span><strong>Design & UX:</strong> Interface design and branding</span>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <span class="text-purple-600 font-bold">•</span>
+                        <span><strong>Marketing & outreach:</strong> Social media, partnerships with schools</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-8">
+        <p class="text-lg">&copy; 2025 LitBot. Empowering Romanian Literature Learning.</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Smooth scrolling for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
