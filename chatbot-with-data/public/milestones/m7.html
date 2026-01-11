@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LitBot – Milestone M7: MVP</title>
+  <title>LitBot – Milestones M7 & M8: MVP & First Sale</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
@@ -48,6 +48,8 @@
     table{width:100%; border-collapse:collapse; margin:16px 0;}
     table th, table td{padding:10px; text-align:left; border-bottom:1px solid var(--border);}
     table th{background:#f8fafc; font-weight:600;}
+    .quote-box{background:#f8fafc; border-left:4px solid #2563eb; padding:12px 16px; margin:12px 0; font-style:italic;}
+    .highlight-stat{background:#dbeafe; padding:8px 12px; border-radius:8px; display:inline-block; margin:4px 0; font-weight:600;}
   </style>
 </head>
 <body>
@@ -59,9 +61,9 @@
   </nav>
 
   <header class="header" id="top">
-    <span class="badge">Milestones M7 & M8</span>
-    <h1>LitBot – MVP & First Sale</h1>
-    <p>A functional prototype demonstrating core value proposition and validating willingness to use/pay</p>
+    <span class="badge">Milestone M7</span>
+    <h1>LitBot – Minimum Viable Product</h1>
+    <p>A functional prototype using feedback from prospective users as the backbone of our design</p>
   </header>
 
   <div class="page">
@@ -73,8 +75,6 @@
         <li><a href="#validation-recap">Pre-MVP Validation</a></li>
         <li><a href="#mvp-scope">MVP Scope & Features</a></li>
         <li><a href="#justifications">Feature Justifications</a></li>
-        <li><a href="#testing">User Testing & Feedback</a></li>
-        <li><a href="#metrics">Success Metrics</a></li>
       </ul>
     </aside>
 
@@ -128,7 +128,7 @@
           
           <h3>MVP Characteristics</h3>
           <ul>
-            <li><strong>Enough value:</strong> Provides meaningful explanations and guided analysis for 5 core Baccalaureate works, addressing the top student pain point (understanding vs. memorizing)</li>
+            <li><strong>Enough value:</strong> Provides meaningful explanations and guided analysis for Baccalaureate works, addressing the top student pain point (understanding vs. memorizing)</li>
             <li><strong>Future benefit:</strong> Demonstrates the potential of full curriculum coverage, personalized learning paths, and exam preparation features</li>
             <li><strong>Feedback loop:</strong> Includes usage analytics, conversation quality ratings, and structured user feedback collection</li>
           </ul>
@@ -213,16 +213,29 @@
             </div>
 
             <div class="feature-item">
+              <strong>✓ Clear, Concise Responses</strong>
+              <p>Responses optimized for clarity without "pompous filler words" based on M4 user research</p>
+            </div>
+
+            <div class="feature-item">
+              <strong>✓ Step-by-Step Explanations</strong>
+              <p>Guided explanations of symbolism, themes, and character analysis</p>
+            </div>
+
+            <div class="feature-item">
               <strong>✓ Feedback Collection</strong>
-              <p>Thumbs up/down on responses, optional comment field</p>
+              <p>Structured feedback form collecting experience ratings, improvement suggestions, and pricing data</p>
             </div>
           </div>
 
           <h3>What's NOT in the MVP (Future Features)</h3>
           <ul>
-            <li>Usage Limits (Freemium): 10 questions/day → Demonstrates value while creating premium upgrade path</li>
-            <li>Mobile native app → Web-first validates concept before platform investment</li>
-            <li>Advanced personalization (learning style adaptation) → Requires more usage data</li>
+            <li><strong>Essay Generation:</strong> Intentionally excluded to promote understanding over copying (teacher concern from M2)</li>
+            <li><strong>Quiz/Test Mode:</strong> Multiple users requested this feature for future development</li>
+            <li><strong>Mobile Native App:</strong> Web-first validates concept before platform investment</li>
+            <li><strong>Citation/Quote Database:</strong> Highly requested feature for premium tier</li>
+            <li><strong>Conversation History Persistence:</strong> Requested by users, planned for next iteration</li>
+            <li><strong>Voice/Speaker Mode:</strong> Accessibility feature for future consideration</li>
           </ul>
 
           <div class="justification">
@@ -248,9 +261,23 @@
               <li>Creates defensible differentiation vs. generic ChatGPT</li>
             </ul>
             <strong>Implementation:</strong> AI responds with questions ("What themes do you notice?") and scaffolded hints rather than complete answers.
+            <br><br>
+            <strong>User Validation:</strong> A teacher stated: <em>"In sfarsit un instrument care promoveaza intelegerea, nu copiatul. Elevii care l-au folosit vin la ore cu intrebari mai bune si pot sa discute despre opere."</em>
           </div>
 
-          <h3>2. Why Web-Only (No Mobile App)?</h3>
+          <h3>2. Why Full Curriculum Coverage from Day 1?</h3>
+          <div class="justification">
+            <strong>Rationale:</strong> M4 user research revealed frustration with incomplete resources. Users explicitly wanted one page where they can ask everything ("o singura pagina in care pot sa intreb tot").
+            <ul>
+              <li>Avoids user frustration from discovering gaps mid-study session</li>
+              <li>Positions LitBot as comprehensive study companion, not partial tool</li>
+              <li>Enables cross-work comparisons and thematic exploration</li>
+              <li>Justifies premium pricing (25 RON/month)</li>
+            </ul>
+            <strong>User Validation:</strong> Multiple users praised this decision, with one stating: <em>"Imi place ca intra in detalii si in acelasi timp explica opera pe intelesul meu, nu cu cuvinte complicate ca in unele comentarii de pe net"</em>
+          </div>
+
+          <h3>3. Why Web-Only (No Mobile App)?</h3>
           <div class="justification">
             <strong>Rationale:</strong> M5 analytics showed 46% prefer mobile app, but 35% want "both" and 14% web-only (total 49% satisfied with web). For MVP:
             <ul>
@@ -259,254 +286,12 @@
               <li>Desktop usage makes sense: students study at desks with textbooks</li>
               <li>Mobile-responsive web covers 81% of stated preferences</li>
             </ul>
-            <strong>Post-MVP:</strong> If retention proves strong and users explicitly request app, we'll build native mobile.
-          </div>
-
-          <h3>3. Why Start with Romanian (Not Expand to Other Subjects)?</h3>
-          <div class="justification">
-            <strong>Rationale:</strong> M2 validation was literature-specific. Expanding to other subjects would:
-            <ul>
-              <li>Require new customer discovery and validation cycles</li>
-              <li>Dilute resources across unvalidated markets</li>
-              <li>Reduce curriculum alignment quality (our core differentiator)</li>
-            </ul>
-            <strong>Strategy:</strong> Dominate Romanian literature first, then expand horizontally (History, Philosophy) using proven playbook.
+            <strong>Post-MVP Validation:</strong> 4 users explicitly requested mobile app in feedback, validating this as high-priority post-launch feature.
           </div>
         </div>
       </article>
 
-      <!-- <article class="section-card" id="demo" style="--grad:linear-gradient(135deg, #0ea5e9, #6366f1)">
-        <div class="section-header">
-          <h2>MVP Demo & User Flow</h2>
-          <a class="chip" href="#top" title="Back to top">↑</a>
-        </div>
-        <div class="section-body">
-          
-          <h3>Primary User Flow: Student Asks Question</h3>
-          <ol>
-            <li><strong>Landing:</strong> Student arrives via school referral or social media ad</li>
-            <li><strong>Sign-up:</strong> Email + password (or Google OAuth) → 30 seconds</li>
-            <li><strong>Onboarding:</strong> "What work are you studying?" → Selects from all 20 available works</li>
-            <li><strong>First Question:</strong> Student types "Care este tema romanului Ion?"</li>
-            <li><strong>Guided Response:</strong> LitBot asks "What did you notice about Ion's motivations?" before explaining themes</li>
-            <li><strong>Follow-up:</strong> Student can ask unlimited questions, exploring as deeply as needed</li>
-            <li><strong>Premium Prompt:</strong> After 10+ questions, gentle suggestion: "Want essay outlines & exam mode? Try Premium"</li>
-            <li><strong>Feedback Prompt:</strong> After conversation, "Was this helpful? 👍👎"</li>
-          </ol>
-
-          <div class="mvp-demo">
-            <h4>Sample Conversation (Screenshot Placeholder)</h4>
-            <div class="screenshot-placeholder">
-              [Screenshot: LitBot chat interface showing guided dialogue about "Ion" with student avatar on right, LitBot avatar on left, clean message bubbles, and "Premium features available" button in header]
-            </div>
-          </div>
-
-          <h3>Technical Architecture (Simplified)</h3>
-          <ul>
-            <li><strong>Frontend:</strong> React SPA with Tailwind CSS (per M4 wireframe preferences)</li>
-            <li><strong>Backend:</strong> Node.js + Express API</li>
-            <li><strong>AI:</strong> Claude API with custom Romanian literature system prompts + curriculum knowledge base</li>
-            <li><strong>Database:</strong> PostgreSQL (user accounts, conversation history, usage tracking)</li>
-            <li><strong>Analytics:</strong> PostHog (continued from M5) for funnel tracking</li>
-            <li><strong>Hosting:</strong> Vercel (frontend) + Railway (backend) for rapid deployment</li>
-          </ul>
-
-          <div class="justification">
-            <strong>Tech Stack Justification:</strong> This stack prioritizes speed of iteration over scalability. We can rebuild for scale after validating PMF. Claude API chosen for Romanian language quality and reasoning capabilities demonstrated in prototype testing.
-          </div>
-        </div>
-      </article> -->
-
-      <article class="section-card" id="testing" style="--grad:linear-gradient(135deg, #f97316, #eab308)">
-        <div class="section-header">
-          <h2>User Testing & Initial Feedback</h2>
-          <a class="chip" href="#top" title="Back to top">↑</a>
-        </div>
-        <div class="section-body">
-          
-          <h3>Alpha Testing (Week 1-2)</h3>
-          <p><strong>Participants:</strong> 15 students from M2 interview cohort + 2 teachers</p>
-          
-          <div class="metric-box">
-            <strong>Early Results</strong>
-            <ul>
-              <li>Average session duration: 12.3 minutes (target: >10 min)</li>
-              <li>Questions per session: 8.4 (no artificial limits)</li>
-              <li>Helpfulness rating: 4.2/5 (target: >4.0)</li>
-              <li>Works explored per user: 2.7 average (validates full coverage decision)</li>
-              <li>Premium interest: 5/15 users asked about premium features (33%)</li>
-            </ul>
-          </div>
-
-          <h3>Qualitative Feedback</h3>
-          <table>
-            <thead>
-              <tr>
-                <th>User</th>
-                <th>Positive Feedback</th>
-                <th>Improvement Needed</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Student S6 (M2 cohort)</td>
-                <td>"Exactly what I wanted — it guides me without giving everything ready-made."</td>
-                <td>"Sometimes responses too long, prefer bullet points"</td>
-              </tr>
-              <tr>
-                <td>Student (new)</td>
-                <td>"Perfect that it has all the works — I was able to check Enigma of Otilia as well."</td>
-                <td>"Would pay for essay outline feature"</td>
-              </tr>
-              <tr>
-                <td>Teacher T2 (M2 cohort)</td>
-                <td>"I can recommend this - it teaches thinking, not copying"</td>
-                <td>"Add citation feature so students can reference sources"</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <h3>Critical Learning: Response Length</h3>
-          <div class="justification">
-            <strong>Insight:</strong> 7/15 testers said responses were "too detailed." We adjusted AI prompts to favor concise explanations. Post-adjustment rating increased from 3.9 to 4.2/5.
-            <br><br>
-            <strong>Action:</strong> This validates the importance of conversational control - students want to pace their own learning depth.
-          </div>
-        </div>
-      </article>
-
-      <article class="section-card" id="metrics" style="--grad:linear-gradient(135deg, #9333ea, #ef4444)">
-        <div class="section-header">
-          <h2>Success Metrics & Validation Criteria</h2>
-          <a class="chip" href="#top" title="Back to top">↑</a>
-        </div>
-
-        <div class="section-body">
-
-          <p>
-            MVP success is evaluated using a small-scale pilot study consisting of
-            <strong>15 student responses</strong>. While the sample size is limited,
-            the metrics provide early evidence of problem-solution fit, learning value,
-            and preliminary willingness to pay.
-          </p>
-
-          <h3>Primary Validation Metrics</h3>
-
-          <div class="metric-box">
-            <strong>1. Learning Effectiveness (Core Problem Validation)</strong>
-            <p><b>Metric:</b> “Did LitBot help you understand literature better?”</p>
-            <p><b>Results:</b></p>
-            <ul>
-              <li>10 / 15 (66.7%) — Yes, significantly</li>
-              <li>3 / 15 (20.0%) — Somewhat</li>
-              <li>2 / 15 (13.3%) — No / unclear</li>
-            </ul>
-            <p><b>Positive responses:</b> 13 / 15 (86.7%)</p>
-            <p><b>Validation:</b> Confirms that the majority of users experience improved understanding, not just answer generation</p>
-          </div>
-
-          <div class="metric-box">
-            <strong>2. Overall Product Satisfaction</strong>
-            <p><b>Metric:</b> Overall experience rating (1–5)</p>
-            <ul>
-              <li>5 — 6 users</li>
-              <li>4 — 5 users</li>
-              <li>3 — 3 users</li>
-              <li>2 or below — 1 user</li>
-            </ul>
-            <p><b>Users rating 4 or 5:</b> 11 / 15 (73.3%)</p>
-            <p><b>Average score:</b> 4.1 / 5</p>
-            <p><b>Validation:</b> MVP quality is sufficient for continued use, despite early-stage limitations</p>
-          </div>
-
-          <div class="metric-box">
-            <strong>3. Willingness to Pay (25 RON / month)</strong>
-            <p><b>Metric:</b> “Would you pay 25 RON/month for LitBot?”</p>
-            <ul>
-              <li>Yes — 12 users</li>
-              <li>Maybe — 2 users</li>
-              <li>No — 1 users</li>
-            </ul>
-            <p><b>Validation:</b> Indicates early monetization potential with room for feature-based refinement</p>
-          </div>
-
-          <div class="metric-box">
-            <strong>4. Price Sensitivity</strong>
-            <p><b>Metric:</b> “What would be a fair monthly price?”</p>
-            <ul>
-              <li>20–30 RON — 9 users</li>
-              <li>10–20 RON — 4 users</li>
-              <li>Below 10 RON — 2 users</li>
-            </ul>
-            <p><b>Users anchoring near target price:</b> 9 / 15 (60%)</p>
-            <p><b>Validation:</b> Confirms that 25 RON/month is acceptable for a meaningful subset of users</p>
-          </div>
-
-          <div class="metric-box">
-            <strong>5. Recommendation Likelihood (NPS-style)</strong>
-            <p><b>Metric:</b> “How likely are you to recommend LitBot to a classmate?” (0–10)</p>
-            <ul>
-              <li>Scores 9–10: 6 users</li>
-              <li>Scores 7–8: 5 users</li>
-              <li>Scores 6 or below: 4 users</li>
-            </ul>
-            <p><b>Average score:</b> 7.9 / 10</p>
-            <p><b>Validation:</b> Indicates organic sharing potential within peer groups</p>
-          </div>
-
-          <h3>Qualitative Insights (From Open-Ended Responses)</h3>
-          <ul>
-            <li><b>Most valued feature:</b> Step-by-step explanation of themes and symbolism</li>
-            <li><b>Common pain point:</b> Desire for more concrete examples and quotations</li>
-            <li><b>Primary use case:</b> Homework preparation and exam revision</li>
-            <li><b>Trust factor:</b> Students valued explanations over direct answers</li>
-          </ul>
-
-          <h3>Go / No-Go Decision</h3>
-          <div class="justification">
-            <p><b>GO criteria:</b></p>
-            <ul>
-              <li>✓ ≥80% report improved understanding (achieved: 86.7%)</li>
-              <li>✓ ≥25% definite willingness to pay (achieved: 26.7%)</li>
-              <li>✓ ≥70% satisfaction (4–5/5) (achieved: 73.3%)</li>
-              <li>✓ Clear qualitative learning value identified</li>
-            </ul>
-
-            <p><b>Decision:</b> Despite the small sample size, all minimum validation thresholds were met.
-            The MVP demonstrates early problem-solution fit and justifies further iteration and beta testing.</p>
-          </div>
-
-        </div>
-      </article>
-
-      <article class="section-card" id="conclusion" style="--grad:linear-gradient(135deg, #16a34a, #10b981)">
-        <div class="section-header">
-          <h2>Conclusion: MVP Validation Summary</h2>
-          <a class="chip" href="#top" title="Back to top">↑</a>
-        </div>
-        <div class="section-body">
-          <h3>Critical Questions Answered</h3>
-          
-          <div class="validation-evidence">
-            <strong>✓ Will students use it?</strong>
-            <p>Yes. 73% of alpha users returned within 7 days, and average session duration (12.3 minutes) indicates deep engagement, not superficial browsing.</p>
-          </div>
-
-          <div class="validation-evidence">
-            <strong>✓ Will students pay for it?</strong>
-            <p>Strong signals: 27% of users who hit the limit clicked upgrade, and qualitative feedback included "Would pay if it covered all 20 works" - validating that full coverage is the key to conversion.</p>
-          </div>
-
-          <div class="validation-evidence">
-            <strong>✓ Does it solve the problem?</strong>
-            <p>Yes. 87% rated comprehension improvement as 4-5/5, and student feedback explicitly contrasts LitBot with memorization: "Înțeleg simbolistica acum, nu doar o memorez."</p>
-          </div>
-
-          <div class="validation-evidence">
-            <strong>✓ Will teachers accept it?</strong>
-            <p>Yes. Teacher T2 stated "I can recommend this - it teaches thinking, not copying," validating that our guided approach addresses cheating concerns.</p>
-          </div>
-
+      <article class="section-card" id="conclusion" style="--grad:linear-gradient(135deg, #2563eb, #7c3aed)">
           <h3>Links & Resources</h3>
           <ul>
             <li><a href="../index.html">← Back to LitBot Overview</a></li>
@@ -514,8 +299,10 @@
             <li><a href="m4.html">Milestone M4: User Research</a></li>
             <li><a href="m5.html">Milestone M5: Lead Generation</a></li>
             <li><a href="m6.html">Milestone M6: Market Research</a></li>
+            <li><a href="m8.html">Milestone M8: First Sale</a></li>
             <li><a href="../wireframe.html">LitBot Wireframe</a></li>
             <li><a href="../landing.html">Product Landing Page</a></li>
+            <li><a href="feedback_form.html">User Feedback Form</a></li>
           </ul>
         </div>
       </article>
@@ -524,7 +311,7 @@
   </div>
 
   <footer class="footer">
-    © 2025 LitBot · <a href="../index.html">Main Site</a> · <a href="m2.html">M2</a> · <a href="m4.html">M4</a> · <a href="m5.html">M5</a> · <a href="m6.html">M6</a>
+    © 2025 LitBot · <a href="../index.html">Main Site</a> · <a href="m2.html">M2</a> · <a href="m4.html">M4</a> · <a href="m5.html">M5</a> · <a href="m6.html">M6</a> · <a href="m8.html">M8</a>
   </footer>
 </body>
 </html>
