@@ -45,19 +45,58 @@
     .metric-card h4{margin:0 0 8px 0; color:var(--accent);}
     .metric-card .value{font-size:2rem; font-weight:800; color:var(--text);}
     .metric-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:16px; margin:16px 0;}
+    nav {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 6%;
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,.96);
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .brand {
+    font-weight: 800;
+    font-size: 1.5rem;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 18px;
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+  nav ul a {
+    color: #111827;
+    padding-bottom: 2px;
+  }
+  nav ul a:hover {
+    color: var(--accent1);
+  }
+  article:first-child{
+    margin-top: 0 !important;
+  }
   </style>
 </head>
 <body>
-  <nav class="nav">
-    <div class="nav-inner">
-      <div class="brand">LitBot</div>
-      <a class="button" href="#top">Înapoi sus</a>
+  <nav>
+    <div class="brand">
+      <span style="background: linear-gradient(135deg, #7c3aed, #2563eb); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        <a href="./home.html" style="text-decoration:none">
+          LitBot 📚
+        </a>
+      </span>
     </div>
+    <a href="#top" class="btn btn-primary">Inapoi sus</a>
   </nav>
 
   <header class="header" id="top">
-    <span class="badge">Etapa 5</span>
-    <h1>LitBot — Raport Campanie de Generare de Lead-uri</h1>
+    <h1>Colectare de Lead-uri</h1>
+    <p>Documentarea colectării de lead-uri: landing page, măsurare conversii și funnel-uri</p>
   </header>
 
   <div class="page">
@@ -78,8 +117,8 @@
           <a class="chip" href="#top" title="Înapoi sus">↑</a>
         </div>
         <div class="section-body">
-          <p><strong>Obiectiv:</strong> Generarea interesului din partea adoptatorilor timpurii și colectarea de email-uri pentru lansarea LitBot</p>
-          <p><strong>Public țintă:</strong> Elevi de liceu din România (clasele XI-XII), profesori și părinți care se pregătesc pentru examenul de Bacalaureat</p>
+          <p><strong>Obiectiv:</strong> Să stârnim interes în rândul early adopters și să strângem adrese de email pentru lansarea LitBot</p>
+          <p><strong>Public țintă:</strong> Elevi de liceu din România (clasele XI-XII) care se pregătesc pentru examenul de Bacalaureat și profesorii și părinții acestora</p>
           
           <div class="metric-grid">
             <div class="metric-card">
@@ -105,40 +144,40 @@
         </div>
         <div class="section-body">
           <h3>Configurare PostHog</h3>
-          <p>Analiza PostHog a fost integrată în pagina principală, pagina de destinație și pagina de wireframe pentru a urmări:</p>
+          <p>Am integrat PostHog pe pagina principală, landing page și pagina de wireframe, ca să putem urmări clar cum interacționează oamenii cu LitBot. Am folosit:</p>
           <ul>
-            <li><strong>Analiză Web:</strong> Vizualizări de pagină, sesiuni vizitatori</li>
-            <li><strong>Analiză Produs:</strong> Urmărirea pâlniei de conversie pentru înscrierea prin email</li>
-            <li><strong>Reluare Sesiune:</strong> Observarea comportamentului utilizatorilor și tiparelor de interacțiune</li>
+            <li><strong>Web analytics:</strong> vizualizări de pagină și sesiuni</li>
+            <li><strong>Product analytics:</strong> urmărirea funnel-ului de conversie pentru înscrierea cu email</li>
+            <li><strong>Session replay:</strong> observarea comportamentului real al utilizatorilor și a tiparelor de navigare</li>
           </ul>
 
           <h3>Evenimente urmărite</h3>
             <p>
-                Pentru a înțelege cum progresează utilizatorii prin fluxul de generare de lead-uri LitBot, mai multe evenimente cheie de interacțiune au fost urmărite pe parcursul sesiunii. Aceste evenimente oferă informații despre cât de departe ajung utilizatorii, unde ezită și unde abandonează.
+                Pentru a înțelege cum avansează utilizatorii prin pagina de înscriere, am urmărit câteva acțiuni-cheie. Ele ne arată cât de departe ajung oamenii, unde ezită și în ce punct renunță.
             </p>
 
             <ul>
-                <li><strong>Vizualizare pagină index:</strong> Punctul de intrare inițial pentru toți utilizatorii.</li>
-                <li><strong>Vizualizare pagină de destinație:</strong> Ecranul principal cu îndemnul la acțiune care prezintă LitBot.</li>
-                <li><strong>Vizualizare pagină wireframe:</strong> Pasul opțional din mijlocul pâlniei care prezintă prototipul UI.</li>
-                <li><strong>Tastare în câmpul de email:</strong> Indică intenția de a se implica sau converti.</li>
-                <li><strong>Interacțiune cu checkbox-ul newsletter:</strong> Măsoară micro-implicarea și încrederea.</li>
-                <li><strong>Trimitere formular:</strong> Evenimentul final de conversie, completând fluxul de înscriere.</li>
+                <li><strong>Vizualizare pagină principală:</strong> Punctul de intrare inițial pentru toți utilizatorii.</li>
+                <li><strong>Vizualizare landing page:</strong> pagina cu mesajul principal și opțiunea de testare.</li>
+                <li><strong>Vizualizare pagină wireframe:</strong> Pasul opțional din mijlocul funnel-ului care prezintă prototipul UI.</li>
+                <li><strong>Tastare în câmpul de email:</strong> Indică intenția de a se înscrie.</li>
+                <li><strong>Interacțiune cu checkbox-ul newsletter:</strong> Măsoară implicarea și încrederea.</li>
+                <li><strong>Trimitere formular:</strong> Finalizarea flow-ului de conversie.</li>
             </ul>
 
             <img class="complete_funel" src="../images/complete_funel.png" width="800">
 
-            <h3>Pâlnie de conversie</h3>
+            <h3>Funnel de conversie</h3>
                 <p>
-                Mai jos este pâlnia care reprezintă cum se deplasează utilizatorii de la prima interacțiune către conversie.
-                Această pâlnie ajută la vizualizarea atât a profunzimii implicării, cât și a punctelor de fricțiune.
+                Mai jos este funnel-ul care reprezintă cum se deplasează utilizatorii de la prima interacțiune către conversie.
+                Ne ajută să vedem atât nivelul de implicare, cât și punctele unde se pierde trafic.
                 </p>
 
                 <ol>
-                    <li><strong>Vizită pagină de destinație:</strong> Utilizatorii intră în fluxul de generare de lead-uri.</li>
+                    <li><strong>Vizită landing page:</strong> Intrarea în fluxul de lead generation.</li>
                     <li><strong>Interacțiune câmp email:</strong> Demonstrează intenție mai puternică de înscriere.</li>
-                    <li><strong>Abonare newsletter:</strong> Pas opțional care validează interesul suplimentar.</li>
-                    <li><strong>Trimitere formular:</strong> Finalizarea pâlniei și conversie reușită.</li>
+                    <li><strong>Abonare newsletter:</strong> Arată interes suplimentar și disponibilitatea de a rămâne conectați.</li>
+                    <li><strong>Trimitere formular:</strong> Finalizarea funnel-ului și conversie reușită.</li>
                 </ol>
 
             <img class="small_funel" src="../images/small_funel.png" width="600">
@@ -152,12 +191,12 @@
         </div>
         <div class="section-body">
           <h3>Integrare Formspree</h3>
-          <p>Formularul de colectare a lead-urilor folosește Formspree pentru gestionarea backend, integrat în partea de jos a paginii de destinație.</p>
+          <p>Pentru formularul de colectare a lead-urilor am folosit Formspree, care se ocupă de partea de backend (trimiterea și gestionarea înscrierilor). Formularul este integrat în partea de jos a landing page-ului.</p>
 
           <h3>Câmpuri formular</h3>
           <ul>
-            <li><strong>Email:</strong> Câmp obligatoriu pentru contact</li>
-            <li><strong>Abonare newsletter:</strong> Checkbox opțional pentru actualizări</li>
+            <li><strong>Email:</strong> Câmp obligatoriu, folosit pentru a putea lua legătura cu utilizatorii interesați</li>
+            <li><strong>Abonare newsletter:</strong> Checkbox opțional, pentru cei care vor să primească actualizări despre progres și lansare</li>
           </ul>
 
           <img class="formspree" src="../images/formspree.png" width="600">
@@ -170,22 +209,22 @@
           <a class="chip" href="#top" title="Înapoi sus">↑</a>
         </div>
         <div class="section-body">
-          <h3>Analiza pâlniei de conversie</h3>
+          <h3>Analiza funnel de conversie</h3>
           <ul>
-            <li>Pagină index → Pagină de destinație: 80.95% au continuat</li>
-            <li>Pagină de destinație → Tastare email: 94.11% au continuat</li>
-            <li>Tastare email → Trimitere formular: 81.25% au convertit</li>
+            <li>Pagină index → Landing page: 80.95% au continuat</li>
+            <li>Landing page → Tastare email: 94.11% au continuat</li>
+            <li>Tastare email → Trimitere formular: 81.25% au completat</li>
           </ul>
 
-          <h3>Constatări din reluarea sesiunilor</h3>
+          <h3>Constatări din session replay</h3>
           <video controls style="width: 100%; max-width: 600px;">
             <source src="../images/session_replay.mp4" type="video/mp4">
           </video>
           <p><strong>Observații cheie:</strong></p>
           <ul>
-            <li>Utilizatorii petrec în medie 14.8 secunde citind secțiunea de destinație înainte de a derula sau a da click.</li>
-            <li>63% dintre utilizatori derulează până la secțiunea „Cum funcționează", indicând o implicare moderată cu conținutul de sub fold.</li>
-            <li>Cel mai frecvent punct de ezitare apare la pasul de abonare la newsletter, unde mulți utilizatori fac o pauză de câteva secunde înainte de a decide dacă să continue.</li>
+            <li>În medie, utilizatorii stau aproximativ 14,8 secunde pe secțiunea principală a paginii înainte să deruleze sau să dea click.</li>
+            <li>63% dintre utilizatori derulează până la secțiunea „Cum funcționează", ceea ce sugerează un interes rezonabil și pentru conținutul din josul paginii.</li>
+            <li>Cel mai des se vede o ezitare la abonarea la newsletter: mulți utilizatori se opresc câteva secunde aici înainte să decidă dacă merg mai departe.</li>
           </ul>
         </div>
       </article>
@@ -194,7 +233,7 @@
   </div>
 
   <footer class="footer">
-    @2025 LitBot • <a href="/home.html">Înapoi la site-ul principal</a>
+    © 2025 LitBot · <a href="../home.html">Pagina principală</a> · <a href="m2.html">M2</a> · <a href="m4.html">M4</a> · <a href="m6.html">M6</a> · <a href="m7.html">M7</a> · <a href="m8.html">M8</a>
   </footer>
 </body>
 </html>
