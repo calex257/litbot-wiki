@@ -33,7 +33,7 @@ const getWelcomeMessage = (): Message => ({
 // Create a new chat session
 const createNewChat = (): ChatSession => ({
   id: generateId(),
-  title: "New Chat",
+  title: "Conversație nouă",
   messages: [getWelcomeMessage()],
   createdAt: new Date(),
 });
@@ -223,16 +223,16 @@ export default function LiteraryChat() {
           <div className="sb-logo">Lb</div>
           <div>
             <div className="sb-title">LitBot</div>
-            <div className="sb-sub">Literature Chat</div>
+            <div className="sb-sub">Chat Literar</div>
           </div>
         </div>
 
         <button className="sb-btn" onClick={handleNewChat}>
           <span className="icon">＋</span>
-          <span>New Chat</span>
+          <span>Conversație nouă</span>
         </button>
 
-        <div className="sb-label">Recent chats</div>
+        <div className="sb-label">Conversații recente</div>
         <div className="sb-list">
           {chats.map((chat) => (
             <div
@@ -257,14 +257,14 @@ export default function LiteraryChat() {
 
         <div className="sb-footer">
           <div>LitBot — Chatbot literar</div>
-          <a href="/home.html">← Back to overview</a>
+          <a href="/home.html">← Înapoi la prezentare</a>
         </div>
       </aside>
 
       {/* Chat Area */}
       <section className="chat-wrap">
         <header className="chat-header">
-          <div className="chat-title">LitBot — Literature Assistant</div>
+          <div className="chat-title">LitBot — Asistent Literar</div>
         </header>
 
         <div className="chat-main">

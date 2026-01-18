@@ -39,9 +39,9 @@ export async function createRagChain() {
   });
 
   const qaPrompt = ChatPromptTemplate.fromMessages([
-    ["system", `You are a literature expert. Using the following context, answer the user's question in a concise way (maximum 3).If the user asks for a specific quote, fragment, stanza or lines from a literary work in the public domain (e.g. Mihai Eminescu), you may provide it in full, as found in the context. Otherwise, Do not exceed the length of maximum 3 sentences, and make sure not to stop mid-sentence.Do not say "Nu pot accesa textul furnizat." and after that you start saying the answer. Be brief and to the point. Detail only if the user says so. If unsure, just say you don't know.`],
+    ["system", `Ești un expert în literatură română. Folosind contextul de mai jos, răspunde la întrebarea utilizatorului într-un mod concis (maxim 3 propoziții). Dacă utilizatorul cere un citat specific, un fragment, o strofă sau versuri dintr-o operă literară din domeniul public (de exemplu, Mihai Eminescu), poți să le oferi integral, așa cum apar în context. Altfel, nu depăși lungimea de maxim 3 propoziții și ai grijă să nu te oprești la mijlocul unei propoziții. Nu spune „Nu pot accesa textul furnizat." și după aceea să începi să dai răspunsul. Fii scurt și la obiect. Oferă detalii doar dacă utilizatorul cere acest lucru. Dacă nu ești sigur, spune că nu știi. Răspunde întotdeauna în limba română.`],
     new MessagesPlaceholder("chat_history"),
-    ["human", "Question: {input}\n\nContext: {context}"],
+    ["human", "Întrebare: {input}\n\nContext: {context}"],
   ]);
 
   const questionAnswerChain = await createStuffDocumentsChain({
