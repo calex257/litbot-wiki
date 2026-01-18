@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LitBot – Etapa M7: MVP</title>
+  <title>LitBot - Etapa M7: MVP</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
@@ -15,6 +15,39 @@
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.65}
+    nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 6%;
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,.96);
+  border-bottom: 1px solid #f3f4f6;
+}
+.brand {
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+nav ul a {
+  color: #111827;
+  padding-bottom: 2px;
+}
+nav ul a:hover {
+  color: var(--accent1);
+}
+
     a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
     .nav{position:sticky; top:0; z-index:10; backdrop-filter:saturate(1.2) blur(6px); background:rgba(255,255,255,0.75); border-bottom:1px solid var(--border);}
     .nav-inner{max-width:var(--maxw);margin:0 auto;display:flex;gap:20px;align-items:center;justify-content:space-between;padding:12px 20px}
@@ -53,16 +86,16 @@
   </style>
 </head>
 <body>
-  <nav class="nav">
-    <div class="nav-inner">
-      <div class="brand">LitBot</div>
-      <a class="button" href="#top">Înapoi sus</a>
+  <nav>
+    <div class="brand">
+      <span style="background: linear-gradient(135deg, #7c3aed, #2563eb); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">LitBot 📚</span>
     </div>
+    <a href="#top" class="btn btn-primary">Inapoi sus</a>
   </nav>
 
   <header class="header" id="top">
-    <span class="badge">Etapa M7</span>
-    <h1>LitBot – Produs Minim Viabil</h1>
+    <span class="badge">Etapa 7</span>
+    <h1>Produs Minim Viabil</h1>
     <p>Un prototip funcțional care folosește feedback-ul de la utilizatorii potențiali ca bază a designului nostru</p>
   </header>
 
@@ -70,7 +103,6 @@
     <aside class="sidebar">
       <h4>Cuprins</h4>
       <ul>
-        <li><a href="#try-and-share">Încearcă LitBot și oferă feedback</a></li>
         <li><a href="#overview">Prezentare generală MVP</a></li>
         <li><a href="#validation-recap">Validare pre-MVP</a></li>
         <li><a href="#mvp-scope">Domeniu și funcționalități MVP</a></li>
@@ -79,63 +111,21 @@
     </aside>
 
     <main>
-      <section class="section-card" id="try-and-share" style="--grad:linear-gradient(135deg, #0ea5e9, #2563eb)">
-        <div class="section-header">
-          <h2>Încearcă LitBot și oferă feedback</h2>
-          <a class="chip" href="#top" title="Înapoi sus">↑</a>
-        </div>
-
-        <div class="section-body">
-          <p>
-            LitBot este un AI conversațional conceput pentru a ajuta elevii să <strong>înțeleagă literatura, nu să memoreze eseuri</strong>.
-            Încearcă produsul și ajută-ne să-l îmbunătățim oferindu-ne feedback-ul tău sincer.
-          </p>
-
-          <div class="feature-list">
-            <div class="feature-item">
-              <strong>🚀 Încearcă produsul</strong>
-              <p>
-                <a href="/chat" target="_blank">
-                  Deschide LitBot →
-                </a>
-              </p>
-            </div>
-
-            <div class="feature-item">
-              <strong>📝 Oferă feedback</strong>
-              <p>
-                <a href="feedback_form.html" target="_blank">
-                  Mergi la formularul de feedback →
-                </a>
-              </p>
-            </div>
-          </div>
-
-          <div class="justification">
-            <strong>De ce contează feedback-ul tău:</strong> Acest MVP este construit împreună cu elevii și profesorii.
-            Răspunsurile tale influențează direct prețurile, funcționalitățile și dezvoltarea viitoare.
-          </div>
-        </div>
-      </section>
-
+  
       <article class="section-card" id="overview" style="--grad:linear-gradient(135deg, #2563eb, #06b6d4)">
         <div class="section-header">
           <h2>Prezentare generală MVP</h2>
           <a class="chip" href="#top" title="Înapoi sus">↑</a>
         </div>
         <div class="section-body">
-          <p>MVP-ul LitBot este un asistent AI conversațional funcțional axat pe a ajuta elevii de liceu din România să înțeleagă literatura prin dialog ghidat în loc de memorare. Acest MVP reprezintă setul minim de funcționalități necesar pentru a valida ipoteza noastră de bază: că elevii vor interacționa și vor găsi valoare într-un asistent literar interactiv, aliniat la programă.</p>
+          <p>MVP-ul LitBot este o versiune funcțională, în formă minimă, a unui asistent AI conversațional care are scopul de a-i pe elevii de liceu să înțeleagă literatura română prin dialog ghidat, nu prin memorare. Scopul acestui MVP este să testăm ipoteza de bază: elevii vor folosi un asistent literar interactiv, aliniat la programă, și vor simți că le este cu adevărat util.</p>
           
           <h3>Caracteristici MVP</h3>
           <ul>
-            <li><strong>Valoare suficientă:</strong> Oferă explicații semnificative și analiză ghidată pentru operele de Bacalaureat, adresând principala problemă a elevilor (înțelegere vs. memorare)</li>
-            <li><strong>Beneficiu viitor:</strong> Demonstrează potențialul acoperirii complete a programei, trasee de învățare personalizate și funcționalități de pregătire pentru examen</li>
-            <li><strong>Buclă de feedback:</strong> Include analiză a utilizării, evaluări ale calității conversațiilor și colectare structurată de feedback de la utilizatori</li>
+            <li><strong>Valoare imediată:</strong> oferă explicații clare și analiză ghidată pentru operele de Bacalaureat, abordând direct problema principală a elevilor: înțelegerea, nu memorarea.</li>
+            <li><strong>Potențial de dezvoltare:</strong> arată că soluția poate fi extinsă către acoperirea completă a programei, metode de învățare personalizate și funcționalități dedicate pregătirii pentru examen.</li>
+            <li><strong>Feedback și îmbunătățire continuă:</strong> include monitorizarea utilizării, evaluarea calității conversațiilor și colectarea de feedback structurat de la utilizatori.</li>
           </ul>
-
-          <div class="justification">
-            <strong>De ce un MVP acum?</strong> Am validat problema (M2: 80% dintre elevi se bazează pe memorare), am confirmat cererea (M5: 67% ar încerca imediat) și am înțeles dimensiunea pieței (M6: 100k-250k utilizatori adresabili). MVP-ul testează dacă soluția noastră își îndeplinește promisiunea și dacă utilizatorii vor converti în clienți plătitori.
-          </div>
         </div>
       </article>
 
@@ -145,44 +135,51 @@
           <a class="chip" href="#top" title="Înapoi sus">↑</a>
         </div>
         <div class="section-body">
-          <p>Înainte de a construi MVP-ul, am validat ipoteze critice de-a lungul mai multor etape:</p>
+          <p>Înainte să trecem la realizarea MVP-ului, ne-am verificat ipotezele esențiale în mai multe etape, ca să fim siguri că rezolvăm o problemă reală și că există interes pentru soluție.</p>
 
           <div class="validation-evidence">
             <strong>M2 - Descoperirea clienților:</strong>
             <ul>
-              <li>Validarea problemei: 80% dintre elevii chestionați (69/86) se bazează puternic pe memorare</li>
-              <li>Interes pentru soluție: 67% ar încerca imediat un asistent AI; 83% au evaluat interesul la 4-5/5</li>
-              <li>Funcționalitate cea mai cerută: Întrebări și răspunsuri interactive (89% au clasat-o în top 3)</li>
-              <li>Profesorii au confirmat: 75% ar recomanda un instrument ghidat, aliniat la programă</li>
+              <li>Validarea problemei: 80% dintre elevii chestionați (69 din 86) spun că se bazează mult pe memorare.</li>
+              <li>Interes pentru soluție: 67% ar încerca chiar acum un asistent AI; 83% au evaluat interesul cu 4-5 din 5</li>
+              <li>Funcționalitatea cea mai cerută: Întrebări și răspunsuri interactive(89% au pus această funcție în top 3).</li>
+              <li>Confirmare din partea profesorilor: 75% ar recomanda un instrument ghidat și aliniat la programă</li>
             </ul>
           </div>
 
           <div class="validation-evidence">
             <strong>M4 - Cercetare utilizatori:</strong>
+            <p>
+              Din discuțiile cu elevii a reieșit foarte clar ce contează pentru ei:
+            </p>
             <ul>
-              <li>Elevii vor răspunsuri clare, concise fără „cuvinte pompoase de umplutură"</li>
-              <li>Preferință pentru interfață cu o singură pagină unde „pot întreba orice"</li>
-              <li>Dorință de interacțiune empatică (avatar, ton conversațional)</li>
-              <li>Explicații pas cu pas ale simbolismului și temelor complexe</li>
+              <li>Vor răspunsuri clare și la obiect, fără „cuvinte pompoase de umplutură”</li>
+              <li>Preferă o interfață simplă, pe o singură pagină, unde „pot întreba orice”</li>
+              <li>Își doresc o interacțiune mai umană și empatică (de exemplu, avatar și ton conversațional)</li>
+              <li>Au nevoie de explicații pas cu pas, mai ales pentru simbolism și teme complicate.</li>
             </ul>
           </div>
 
           <div class="validation-evidence">
-            <strong>M5 - Generare de lead-uri:</strong>
+            <strong>M5 - Strângere de înscrieri:</strong>
+            <p>Ca să vedem dacă există interes real, nu doar „la nivel de idee”, am pus o pagină simplă de înscriere și am urmărit rezultatele:</p>
             <ul>
-              <li>21 de lead-uri calificate prin email colectate</li>
-              <li>Rată de conversie de 61.9% de la vizualizarea paginii de destinație la înscriere</li>
+              <li>Am strâns 21 de persoane interesate, care au lăsat email-ul ca să afle când lansăm</li>
+              <li>Rată de conversie foarte bună: 61.9% dintre cei care au intrat pe pagină s-au și înscris</li>
               <li>94% dintre vizitatorii care au început să tasteze email-ul au completat formularul</li>
             </ul>
           </div>
 
           <div class="validation-evidence">
             <strong>M6 - Cercetare de piață:</strong>
+            <p>
+              Analiza pieței indică semnale încurajatoare pentru produsul nostru:
+            </p>
             <ul>
-              <li>Piață țintă: 100k-250k utilizatori domestici</li>
-              <li>Validare preț: interval optim 20-30 RON/lună (60% dintre părinți dispuși să plătească)</li>
-              <li>Potențial de venituri: multi-milion EUR anual la scară</li>
-              <li>Lacună competitivă: nu există niciun asistent conversațional aliniat la programă</li>
+              <li>Dimensiunea pieței: estimăm un public țintă de aproximativ 100.000-250.000 de utilizatori potențiali în România.</li>
+              <li>Validarea prețului: un abonament în intervalul 20-30 RON/lună pare sustenabil, iar 60% dintre părinți declară că ar fi dispuși să plătească.</li>
+              <li>Potențial de venit: la nivel de adopție ridicată, există un potențial de venituri anuale de ordinul milioanelor de euro.</li>
+              <li>Context competitiv: există o nișă clară pe piață; nu am identificat un asistent conversațional care să fie, în același timp, aliniat la programă și orientat specific către pregătirea la literatură.</li>
             </ul>
           </div>
         </div>
@@ -194,52 +191,52 @@
           <a class="chip" href="#top" title="Înapoi sus">↑</a>
         </div>
         <div class="section-body">
-          <h3>Ce este INCLUS în MVP</h3>
+          <h3>Ce este inclus în MVP</h3>
           
           <div class="feature-list">
             <div class="feature-item">
               <strong>✓ Acoperire completă a programei (20 opere)</strong>
-              <p>Acoperire completă a tuturor textelor literare pentru Bacalaureat, incluzând Ion, Moara cu Noroc, Luceafărul, Plumb, Ultima noapte, Enigma Otiliei și toate celelalte opere obligatorii</p>
+              <p>Acoperă complet toate textele literare pentru Bacalaureat</p>
             </div>
 
             <div class="feature-item">
               <strong>✓ Interfață conversațională</strong>
-              <p>Interfață de chat curată, cu o singură pagină, cu avatar și răspunsuri în timp real</p>
+              <p>Pune la dispoziție o interfață de chat intuitivă, cu un avatar și răspunsuri în timp real</p>
             </div>
 
             <div class="feature-item">
               <strong>✓ Aliniere la programă</strong>
-              <p>Toate răspunsurile verificate conform cerințelor oficiale de Bacalaureat și standardelor de critică literară</p>
+              <p>Toate răspunsurile sunt verificate conform cerințelor oficiale de Bacalaureat și standardelor de critică literară</p>
             </div>
 
             <div class="feature-item">
               <strong>✓ Răspunsuri clare și concise</strong>
-              <p>Răspunsuri optimizate pentru claritate fără „cuvinte pompoase de umplutură" pe baza cercetării utilizatorilor M4</p>
+              <p>Răspunsurile sunt optimizate pentru claritate fără „cuvinte pompoase de umplutură" pe baza cercetării utilizatorilor M4</p>
             </div>
 
             <div class="feature-item">
               <strong>✓ Explicații pas cu pas</strong>
-              <p>Explicații ghidate ale simbolismului, temelor și analizei personajelor</p>
+              <p>Oferă explicații structurate ale simbolismului, temelor și analizei personajelor</p>
             </div>
 
             <div class="feature-item">
               <strong>✓ Colectare feedback</strong>
-              <p>Like/dislike la răspunsuri, câmp opțional de comentarii</p>
+              <p>Există opțiunea de a da like/dislike la răspunsuri și un câmp opțional de comentarii</p>
             </div>
           </div>
 
           <h3>Ce NU este în MVP (Funcționalități viitoare)</h3>
           <ul>
-            <li><strong>Generare de eseuri:</strong> Exclus intenționat pentru a promova înțelegerea în loc de copiere (îngrijorarea profesorilor din M2)</li>
-            <li><strong>Mod test/quiz:</strong> Mai mulți utilizatori au cerut această funcționalitate pentru dezvoltarea viitoare</li>
-            <li><strong>Aplicație mobilă nativă:</strong> Mai întâi web validează conceptul înainte de investiția în platformă</li>
-            <li><strong>Bază de date citate:</strong> Funcționalitate foarte cerută pentru nivelul premium</li>
-            <li><strong>Persistența istoricului conversațiilor:</strong> Cerută de utilizatori, planificată pentru următoarea iterație</li>
-            <li><strong>Mod voce/vorbitor:</strong> Funcționalitate de accesibilitate pentru considerare viitoare</li>
+            <li><strong>Generare de eseuri:</strong> Exclusă intenționat, pentru a încuraja înțelegerea și gândirea, nu copierea (o preocupare ridicată de profesori în etapa M2)</li>
+            <li><strong>Mod test/quiz:</strong> Mai mulți utilizatori au cerut această funcționalitate dar este programată pentru o etapă ulterioară</li>
+            <li><strong>Aplicație mobilă nativă:</strong> Întâi validăm conceptul în versiunea web, înainte de a investi în dezvoltarea pe platforme mobile</li>
+            <li><strong>Bază de date citate:</strong> Fncționalitate cerută frecvent, planificată pentru nivelul premium</li>
+            <li><strong>Persistența istoricului conversațiilor:</strong> Cerută de utilizatori, planificată pentru următoarea etapă</li>
+            <li><strong>Mod vocal:</strong> Opțiune orientată spre accesibilitate, de luat în calcul în viitor</li>
           </ul>
 
           <div class="justification">
-            <strong>Justificarea domeniului:</strong> MVP-ul se concentrează exclusiv pe problema #1 validată (înțelegere vs. memorare) și funcționalitatea #1 cerută (Întrebări și răspunsuri interactive). Am implementat acoperirea completă a tuturor operelor literare pentru Bacalaureat pentru a oferi valoare completă și a evita frustrarea conținutului incomplet.
+            <strong>Justificarea deciziilor:</strong> MVP-ul este construit strict în jurul celor mai importante două concluzii validate: problema principală (înțelegerea, nu memorarea) și funcționalitatea cea mai cerută (întrebări și răspunsuri interactive). Am implementat acoperirea completă a tuturor operelor literare pentru Bacalaureat pentru a oferi o experiență completă și a evita frustrarea de a avea conținut incomplet.
           </div>
         </div>
       </article>
@@ -253,25 +250,24 @@
 
           <h3>1. De ce interfață conversațională (nu generator de eseuri)?</h3>
           <div class="justification">
-            <strong>Motivație:</strong> Interviurile M2 cu profesorii (3/4) au exprimat îngrijorare privind memorarea. Elevii M4 au spus că vor să „înțeleagă, nu doar să copieze". O abordare conversațională:
+            <strong>Motivație:</strong> În interviurile din M2, 3 din 4 profesori s-au arătat preocupați de posibilitatea ca elevii să copieze eseurile de pe LitBot. În M4, elevii au spus explicit că își doresc să „înțeleagă, nu doar să copieze”. O abordare conversațională susține acest obiectiv deoarece:
             <ul>
-              <li>Forțează implicarea activă în loc de consumul pasiv</li>
-              <li>Construiește abilități de gândire critică (cerința reală a examenului)</li>
-              <li>Reduce îngrijorările legate de plagiat, făcând profesorii aliați, nu oponenți</li>
-              <li>Creează diferențiere apărabilă vs. ChatGPT generic</li>
+              <li>Încurajează implicarea activă, nu consumul pasiv de informație</li>
+              <li>Dezvoltă abilități de gândire critică (cerința reală a examenului)</li>
+              <li>Reduce riscurile percepute de plagiat, ceea ce face profesorii mai deschiși cu privire la produs</li>
             </ul>
             <strong>Implementare:</strong> AI-ul răspunde cu întrebări („Ce teme observi?") și indicii structurate în loc de răspunsuri complete.
             <br><br>
-            <strong>Validare de la utilizatori:</strong> Un profesor a declarat: <em>„În sfârșit un instrument care promovează înțelegerea, nu copiatul. Elevii care l-au folosit vin la ore cu întrebări mai bune și pot să discute despre opere."</em>
+            <strong>Validare de la utilizatori:</strong> Un profesor ne-a transmis: <em>„În sfârșit un instrument care promovează înțelegerea, nu copiatul. Elevii care l-au folosit vin la ore cu întrebări mai bune și pot să discute despre opere."</em>
           </div>
 
           <h3>2. De ce acoperire completă a programei din ziua 1?</h3>
           <div class="justification">
-            <strong>Motivație:</strong> Cercetarea utilizatorilor M4 a dezvăluit frustrare cu resursele incomplete. Utilizatorii au dorit explicit o pagină unde pot întreba orice („o singură pagină în care pot să întreb tot").
+            <strong>Motivație:</strong> Cercetarea din M4 a evidențiat frustrarea elevilor față de resursele incomplete. Utilizatorii au dorit explicit o pagină unde pot întreba orice („o singură pagină în care pot să întreb tot"). Acoperirea completă:
             <ul>
-              <li>Evită frustrarea utilizatorilor de a descoperi lacune în mijlocul sesiunii de studiu</li>
-              <li>Poziționează LitBot ca partener de studiu complet, nu instrument parțial</li>
-              <li>Permite comparații între opere și explorare tematică</li>
+              <li>Elimină riscul ca utilizatorul să întâlnească goluri în conținut în mijlocul unei sesiuni de studiu</li>
+              <li>Poziționează LitBot ca partener de studiu complet</li>
+              <li>Permite comparații între opere și explorarea temelor acestora</li>
               <li>Justifică prețul premium (25 RON/lună)</li>
             </ul>
             <strong>Validare de la utilizatori:</strong> Mai mulți utilizatori au lăudat această decizie, unul declarând: <em>„Îmi place că intră în detalii și în același timp explică opera pe înțelesul meu, nu cu cuvinte complicate ca în unele comentarii de pe net"</em>
@@ -279,14 +275,14 @@
 
           <h3>3. De ce doar web (fără aplicație mobilă)?</h3>
           <div class="justification">
-            <strong>Motivație:</strong> Analiza M5 a arătat că 46% preferă aplicație mobilă, dar 35% vor „ambele" și 14% doar web (total 49% satisfăcuți cu web). Pentru MVP:
+            <strong>Motivație:</strong> Datele din M5 arată că 46% preferă o aplicație mobilă, 14% o aplicație web-based, iar 35% le-ar folosi pe amândouă. Practic, o versiune web acoperă direct 49% (cei care preferă web + cei care vor web și mobile), iar cu un web responsive o mare parte din nevoia de mobil este adresată încă din MVP. În această etapă, web-ul este alegerea mai practică deoarece:
             <ul>
-              <li>Iterație mai rapidă: actualizările web se lansează instant vs. ciclurile de revizuire din app store</li>
-              <li>Cost de dezvoltare mai mic: o singură bază de cod vs. iOS + Android</li>
-              <li>Utilizarea pe desktop are sens: elevii studiază la birouri cu manuale</li>
-              <li>Web-ul responsive pe mobil acoperă 81% din preferințele declarate</li>
+              <li>Permite iterații rapide fără aprobări în app stores</li>
+              <li>reduce semnificativ costurile (un singur codebase, fără iOS + Android);</li>
+              <li>Utilizarea pe desktop are sens: mulți elevi lucrează la birou folosind manuale și caiete</li>
+              <li>Varianta responsive pe mobil acoperă majoritatea scenariilor de utilizare</li>
             </ul>
-            <strong>Validare post-MVP:</strong> 4 utilizatori au cerut explicit aplicație mobilă în feedback, validând aceasta ca funcționalitate de prioritate ridicată post-lansare.
+            <strong>Validare post-MVP:</strong> În feedback, 4 utilizatori au cerut explicit aplicație mobilă, confirmând că aceasta este o direcție importantă pentru etapa următoare.
           </div>
         </div>
       </article>
@@ -311,7 +307,7 @@
   </div>
 
   <footer class="footer">
-    © 2025 LitBot · <a href="../index.html">Main Site</a> · <a href="m2.html">M2</a> · <a href="m4.html">M4</a> · <a href="m5.html">M5</a> · <a href="m6.html">M6</a> · <a href="m8.html">M8</a>
+    © 2025 LitBot · <a href="../index.html">Pagina principală</a> · <a href="m2.html">M2</a> · <a href="m4.html">M4</a> · <a href="m5.html">M5</a> · <a href="m6.html">M6</a> · <a href="m8.html">M8</a>
   </footer>
 </body>
 </html>
