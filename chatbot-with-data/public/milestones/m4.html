@@ -16,9 +16,38 @@
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.65}
     a{color:var(--accent);text-decoration:none} a:hover{text-decoration:underline}
-    .nav{position:sticky; top:0; z-index:10; backdrop-filter:saturate(1.2) blur(6px); background:rgba(255,255,255,0.75); border-bottom:1px solid var(--border);}
-    .nav-inner{max-width:var(--maxw);margin:0 auto;display:flex;gap:20px;align-items:center;justify-content:space-between;padding:12px 20px}
-    .brand{font-weight:800;letter-spacing:.2px}
+    nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 6%;
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,.96);
+  border-bottom: 1px solid #f3f4f6;
+}
+.brand {
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+nav ul a {
+  color: #111827;
+  padding-bottom: 2px;
+}
+nav ul a:hover {
+  color: var(--accent1);
+}
     .header{max-width:var(--maxw); margin:24px auto 0; padding:24px 20px 0;}
     h1{font-size:2.25rem; line-height:1.2; margin:0 0 12px; letter-spacing:.2px}
     h2{font-size:1.35rem; margin:0}
@@ -39,17 +68,17 @@
   </style>
 </head>
 <body>
-  <nav class="nav">
-    <div class="nav-inner">
-      <div class="brand">LitBot</div>
-      <a class="button" href="#top">Înapoi sus</a>
-    </div>
-  </nav>
+  <nav>
+  <div class="brand">
+    <span style="background: linear-gradient(135deg, #7c3aed, #2563eb); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+      <a href="../home.html" style="text-decoration:none">LitBot 📚</a></span>
+  </div>
+  <a href="#top" class="btn btn-primary">Inapoi sus</a>
+</nav>
 
   <header class="header" id="top">
-    <span class="badge">Etapa 4</span>
-    <h1>LitBot — Etapa 4</h1>
-    <p>Interviuri • Persona • Povești utilizator • Fluxuri utilizator • Constatări</p>
+    <h1>Analiza comportamentului utilizatorilor</h1>
+    <p>Descoperirea nevoilor și asteptărilor utilizatorilor pentru a crea un chatbot literar eficient.</p>
   </header>
 
   <div class="page">
@@ -60,8 +89,8 @@
         <li><a href="#user-persona">2. Persona utilizator</a></li>
         <li><a href="#user-stories">3. Povești utilizator</a></li>
         <li><a href="#user-flows">4. Fluxuri utilizator</a></li>
-        <li><a href="#findings-adjustments">5. Constatări și Ajustări produs</a></li>
-        <li><a href="#findings">6. Concluzii și Constatări</a></li>
+        <li><a href="#findings-adjustments">5. Constatări și ajustări produs</a></li>
+        <li><a href="#findings">6. Concluzii și constatări</a></li>
       </ul>
     </aside>
 
@@ -74,31 +103,31 @@
         <div class="section-body">
           <p>Pentru această etapă, utilizatorii au fost rugați să își imagineze că interacționează cu un chatbot care poate răspunde la întrebări despre literatură. Exemple de interacțiuni:</p>
 
-          <h3>Interviu 1 – Elev (Liceu)</h3>
-          <p><strong>Întrebare:</strong> Care este tema romanului Ion de Liviu Rebreanu?</p>
-          <p><strong>Răspuns:</strong> Tema principală este lupta pentru avere și influența mediului social asupra individului.</p>
+          <strong>Interviu 1 – Elev (Liceu)</strong>
+          <p><em>Întrebare</em>: Care este tema romanului Ion de Liviu Rebreanu?</p>
+          <p><em>Răspuns</em>: Tema principală este lupta pentru avere și influența mediului social asupra individului.</p>
 
-          <h3>Interviu 2 – Elev (Liceu)</h3>
-          <p><strong>Întrebare:</strong> Ce caracteristică are romanul Ion de Liviu Rebreanu pe care alte opere din literatura română nu o au?</p>
-          <p><strong>Răspuns:</strong> Realismul social detaliat și analiza psihologică profundă a personajelor.</p>
+          <strong>Interviu 2 – Elev (Liceu)</strong>
+          <p><em>Întrebare</em>: Ce caracteristică are romanul "Ion" de Liviu Rebreanu pe care alte opere din literatura română nu o au?</p>
+          <p><em>Răspuns</em>: Realismul social detaliat și analiza psihologică profundă a personajelor.</p>
+          
+          <strong>Interviu 3 – Elev (Liceu)</strong>
+          <p><em>Întrebare</em>: Care este relația dintre Ghiță și Ana din "Moara cu Noroc"?</p>
+          <p><em>Răspuns</em>: Relația este complexă și tensionată, bazată pe dorința de avere și conflicte morale.</p>
 
-          <h3>Interviu 3 – Elev (Liceu)</h3>
-          <p><strong>Întrebare:</strong> Care este relația dintre Ghiță și Ana din Moara cu Noroc?</p>
-          <p><strong>Răspuns:</strong> Relația este complexă și tensionată, bazată pe dorința de avere și conflicte morale.</p>
-
-          <h3>Alte exemple de întrebări</h3>
+          <strong>Alte exemple de întrebări</strong>
           <ul>
-            <li>Ce conflicte morale apar în Ion și cum influențează personajele?</li>
-            <li>Cum este reprezentat satul românesc în romanul Ion?</li>
+            <li>Ce conflicte morale apar în "Ion" și cum influențează personajele?</li>
+            <li>Cum este reprezentat satul românesc în romanul "Ion"?</li>
             <li>Care sunt diferențele între mentalitatea personajelor masculine și feminine?</li>
-            <li>Ce simboluri recurente apar în Moara cu Noroc?</li>
+            <li>Ce simboluri recurente apar în "Moara cu Noroc"?</li>
           </ul>
 
-          <p>De asemenea, utilizatorii au fost rugați să descrie cum văd chatbot-ul literar perfect</p>
-          <p><strong>Answer1:</strong> Un chatbot care sa explice logic operele, ca eu sa numai fiu nevoit sa tocesc pagini intregi de comentarii</p>
-          <p><strong>Answer2:</strong>Vreau o singura pagina in carepot sa intreb tot. Mereu am simtit ca limba romana este doar o adunatrua de cuvinte pompoase, care suna bine si nu transmit nimic. Mi-as dori ca acest chatbot sa explice operele clar, fara cuvinte de umplutura</p>
-          <p><strong>Answer3:</strong>Este mult prea multa siimbolistica in opere si cateodata prea complexe, asa ca mi-ar placea un chatbot care sa explice pas cu pas intelesul operelor si caracteristicile acestora</p>
-          <p><strong>Answer4:</strong>Vreau sa simt totusi ca vorbesc cu o persoana, raspunsurile sa nu fie seci...si poate chiar sa aiba o poza chatbot-ul, ca sa am putin senzatia de empatie</p>
+          <p>De asemenea, utilizatorii au fost rugați să descrie cum văd chatbot-ul literar perfect:</p>
+          <p><strong>Answer1:</strong> Un chatbot care sa explice logic operele, ca eu sa numai fiu nevoit sa tocesc pagini intregi de comentarii.</p>
+          <p><strong>Answer2:</strong> Vreau o singură pagină în care pot să întreb tot. Mereu am simțit că limba română este doar o adunătură de cuvinte pompoase, care sună bine și nu transmit nimic. Mi-aș dori ca acest chatbot să explice operele clar, fără cuvinte de umplutură.</p>
+          <p><strong>Answer3:</strong> Este mult prea multa simbolistică în opere și câteodată prea complexe, așa că mi-ar plăcea un chatbot care să explice pas cu pas înțelesul operelor și caracteristicile acestora.</p>
+          <p><strong>Answer4:</strong> Vreau sa simt totuși că vorbesc cu o persoană, răspunsurile să nu fie seci...și poate chiar să aibă o poză chatbot-ul, ca să am puțin senzația de empatie</p>
         </div>
       </article>
 
@@ -124,7 +153,7 @@
         </div>
         <div class="section-body">
           <ul>
-            <li>Ca <strong>student</strong>, vreau să pun o întrebare direct în chat, ca să primesc răspuns rapid despre opere literare.</li>
+            <li>Ca <strong>elev</strong>, vreau să pun o întrebare direct în chat și să primesc răspuns rapid despre opere literare.</li>
             <li>Ca <strong>elev</strong>, vreau să primesc răspunsuri concise, ca să înțeleg temele și personajele mai ușor.</li>
             <li>Ca <strong>utilizator</strong>, vreau să primesc exemple concrete și clar explicate pentru fiecare întrebare.</li>
           </ul>
@@ -137,11 +166,11 @@
           <a class="chip" href="#top" title="Înapoi sus">↑</a>
         </div>
         <div class="section-body">
-          <h3>Flux – Interacțiune în Chat</h3>
+          <h3>Interacțiune în Chat</h3>
           <ol>
-            <li>User deschide chatbot-ul LitBot</li>
-            <li>User scrie o întrebare despre literatură</li>
-            <li>User apasă Enter și așteaptă răspunsul</li>
+            <li>Utilizatorul deschide chatbot-ul LitBot</li>
+            <li>Utilizatorul scrie o întrebare despre literatură</li>
+            <li>Utilizatorul apasă Enter și așteaptă răspunsul</li>
             <li>Chatbot-ul generează răspuns clar și concis, cu exemple dacă este necesar</li>
           </ol>
         </div>
@@ -149,14 +178,14 @@
 
       <article class="section-card" id="findings-adjustments" style="--grad:linear-gradient(135deg, #0ea5e9, #6366f1)">
         <div class="section-header">
-            <h2>5. Constatări și Ajustări produs</h2>
+            <h2>5. Constatări și ajustări produs</h2>
             <a class="chip" href="#top" title="Înapoi sus">↑</a>
         </div>
         <div class="section-body">
             <ul>
-            <li>Chatbot-ul trebuie sa ofere raspunsuri concise, clare, fara a se pierde in detalii sau a folosi un limbaj prea elevat.</li>
-            <li>O singura pagina in care utilizator intreaba tot, nu avem cate o file pentru fiecare opera in parte</li>
-            <li>Sa adaugam o poza de profil chatbot-ului, pentru a crea o conexiune mai empatica cu utilizatorul.</li>
+            <li>Chatbot-ul trebuie să ofere răspunsuri concise, clare, fără a se pierde în detalii sau a folosi un limbaj prea elevat.</li>
+            <li>O singură pagină în care utilizator întreabă tot, nu avem câte o filă pentru fiecare operă în parte</li>
+            <li>Să adăugăm o poză de profil chatbot-ului, pentru a crea o conexiune mai empatică cu utilizatorul.</li>
             <li>UI-ul trebuie redus la minimum:
                 <ul>
                 <li>zonă de chat;</li>
@@ -171,12 +200,12 @@
 
       <article class="section-card" id="findings" style="--grad:linear-gradient(135deg, #f97316, #eab308)">
         <div class="section-header">
-          <h2>6. Concluzii și Constatări</h2>
+          <h2>6. Concluzii și constatări</h2>
           <a class="chip" href="#top" title="Înapoi sus">↑</a>
         </div>
         <div class="section-body">
           <ul>
-            <li>Utilizatorii isi doresc un chatbot care sa poate raspunda clar si concis la intrebari, fara a se pierde in detalii</li>
+            <li>Utilizatorii își doresc un chatbot care să poată răspunde clar și concis la întrebări, fără a se pierde în detalii</li>
             <li>Interacțiunea directă prin chat este cea mai naturală pentru utilizatori.</li>
             <li>Întrebările ghidate sau exemplele concrete cresc înțelegerea rapidă a textelor.</li>
             <li>Răspunsurile concise și explicative ajută la claritate și economie de timp.</li>
@@ -189,7 +218,7 @@
   </div>
 
   <footer class="footer">
-    @2025 LitBot
+    © 2025 LitBot · <a href="../home.html">Pagina principală</a> · <a href="m2.html">M2</a> · <a href="m5.html">M5</a> · <a href="m6.html">M6</a> · <a href="m7.html">M7</a> · <a href="m8.html">M8</a>
   </footer>
 </body>
 </html>
