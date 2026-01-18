@@ -70,19 +70,58 @@ p{margin:12px 0}
 }
 .footer{max-width:var(--maxw); margin:40px auto; padding:0 20px 40px; color:var(--muted); font-size:.9rem}
 .section-card .section-header{background:linear-gradient(135deg,#2563eb,#06b6d4)}
+    nav {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 6%;
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,.96);
+    border-bottom: 1px solid #f3f4f6;
+  }
+  .brand {
+    font-weight: 800;
+    font-size: 1.5rem;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 18px;
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+  nav ul a {
+    color: #111827;
+    padding-bottom: 2px;
+  }
+  nav ul a:hover {
+    color: var(--accent1);
+  }
+  article:first-child{
+    margin-top: 0 !important;
+  }
 </style>
 </head>
 <body>
-  <nav class="nav">
-    <div class="nav-inner">
-      <div class="brand">LitBot</div>
-      <a class="button" href="#top">Înapoi sus</a>
+  <nav>
+    <div class="brand">
+      <span style="background: linear-gradient(135deg, #7c3aed, #2563eb); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        <a href="../home.html" style="text-decoration:none">
+          LitBot 📚
+        </a>
+      </span>
     </div>
+    <a href="#top" class="btn btn-primary">Inapoi sus</a>
   </nav>
 
   <header class="header" id="top">
-    <h1>Raport de Cercetare de Piață — LitBot (Etapa M6)</h1>
-    <p>Acest raport rezumă dimensionarea pieței, peisajul competitiv, cota de piață prognozată și proiecțiile de venituri pentru LitBot, un asistent conversațional AI conceput pentru a ajuta elevii de liceu din România să se pregătească pentru Bacalaureatul la literatură.</p>
+    <h1>Raport de Cercetare de Piață</h1>
+    <p>Acest raport rezumă dimensionarea pieței, peisajul competitiv, cota de piață prognozată și proiecțiile de venituri pentru LitBot.</p>
   </header>
 
   <div class="page">
@@ -94,7 +133,7 @@ p{margin:12px 0}
         <li><a href="#competition">Competiție</a></li>
         <li><a href="#projections">Cotă de piață și proiecții</a></li>
         <li><a href="#valuation">Evaluarea pieței și valoarea capturată</a></li>
-        <li><a href="#conclusion">Concluzie</a></li>
+        <li><a href="#conclusion">Concluzie și recomandări</a></li>
       </ul>
     </aside>
 
@@ -106,8 +145,20 @@ p{margin:12px 0}
           <a class="chip" href="#top" title="Înapoi sus">↑</a>
         </div>
         <div class="section-body">
-          <p>Piața adresată de LitBot constă în principal din elevi de liceu din România care se pregătesc pentru examenul național de Bacalaureat la limba și literatura română. Această piață include atât candidații din anul final, cât și elevii din anii anteriori care studiază literatura ca parte a programei de învățământ secundar superior. Publicurile secundare includ părinții care finanțează resursele de pregătire, meditatorii și centrele educaționale mici care caută instrumente digitale pentru a-și completa serviciile, și studenții universitari motivați care au nevoie de recapitulări rapide ale subiectelor literare. Propunerea de valoare de bază a produsului este de a oferi o experiență conversațională la cerere care ghidează înțelegerea și analiza, în loc să ofere eseuri memorate, abordând astfel o problemă bine documentată în rândul candidaților și educatorilor.</p>
-      </div>
+
+          <p><b>Piața LitBot</b> este formată, în primul rând, din elevi de liceu din România care se pregătesc pentru Bacalaureat la limba și literatura română.</p>
+
+          <p>Ne adresăm atât elevilor din clasa a XII-a, cât și celor din clasele X-XI care vor să învețe din timp și să-și consolideze înțelegerea operelor din programă.</p>
+
+          <p><b>Publicuri secundare</b> (care pot influența decizia de cumpărare sau utilizarea):</p>
+          <ul>
+            <li><b>Părinții</b> care finanțează pregătirea elevilor</li>
+            <li><b>Profesori / meditatori</b> care caută un instrument digital ajutător</li>
+            <li><b>Centre educaționale mici</b> care vor să includă un suport digital în serviciile lor</li>
+          </ul>
+
+          <p><b>Propunerea de valoare</b> este o experiență conversațională, la cerere, care ghidează elevul spre înțelegere și analiză (nu spre reproducerea unor eseuri memorate). Astfel, LitBot țintește să ajute elevii să treacă de la „a ști pe de rost” la „a înțelege”.</p>
+        </div>
       </article>
 
       <article class="section-card" id="market-size">
@@ -116,8 +167,18 @@ p{margin:12px 0}
           <a class="chip" href="#top" title="Înapoi sus">↑</a>
         </div>
         <div class="section-body">
-          <p>Estimarea dimensiunii pieței țintă începe cu statisticile educaționale naționale. Cohortele recente din România produc aproximativ 140.000 până la 160.000 de absolvenți de liceu pe an, iar nivelurile anuale de înregistrare la Bacalaureat au fost în mod istoric de peste 120.000 de candidați. Restricționând piața inițială la cei care se pregătesc activ pentru componenta de literatură și permițând utilizatori suplimentari din clasele inferioare care revizuiesc în avans, o piață practică accesibilă pentru un asistent dedicat de literatură română este între 100.000 și 250.000 de utilizatori unici. Extinderea domeniului pentru a include părinții care achiziționează servicii în numele elevilor și achizițiile instituționale mai mici de către școli și centre de meditații mărește moderat piața adresabilă. Această cifră nu include creșterea posibilă prin expansiunea geografică către comunitățile vorbitoare de limba română din străinătate, care ar adăuga utilizatori incrementali dar se află în afara focusului inițial domestic.</p>
-      </div>
+
+          <p>Estimarea dimensiunii pieței pornește de la datele despre categoriile de elevi și numărul de candidați la Bacalaureat.</p>
+
+          <ul>
+            <li>România are, în mod tipic, aproximativ <b>140.000-160.000</b> absolvenți de liceu anual.</li>
+            <li>Numărul anual de înscriși la Bacalaureat este, de regulă, <b>peste 120.000</b> candidați.</li>
+          </ul>
+
+          <p>Pentru LitBot, ne interesează în principal elevii care se pregătesc activ pentru componenta de literatură, plus elevii din clasele X-XI care învață „în avans”. În acest cadru, estimăm o piață practică accesibilă de <b>100.000-250.000</b> utilizatori unici.</p>
+
+          <p>Dacă includem și achiziții instituționale (școli / centre de meditații), piața adresabilă crește semnificativ.</p>
+        </div>
       </article>
 
       <article class="section-card" id="competition">
@@ -126,18 +187,47 @@ p{margin:12px 0}
           <a class="chip" href="#top" title="Înapoi sus">↑</a>
         </div>
         <div class="section-body">
-          <p>Piața este populată de o combinație de jucători tradiționali și digitali. Serviciile tradiționale de meditații particulare rămân o opțiune dominantă plătită în multe regiuni, oferind coaching intensiv unu-la-unu la un cost orar semnificativ. Mai mulți furnizori online și offline publică materiale de studiu statice, compilații de comentarii și notițe descărcabile; aceste resurse sunt utilizate pe scară largă, dar nu sunt interactive și încurajează frecvent învățarea prin memorare. Creatorii de conținut video și seriile de prelegeri online sunt o alternativă gratuită populară, dar din nou nu reușesc să ofere explicații personalizabile, bazate pe dialog, adaptate la înțelegerea actuală a unui elev. Forumurile de colegi și grupurile de studiu oferă asistență ad-hoc, dar sunt inconsistente în ceea ce privește calitatea și alinierea cu programa de Bacalaureat. În ansamblu, câmpul competitiv este fragmentat și nu conține un asistent conversațional adoptat pe scară largă, aliniat la programă pentru literatura română. Această fragmentare creează o oportunitate pentru LitBot de a revendica o poziție diferențiată dacă poate oferi răspunsuri constant precise, aliniate la programă și un model de explicație de încredere și transparent pe care profesorii și părinții îl acceptă.</p>
-      </div>
+
+          <p>Piața este fragmentată și acoperită de soluții foarte diferite ca format și calitate. Principalele alternative pe care le folosesc elevii astăzi sunt:</p>
+
+          <ul>
+            <li><b>Meditații individuale</b> - eficiente, dar din ce în ce mai costisitoare.</li>
+            <li><b>Comentarii și notițe</b> (online/offline) - accesibile, dar neinteractive și adesea orientate spre memorare.</li>
+            <li><b>Conținut video</b> (YouTube / cursuri) - util pentru explicații generale, dar fără personalizare și fără dialog.</li>
+            <li><b>Grupuri și forumuri</b> - suport al comunității, însă calitate inconsistentă și aliniere variabilă la programă.</li>
+          </ul>
+
+          <p>În prezent, nu există un asistent conversațional adoptat pe scară largă care să fie <b>aliniat la programă</b> și optimizat pentru literatura de Bacalaureat. Aici este nișa pe care LitBot poate să o acopere.</p>
+
+          <p>Pentru a câștiga credibilitate (mai ales în fața profesorilor și părinților), diferențierea trebuie susținută prin:</p>
+          <ul>
+            <li>răspunsuri <b>corecte și consecvente</b>, cu terminologie potrivită nivelului de liceu;</li>
+            <li>aliniere clară la <b>cerințele de examen</b> și la programa relevantă;</li>
+            <li><b>transparență</b> (surse/citări) acolo unde este posibil;</li>
+            <li>un mod de explicație care construiește <b>înțelegerea</b>, nu „șabloane de copiat”.</li>
+          </ul>
+        </div>
       </article>
 
       <article class="section-card" id="projections">
         <div class="section-header">
-          <h2>Cotă de piață și proiecții (anii 1–5)</h2>
+          <h2>Cotă de piață și proiecții (anii 1-5)</h2>
           <a class="chip" href="#top" title="Înapoi sus">↑</a>
         </div>
         <div class="section-body">
-          <p>În scopuri de planificare, se presupune un tipar de adoptare în etape. În primul an după lansare, se așteaptă ca adoptarea să fie modestă în timp ce produsul își construiește credibilitatea și rafinează conținutul: o estimare conservatoare plasează abonații activi în intervalul de cinci până la zece mii de utilizatori. În al doilea an, marketingul eficient, recomandările din gură în gură și parteneriatele pilot timpurii cu școli selectate ar trebui să crească baza de utilizatori până la zeci de mii. În al treilea an, cu condiția ca produsul să mențină calitatea și retenția, baza de utilizatori se poate extinde în mod rezonabil în zecile de mii. Anul patru și anul cinci presupun o creștere continuă determinată de maturitatea produsului, acoperirea curriculară a operelor de Bacalaureat și posibila licențiere instituțională; într-un scenariu moderat, utilizatorii ar putea număra între cincizeci de mii și o sută douăzeci de mii până în anul cinci. Aceste cifre de adoptare se traduc în procente de cotă de piață care încep cu o cotă de o singură cifră din piața domestică accesibilă în anul unu și progresează către un procent semnificativ cu două cifre sau cu trei cifre mici până în anul cinci, dacă compania execută cu succes și reține utilizatorii.</p>
-      </div>
+
+          <p>Proiecțiile de mai jos sunt orientative și presupun o adopție în etape: întâi construim încredere (calitate + recomandări), apoi accelerăm prin distribuție și parteneriate.</p>
+
+          <p><b>Scenariu moderat (anii 1-5):</b></p>
+          <ul>
+            <li><b>Anul 1:</b> ~<b>5.000-10.000</b> utilizatori activi (validare și rafinare produs).</li>
+            <li><b>Anul 2:</b> creștere către <b>zeci de mii</b>, susținută de marketing, recomandări și prime colaborări pilot.</li>
+            <li><b>Anul 3:</b> consolidare în zona <b>zecilor de mii</b>, dacă retenția rămâne bună.</li>
+            <li><b>Anul 4-5:</b> extindere către <b>50.000-120.000</b> utilizatori, în funcție de maturitatea produsului și de licențierea instituțională.</li>
+          </ul>
+
+          <p>Ca ordin de mărime, asta înseamnă o cotă de piață care pornește de la un procent mic în primul an și poate ajunge la un procent semnificativ în anii 4-5, dacă produsul își păstrează avantajul de calitate și se distribuie eficient.</p>
+        </div>
       </article>
 
       <article class="section-card" id="valuation">
@@ -146,25 +236,54 @@ p{margin:12px 0}
           <a class="chip" href="#top" title="Înapoi sus">↑</a>
         </div>
         <div class="section-body">
-          <p>Pentru a estima valoarea monetară, un model de preț pe bază de abonament este folosit ca referință. Presupunând un venit anual mediu per utilizator plătitor în regiunea de șaptezeci până la nouăzeci de euro (echivalent cu o taxă lunară mică), piața totală adresabilă pentru baza de utilizatori domestici accesibili de aproximativ 250.000 de utilizatori agregă la o valoare anuală de titlu de aproximativ optsprezece până la douăzeci și două de milioane de euro. În anul unu, cu penetrare și prețuri conservatoare, rata de venituri a LitBot ar fi probabil în ordinul sutelor de mii de euro. În anul trei, sub adoptare moderată, venitul anual poate ajunge la mai multe milioane de euro. În anul cinci, cu zeci de mii până la peste o sută de mii de utilizatori și acceptare largă, venitul anual în ordinul milioanelor de euro cu o singură cifră medie până la câteva milioane de euro este realist sub modelul de abonament. Aceste proiecții sunt sensibile la ratele de conversie, retenție, strategia de prețuri și rata de abandon; un preț mai mic crește potențialul de achiziție dar reduce venitul per utilizator, și invers.</p>
-      </div>
+
+          <p>Pentru estimări financiare, folosim un model de abonament ca reper. La un preț lunar mic (de ordinul <b>20-30 RON</b>), venitul anual per utilizator plătitor este aproximativ <b>70-90 EUR</b> (ordine de mărime).</p>
+
+          <p><b>Ce rezultă la nivel de piață:</b></p>
+          <ul>
+            <li>Dacă ne raportăm la un maxim de <b>~250.000</b> utilizatori domestici accesibili, piața totală poate ajunge la aproximativ <b>18-22 milioane EUR/an</b> (într-un scenariu de adoptare foarte ridicată).</li>
+            <li><b>Anul 1:</b> realist, veniturile ar fi mai degrabă în zona <b>sutelor de mii EUR</b>, cu conversie conservatoare.</li>
+            <li><b>Anul 3:</b> într-un scenariu moderat, veniturile pot ajunge la <b>câteva milioane EUR/an</b>.</li>
+            <li><b>Anul 5:</b> cu zeci de mii (sau peste 100.000) utilizatori și retenție bună, veniturile rămân plauzibile în zona  <b>milioanelor de EUR/an</b>.</li>
+          </ul>
+
+          <p>Aceste estimări depind puternic de <b>conversie</b>, <b>retenție</b> și <b>preț</b>: un preț mai mic poate crește adopția, dar scade venitul per utilizator, iar un preț mai mare poate face invers.</p>
+        </div>
       </article>
 
       <article class="section-card" id="conclusion">
         <div class="section-header">
-          <h2>Concluzie privind profitabilitatea</h2>
+          <h2>Concluzie și recomandări</h2>
           <a class="chip" href="#top" title="Înapoi sus">↑</a>
         </div>
         <div class="section-body">
-          <p>Având în vedere estimările de mai sus, proiectul prezintă o cale plauzibilă către profitabilitate. Natura digitală a produsului permite o scalabilitate marginală ridicată: odată ce modelele de bază de limbaj natural, alinierea la programă și măsurile de control al calității sunt în vigoare, costul incremental al deservirii utilizatorilor suplimentari este scăzut. Factorii critici de succes sunt calitatea produsului, credibilitatea percepută a conținutului, canalele eficiente de distribuție pentru a ajunge la elevi și părinți, și retenția prin valoarea de învățare demonstrată. Dacă echipa îndeplinește aceste condiții și gestionează prudent marketingul și parteneriatele, afacerea ar trebui să atingă pragul de rentabilitate în primii ani și să genereze flux de numerar pozitiv susținut ulterior. Invers, eșecul de a stabili credibilitatea conținutului, rata mare de abandon sau competiția puternică din partea alternativelor gratuite sau bine stabilite ar reduce material perspectivele de profitabilitate. Abordarea recomandată este, prin urmare, investiție conservatoare în calitatea conținutului, validarea de către profesori și parteneriate pilot în timpul lansării timpurii, urmată de scalare măsurată odată ce metricile de retenție arată stabilitate.</p>
-      </div>
+
+          <p>Pe baza dimensiunii pieței și a scenariilor de adopție, LitBot are o cale realistă către profitabilitate. Fiind un produs digital, costul de a servi utilizatori suplimentari scade mult după ce partea de calitate (aliniere, verificare, conținut) este bine pusă la punct.</p>
+
+          <p><b>Ce va conta cel mai mult în practică:</b></p>
+          <ul>
+            <li><b>Calitatea răspunsurilor</b> și consistența lor în timp;</li>
+            <li><b>Credibilitatea</b> (surse/citări și un proces clar de control al calității);</li>
+            <li><b>Distribuția</b> - canale eficiente către elevi și părinți;</li>
+            <li><b>Retenția</b> - utilizatorii trebuie să simtă progres real în înțelegere.</li>
+          </ul>
+
+          <p><b>Riscuri principale:</b></p>
+          <ul>
+            <li>percepția de „informații incerte” dacă nu există transparență și control al calității;</li>
+            <li>abandon ridicat dacă produsul nu oferă valoare constantă în sesiuni repetate;</li>
+            <li>presiune din partea alternativelor gratuite sau deja consacrate.</li>
+          </ul>
+
+          <p>Recomandarea este o creștere etapizată: investiție inițială în calitate și validare cu profesori (pilot), urmată de scalare treptată doar după ce metricile de retenție și satisfacție se stabilizează.</p>
+        </div>
       </article>
 
     </main>
   </div>
 
   <footer class="footer">
-    @2025 LitBot
+    © 2025 LitBot · <a href="../home.html">Pagina principală</a> · <a href="m2.html">M2</a> · <a href="m4.html">M4</a> · <a href="m5.html">M5</a> · <a href="m7.html">M7</a> · <a href="m8.html">M8</a>
   </footer>
 </body>
 </html>
