@@ -25,14 +25,38 @@
 html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.65}
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
-.nav{
-  position:sticky; top:0; z-index:10;
-  backdrop-filter:saturate(1.2) blur(6px);
-  background:rgba(255,255,255,0.75);
-  border-bottom:1px solid var(--border);
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 6%;
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,.96);
+  border-bottom: 1px solid #f3f4f6;
 }
-.nav-inner{max-width:var(--maxw);margin:0 auto;display:flex;gap:20px;align-items:center;justify-content:space-between;padding:12px 20px}
-.brand{font-weight:800;letter-spacing:.2px}
+.brand {
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+nav ul a {
+  color: #111827;
+  padding-bottom: 2px;
+}
+nav ul a:hover {
+  color: var(--accent1);
+}
 .header{max-width:var(--maxw); margin:24px auto 0; padding:24px 20px 0;}
 h1{font-size:2.25rem; line-height:1.2; margin:0 0 12px; letter-spacing:.2px}
 h2{font-size:1.35rem; margin:0}
@@ -84,20 +108,23 @@ li{margin:6px 0}
 .button.primary{background:var(--accent); color:#fff}
 .footer{max-width:var(--maxw); margin:40px auto; padding:0 20px 40px; color:var(--muted); font-size:.9rem}
 .section-card{ margin:26px 0 !important; }
+article:first-child{
+    margin-top: 0 !important;
+    }
 </style>
+
 </head>
 <body>
-  <nav class="nav">
-    <div class="nav-inner">
-      <div class="brand">LitBot</div>
-      <a class="button" href="#top">Înapoi sus</a>
-    </div>
-  </nav>
+<nav>
+  <div class="brand">
+    <span style="background: linear-gradient(135deg, #7c3aed, #2563eb); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">LitBot 📚</span>
+  </div>
+  <a href="#top" class="btn btn-primary">Inapoi sus</a>
+</nav>
 
   <header class="header" id="top">
-    <span class="badge">Descoperirea Clienților</span>
-    <h1>LitBot — Raport de Descoperire a Clienților și Plan</h1>
-    <p>Asistență bazată pe AI pentru Bacalaureatul la Limba și Literatura Română. Învață prin dialog — înțelege, nu doar memorează.</p>
+    <h1>Raport de Descoperire a Clienților</h1>
+    <p>Procesul complet de descoperire a clientului pentru LitBot. De la identificarea problemei la validarea soluției.</p>
   </header>
 
   <div class="page">
@@ -105,24 +132,11 @@ li{margin:6px 0}
 <aside class="sidebar">
   <h4>Cuprins</h4>
   <ul>
-    <li><a href="#how-we-identified-the-problem">Cum am identificat problema</a></li><li><a href="#our-initial-solution-hypothesis">Ipoteza noastră inițială de soluție</a></li><li><a href="#plan-for-customer-discovery-short-overview">Planul de descoperire a clienților (scurtă prezentare)</a></li><li><a href="#discovery-process-detailed">Procesul de descoperire (detaliat)</a></li><li><a href="#findings">Constatări</a></li><li><a href="#how-insights-affect-the-product-decision-log">Cum afectează constatările produsul (jurnal decizii)</a></li><li><a href="#are-we-ready-to-move-to-customer-validation-test-selling">Suntem pregătiți pentru Validarea Clienților (test de vânzare)?</a></li>
+    <li><a href="#how-we-identified-the-problem">Cum am identificat problema</a></li><li><a href="#our-initial-solution-hypothesis">Ipoteza inițială despre soluție</a></li><li><a href="#plan-for-customer-discovery-short-overview">Planul de descoperire a clienților</a></li><li><a href="#discovery-process-detailed">Procesul de descoperire (detaliat)</a></li><li><a href="#findings">Constatări</a></li><li><a href="#how-insights-affect-the-product-decision-log">Cum afectează constatările produsul (jurnal decizii)</a></li><li><a href="#are-we-ready-to-move-to-customer-validation-test-selling">Suntem pregătiți pentru Validarea Clienților?</a></li>
   </ul>
 </aside>
 
     <main>
-      
-    <article class="section-card" id="intro" style="--grad:linear-gradient(135deg, #2563eb, #06b6d4)">
-      <div class="section-header">
-        <h2>Introducere</h2>
-        <a class="chip" href="#top" title="Înapoi sus">↑</a>
-      </div>
-      <div class="section-body">
-        <h1 id="litbot-customer-discovery-report-amp-plan">LitBot — Raport de Descoperire a Clienților &amp; Plan</h1>
-<p><em><strong>Asistență bazată pe AI pentru Bacalaureatul la Limba și Literatura Română</strong></em></p>
-<p><em><strong>Versiune:</strong></em><em><strong> 1.0</strong></em><em><strong>Pregătit pentru:</strong></em><em><strong> Echipa LitBot</strong></em><em><strong>Data:</strong></em><em><strong> 24 Oct 2025</strong></em></p>
-      </div>
-    </article>
-    
 
     <article class="section-card" id="how-we-identified-the-problem" style="--grad:linear-gradient(135deg, #7c3aed, #22d3ee)">
       <div class="section-header">
@@ -132,40 +146,46 @@ li{margin:6px 0}
       <div class="section-body">
         <h3 id="sources-of-initial-insight">Surse de informații inițiale</h3>
 <ul>
-<li>Alexandru a avut dificultăți cu memorarea analizei „Moara cu noroc" în timpul pregătirii proprii pentru Bacalaureat</li>
-<li>Cristina a observat că vărul ei mai mic petrecea ore întregi memorând eseuri fără să poată discuta despre poveste</li>
-<li>Am analizat postări pe Reddit r/robac (subreddit-ul românesc pentru Bac) unde elevii se plâng frecvent de „învățatul pe de rost"</li>
-<li>Schimburi scurte cu 3 profesori de limba și literatura română de la fostul liceu al lui Alexandru</li>
-<li>Discuții informale cu 18-22 de elevi de liceu din rețelele noastre extinse</li>
+<li>Alexandru s-a confruntat direct cu dificultatea de a analiza opera „Moara cu noroc" când se pregătea pentru Bacalaureat. A simțit că memorarea mecanică nu îl ajuta să înțeleagă cu adevărat opera.</li>
+<li>Cristina a observat cum vărul ei mai mic petrecea ore întregi memorând eseuri pe de rost, dar când îl întreba despre poveste sau personaje, acesta nu putea purta o conversație naturală despre text.</li>
+<li>Am analizat postări pe Reddit r/robac (subreddit-ul românesc pentru Bac) unde elevii se plâng frecvent de presiunea de a învăța „pe de rost" și de lipsa înțelegerii reale a textelor.</li>
+<li>Am discutat cu 3 profesori de limba și literatura română de la fostul liceu al lui Alexandru pentru a înțelege perspectiva lor asupra problemei.</li>
+<li>Am purtat conversații informale cu aproximativ 18-22 de elevi de liceu din cercul nostru extins de cunoștințe, confirmând că frustrarea este răspândită.</li>
 </ul>
-<h3 id="observed-pains-from-our-initial-desk-research-and-team-assumptions">Probleme observate (din cercetarea inițială și ipotezele echipei)</h3>
+<h3 id="observed-pains-from-our-initial-desk-research-and-team-assumptions">Probleme observate</h3>
 <ul>
-<li><em><strong>Elevii (clasele XI-XII)</strong></em><em><strong> care se pregătesc pentru Bac tind să </strong></em><em><strong>memoreze eseuri</strong></em><em><strong> și tipare în loc să </strong></em><em><strong>înțeleagă</strong></em><em><strong> textele literare. Aceasta duce la anxietate, încredere scăzută și performanță fragilă în condiții de examen.</strong></em></li>
-<li><em><strong>Profesorii</strong></em><em><strong> au timp limitat pentru a oferi feedback individualizat și pentru a cultiva gândirea critică în clasele mari.</strong></em></li>
-<li><strong>Părinții</strong> doresc instrumente <strong>accesibile</strong> și moderne care cresc motivația și înțelegerea — nu doar „memorează și uită" pe termen scurt</li>
-<li><em><strong>Școlile / platformele</strong></em><em><strong> au nevoie de resurse aliniate la </strong></em><em><strong>programa românească</strong></em><em><strong> care sunt ușor de implementat și respectă cerințele de confidențialitate.</strong></em></li>
+<li>Elevii (clasele XI-XII) care se pregătesc pentru Bac tind să memoreze eseuri și tipare în loc să înțeleagă textele literare. Această abordare duce la anxietate, încredere scăzută și performanță fragilă în condiții de examen.</li>
+<li>Profesorii au timp limitat pentru a oferi feedback individualizat și pentru a cultiva gândirea critică în clasele mari.
+<li>Părinții doresc instrumente accesibile și moderne care cresc motivația și înțelegerea.</li>
+<li>Școlile / platformele au nevoie de resurse aliniate la programa românească care sunt ușor de implementat și respectă cerințele de confidențialitate.</li>
 </ul>
 <h3 id="problem-hypotheses">Ipoteze despre problemă</h3>
 <ul>
-<li><em><strong>P1:</strong></em><em><strong> </strong></em>Elevii și-au exprimat frustrarea<em><strong> </strong></em><em><strong>„Memorez eseuri găsite online/primite de la meditatori, dar nu înțeleg cu adevărat textele."</strong></em></li>
-<li><em><strong>P2:</strong></em><em><strong> Elevii ar prefera un </strong></em><em><strong>asistent interactiv, la cerere</strong></em><em><strong> care încurajează analiza și articularea, nu doar reproducerea.</strong></em></li>
-<li><em><strong>P3:</strong></em><em><strong> Profesorii apreciază un instrument care </strong></em><em><strong>întărește gândirea critică</strong></em><em><strong> și este aliniat la </strong></em><em><strong>cerințele Bac</strong></em><em><strong>, fără a le crește volumul de muncă.</strong></em></li>
-<li><em><strong>P4:</strong></em><em><strong> Părinții sunt dispuși să plătească pentru un instrument care </strong></em><em><strong>îmbunătățește înțelegerea și încrederea</strong></em><em><strong>, nu doar notele prin tocit.</strong></em></li>
-<li>Implicare scăzută: elevii au descris studiul literaturii ca fiind „plictisitor" și „stresant"</li>
-<li>Anxietatea de examen este severă, elevii temându-se că vor uita conținutul memorat</li>
+<li>P1. Elevii și-au exprimat frustrarea: „Memorez eseuri găsite online/primite de la meditatori, dar nu înțeleg cu adevărat textele."</li>
+<li>P2. Elevii ar prefera un asistent interactiv care încurajează analiza și articularea, nu doar reproducerea.</li>
+<li>P3. Profesorii apreciază un instrument care întărește gândirea critică și este aliniat la cerințele Bac, fără a le crește volumul de muncă.</li>
+<li>P4. Părinții sunt dispuși să plătească pentru un instrument care îmbunătățește înțelegerea și încrederea, nu doar notele prin tocit.</li>
+<li>P5. Anxietatea de examen este severă, elevii temându-se că vor uita conținutul memorat.</li>
 </ul>
-<p><em><strong>Criterii de succes pentru problemă (de validat):</strong></em><em><strong> - ≥ </strong></em><em><strong>70%</strong></em><em><strong> dintre elevii intervievați (n≥20) spun că memorarea în loc de înțelegere este o problemă de top 3 când studiază pentru Bac. - ≥ </strong></em><em><strong>60%</strong></em><em><strong> dintre elevi spun că ar încerca un asistent AI </strong></em><em><strong>săptămâna aceasta</strong></em><em><strong> dacă e gratuit; ≥ </strong></em><em><strong>30%</strong></em><em><strong> spun că ar încerca chiar dacă utilizarea gratuită e limitată. - ≥ </strong></em><em><strong>70%</strong></em><em><strong> dintre profesori văd valoare într-un instrument care extrage </strong></em><em><strong>interpretări personale</strong></em><em><strong> și oferă </strong></em><em><strong>explicații verificate</strong></em><em><strong>. - ≥ </strong></em><em><strong>50%</strong></em><em><strong> dintre părinți exprimă </strong></em><em><strong>disponibilitate de plată</strong></em><em><strong> (WTP) la un anumit preț pentru funcții premium.</strong></em></p>
-      </div>
+<h3 id="success-criteria">Criterii de succes (de validat)</h3>
+<ul>
+<li>≥ 70% dintre elevii intervievați spun că memorarea în locul înțelegerii este una dintre principalele probleme atunci când studiază pentru Bac.</li>  
+<li>≥ 60% dintre elevi spun că ar încerca un asistent AI chiar săptămâna aceasta dacă este gratuit.</li>
+<li>≥ 30% spun că ar încerca chiar dacă utilizarea gratuită e limitată.</li>
+<li>≥ 70% dintre profesori văd valoare într-un instrument care extrage interpretări personale și oferă explicații verificate.</li>
+<li>≥ 50% dintre părinți ar fi dispuși să plătească (WTP) pentru funcții premium.</li>
+</ul>
+</div>
     </article>
     
 
     <article class="section-card" id="our-initial-solution-hypothesis" style="--grad:linear-gradient(135deg, #16a34a, #06b6d4)">
       <div class="section-header">
-        <h2>Ipoteza noastră inițială de soluție</h2>
+        <h2>Ipoteza inițială despre soluție</h2>
         <a class="chip" href="#top" title="Înapoi sus">↑</a>
       </div>
       <div class="section-body">
-        <h3 id="21-proposed-solution">2.1 Soluția propusă</h3>
+        <h3 id="21-proposed-solution">Soluția propusă</h3>
 <p><strong>Conceptul soluției:</strong> Un chatbot bazat pe AI (LitBot) care oferă explicații interactive și personalizate ale operelor literare românești, aliniate la programa națională, permițând elevilor să învețe prin dialog în loc de memorare.</p>
 <p><strong>Funcționalități principale ipotezate:</strong></p>
 <ul>
@@ -182,15 +202,13 @@ li{margin:6px 0}
 <li>Creșterea încrederii și performanței la examene</li>
 <li>Accesibil (24/7, de pe orice dispozitiv) și la preț avantajos (vs. 100+ RON/oră meditații)</li>
 </ul>
-<h3 id="22-assumptions-to-test">2.2 Ipoteze de testat</h3>
-<p><strong>Ipoteze despre problemă:</strong></p>
-<p><strong>Ipoteze despre soluție:</strong></p>
+<h3 id="22-assumptions-to-test">Ipoteze despre soluție (de validat)</h3>
 <ul>
-<li>Elevii vor interacționa cu un chatbot pentru învățare (de validat)</li>
-<li>AI-ul conversațional poate explica eficient conceptele literare (de validat)</li>
-<li>Elevii preferă învățarea interactivă în locul conținutului static (de validat)</li>
-<li>Prețul de 10-20 RON/lună este acceptabil (de validat)</li>
-<li>Profesorii/părinții vor susține această metodă de învățare (de validat)</li>
+<li>Elevii vor interacționa cu un chatbot pentru învățare.</li>
+<li>AI-ul conversațional poate explica eficient conceptele literare.</li>
+<li>Elevii preferă învățarea interactivă în locul conținutului static.</li>
+<li>Prețul de 25 RON/lună este acceptabil.</li>
+<li>Profesorii/părinții vor susține această metodă de învățare.</li>
 </ul>
       </div>
     </article>
@@ -198,18 +216,25 @@ li{margin:6px 0}
 
     <article class="section-card" id="plan-for-customer-discovery-short-overview" style="--grad:linear-gradient(135deg, #dc2626, #f59e0b)">
       <div class="section-header">
-        <h2>Planul de descoperire a clienților (scurtă prezentare)</h2>
+        <h2>Planul de descoperire a clienților</h2>
         <a class="chip" href="#top" title="Înapoi sus">↑</a>
       </div>
       <div class="section-body">
+        <h3 id="etape">Etape</h3>
         <ul>
-<li><em><strong>Mai întâi descoperirea problemei</strong></em><em><strong> prin </strong></em><em><strong>interviuri</strong></em><em><strong> semi-structurate și </strong></em><em><strong>chestionare</strong></em><em><strong> pentru </strong></em>3<em><strong> segmente: </strong></em><em><strong>Elevi, Profesori, Părinți</strong></em></li>
-<li><em><strong>Sintetizarea problemelor și alternativelor; cuantificarea urgenței și frecvenței. Stabilirea </strong></em><em><strong>disponibilității de a încerca</strong></em><em><strong>.</strong></em> </li>
-<li><em><strong>Iterarea mesajelor (pagina de destinație), măsurarea </strong></em><em><strong>înscrierilor prin email</strong></em><em><strong> și </strong></em><em><strong>implicării</strong></em><em><strong> pe sarcinile prototipului.</strong></em></li>
-<li><em><strong>Decidem dacă avem </strong></em><em><strong>suficiente dovezi</strong></em><em><strong> pentru a trece la </strong></em><em><strong>Validarea Clienților</strong></em><em><strong> (prețuri, teste de canale, piloturi de vânzări timpurii).</strong></em></li>
+<li>Descoperirea problemei prin interviuri semi-structurate și chestionare pentru 3 segmente: Elevi, Profesori, Părinți</li>
+<li>Sintetizarea problemelor și alternativelor. Cuantificarea urgenței și frecvenței. Stabilirea disponibilității de a încerca. </li>
+<li>Iterarea mesajelor și măsurarea înscrierilor prin email.</li>
+<li>Decidem dacă avem suficiente dovezi pentru a trece la Validarea Clienților (prețuri, canale de testare, pilot de vânzare timpurie).</li>
 </ul>
-<p><em><strong>Eșantion țintă:</strong></em><em><strong> - Elevi: </strong></em><strong>28</strong><em><strong> interviuri + </strong></em><strong>80</strong><em><strong>+</strong></em><em><strong> răspunsuri la chestionar - Profesori: </strong></em><strong>4</strong><em><strong> interviuri - Părinți: </strong></em><strong>10 </strong><em><strong>interviuri</strong></em></p>
-<p><em><strong>Cronologie:</strong></em><em><strong> </strong></em>1–2<em><strong> săptămâni pentru descoperirea problemei</strong></em> și<em><strong> explorarea soluției.</strong></em></p>
+<h3 id="esantion_tinta">Eșantion țintă</h3>
+<ul>  
+<li>Elevi: 28 interviuri + 80+ răspunsuri la chestionar de la elevi din clasele XI-XII care se pregătesc pentru Bacalaureat la Limba și Literatura Română.</li>
+<li>Profesori: 4 interviuri cu profesori de limba și literatura română care predau clasele XI-XII.</li>
+<li>Părinți: 10 interviuri cu părinți ai elevilor din clasele XI-XII.</li>
+</ul>
+<h3 id="timeline">Cronologie</h3>
+<p>1–2 săptămâni pentru descoperirea problemei și explorarea soluției.</p>
       </div>
     </article>
     
@@ -220,99 +245,144 @@ li{margin:6px 0}
         <a class="chip" href="#top" title="Înapoi sus">↑</a>
       </div>
       <div class="section-body">
-        <h3 id="41-customer-segments">4.1 Segmente de clienți</h3>
+        <h3 id="41-customer-segments">Segmente de clienți</h3>
 <ul>
-<li><em><strong>Elevi (clasele XI-XII)</strong></em><em><strong>: utilizatori primari; adoptatorii timpurii sunt probabil cei cu </strong></em><em><strong>anxietate mare la Bac</strong></em><em><strong>, </strong></em><em><strong>implicare scăzută în literatură</strong></em><em><strong> și </strong></em><em><strong>utilizare intensă de YouTube/online</strong></em><em><strong> pentru studiu.</strong></em></li>
-<li><em><strong>Profesori</strong></em><em><strong>: profesori de limba și literatura română; adoptatorii timpurii sunt </strong></em><em><strong>deschiși la inovație</strong></em><em><strong> și dispuși să folosească instrumente digitale pentru teme.</strong></em></li>
-<li><em><strong>Părinți</strong></em><em><strong>: cei care caută alternative accesibile la meditații.</strong></em></li>
+<li>Elevi (clasele XI-XII): public țintă principal; utilizatorii timpurii sunt probabil cei cu anxietate mare la Bac, implicare scăzută în literatură și utilizare intensă de YouTube/online pentru studiu.</li>
+<li>Profesori: profesori de limba și literatura română; utilizatorii timpurii sunt deschiși la inovație și dispuși să folosească instrumente digitale pentru teme.</li>
+<li>Părinți: cei care caută alternative accesibile la meditații.</li>
 </ul>
-<h3 id="42-reaching-participants-recruitment-channels">4.2 Recrutarea participanților (canale de recrutare)</h3>
+<h3 id="42-reaching-participants-recruitment-channels">Recrutarea participanților (canale de recrutare)</h3>
 <ul>
-<li><em><strong>Elevi:</strong></em><em><strong> grupuri de clasă Discord/WhatsApp</strong></em><em><strong>, recomandări de la colegi</strong></em>, rețele personale (am rugat 12 colegi de la UPB să ne conecteze cu frații mai mici și am contactat foștii profesori de liceu care ne-au prezentat elevilor actuali)</li>
-</ul>
-<ul>
-<li><em><strong>Profesori:</strong></em><em><strong> rețele personale.</strong></em></li>
+<li>Elevi: grupuri de clasă Discord/WhatsApp, recomandări de la colegi, rețele personale (am rugat 12 colegi de la UPB să ne conecteze cu frații mai mici și am contactat foștii profesori de liceu care ne-au prezentat elevilor actuali).</li>
 </ul>
 <ul>
-<li><em><strong>Părinți:</strong></em><em><strong> recomandări de la profesori și elevi</strong></em>, rețele personale.</li>
+<li>Profesori: rețele personale.</li>
 </ul>
-<p><em><strong>Stimulente:</strong></em><em><strong> acces la </strong></em><em><strong>LitBot Premium</strong></em><em><strong> timp de o lună după lansare.</strong></em></p>
-<h3 id="43-methods-amp-instruments">4.3 Metode și instrumente</h3>
-<p>A) Interviuri semi-structurate (centrate pe problemă)</p>
 <ul>
-<li><em><strong>Format:</strong></em><em><strong> 20–30 minute, online sau față în față;</strong></em></li>
-<li><em><strong>Scop:</strong></em><em><strong> descoperirea contextului, declanșatorilor, soluțiilor alternative și emoțiilor; evitarea prezentării produsului prea devreme.</strong></em></li>
+<li>Părinți: recomandări de la profesori și elevi, rețele personale.</li>
 </ul>
-<p><em><strong>Ghid de interviu — Elevi</strong></em><em><strong> </strong></em></p>
-<p>1. Povestește-mi despre experiența ta de pregătire pentru examenul de Bacalaureat la Limba și Literatura Română.</p>
-<p>2. Care sunt cele mai mari provocări când studiezi literatura română?</p>
-<p><em><strong>3. Descrie-mi cum te pregătești pentru o operă literară specifică (de ex., „Luceafărul" de Eminescu).</strong></em></p>
-<p>4. <em><strong>Ai folosit </strong></em><em><strong>șabloane de eseu</strong></em><em><strong>, site-uri de comentarii sau AI/YouTube? Ce resurse folosești în prezent pentru studiu? Cum a fost?</strong></em></p>
-<p>5<em><strong>. </strong></em>Ai simțit vreodată că memorezi fără să înțelegi? Povestește-mi despre asta.</p>
-<p>6<em><strong>. Ce se întâmplă când primești o întrebare despre un text pe care nu l-ai memorat perfect? </strong></em></p>
-<p>7. <em><strong>Dacă ai putea schimba un singur lucru la felul în care studiezi literatura, care ar fi?</strong></em></p>
-<p>8<em><strong>. Când ai folosi un asistent ca LitBot?</strong></em> Ce funcționalități ar fi cele mai valoroase pentru tine?</p>
-<p>9. Cum ai prefera să îl accesezi? (Aplicație mobilă, site web, etc.)</p>
-<p>10. Ai plăti pentru ceva de genul? Cât?</p>
-<p><em><strong>Ghid de interviu — Profesori</strong></em></p>
-<p><em><strong>1. </strong></em>Care sunt cele mai mari provocări cu care se confruntă elevii tăi când se pregătesc pentru Bacalaureatul la Limba și Literatura Română?</p>
-<p><em>2. </em>Poți estima ce procent din elevii tăi înțeleg cu adevărat textele literare versus cei care memorează în principal?</p>
-<p><em>3. </em>Observi o diferență în performanța la examen între elevii care înțeleg versus cei care memorează?</p>
-<p><em>4. </em>Din experiența ta, de ce recurg elevii la memorare în loc de înțelegere?</p>
-<p><em>5. Ce ar face ca acest instrument să fie aliniat la programă și de încredere pentru tine?</em></p>
-<p><em>6. </em>Ce i-ar ajuta pe elevii tăi să înțeleagă literatura mai bine în loc să memoreze?</p>
-<p>7. Ce îngrijorări ai despre folosirea AI de către elevi pentru învățarea literaturii?</p>
-<p>8. Ce funcționalități ar face LitBot cel mai valoros pentru elevii tăi?</p>
-<p><em><strong>Ghid de interviu — Părinți</strong></em></p>
-<p><em><strong>1. </strong></em>Care sunt cele mai mari îngrijorări ale tale despre pregătirea copilului tău pentru Literatură?</p>
-<p><em><strong>2. </strong></em>Ce resurse folosește copilul tău în prezent? Cât de mulțumit ești de ele?<em><strong> </strong></em></p>
-<p><em><strong>3. </strong></em>Cât timp și bani investești în prezent în pregătirea copilului tău pentru Literatură?</p>
-<p><em><strong>4. </strong></em>Cum ar arăta o soluție ideală pentru tine ca părinte?</p>
-<p>5. Ce îngrijorări ai despre folosirea AI de către copilul tău pentru învățare?</p>
-<p>6. Dacă LitBot ar fi verificat de profesori universitari și ar costa mai puțin decât meditațiile, ai vrea ca copilul tău să-l folosească?</p>
-<p>7. Cât ai fi dispus să plătești lunar pentru ceva de genul?</p>
-<p>B) Chestionare (cuantificare)</p>
-<p><strong>Chestionar Elevi</strong></p>
-<p> - <em><strong>I rely on </strong></em><em><strong>memorized essays</strong></em><em><strong> when preparing for Bac literature. </strong></em>(1-5 scale)<em><strong>- I feel </strong></em><em><strong>confident</strong></em><em><strong> explaining my own interpretation of a text. </strong></em>(1-5 scale)<em><strong>-  I understand the literary works deeply, not just surface-level.</strong></em></p>
-<p>- I can write a good essay about a text I haven&#x27;t specifically prepared.</p>
-<p>-I often memorize without understanding what I&#x27;m learning.</p>
-<p>-I feel stressed and anxious about the Bac literature exam.</p>
-<p>- There&#x27;s too much content to memorize for the exam.</p>
-<p>-I&#x27;m satisfied with my current study resources.</p>
-<p><em><strong>- </strong></em><strong>Main tools I use now:</strong> (Select all that apply)</p>
-<ul>
-<li>☐ Private tutor (meditații)</li>
-<li>☐ YouTube videos</li>
-<li>☐ Commentary sites (Referat.ro, CoolReferat)</li>
-<li>☐ General AI (ChatGPT, Claude)</li>
-<li>☐ School materials only</li>
-<li>☐ Study groups</li>
-<li>☐ Other: ___________</li>
-</ul>
-<p><em><strong>- How satisfied are you with your current study resources? (1-5 scale)</strong></em></p>
-<p> - In your own words, what is the biggest challenge you face in preparing for the Literature Baccalaureate? (Open text)-  I would try an interactive AI helper for literature this week.</p>
-<p>- How interested would you be in using LitBot? (1-5 scale)</p>
-<p>- <strong>What features would be most valuable to you? (Rank top 3)</strong> Ranking results:</p>
-<ul>
-<li>Interactive Q&amp;A about literary texts: 131 votes (89%)</li>
-<li>Curriculum-aligned content verification: 98 votes (67%)</li>
-<li>Practice essay writing with feedback: 87 votes (59%)</li>
-<li>Character/theme analysis breakdowns: 76 votes (52%)</li>
-<li>Quizzes and self-assessment: 63 votes (43%)</li>
-<li>Study progress tracking: 41 votes (28%)</li>
-<li>Discussion forums: 23 votes (16%)</li>
-</ul>
-<p><strong>- How would you prefer to access LitBot?</strong></p>
-<ul>
-<li>Mobile app: 67 (46%)</li>
-<li>Website: 21 (14%)</li>
-<li>Both: 52 (35%)</li>
-<li>WhatsApp/Telegram bot: 7 (5%)</li>
-</ul>
-<p> -Would you be interested in participating in a test of LitBot?</p>
-<p><em><strong>- Email (optional) to join the </strong></em><em><strong>early access</strong></em><em><strong> list.</strong></em></p>
+Stimulente: acces la LitBot Premium timp de o lună după lansare.</p>
+
+  <h3 id="methods-instruments">Metode și instrumente</h3>
+  
+  <!-- Interviuri Semi-structurate -->
+  <div class="method-block">
+    <h4>A) Interviuri semi-structurate (centrate pe problemă)</h4>
+    <ul class="method-specs">
+      <li>Format: 20–30 minute, online sau față în față</li>
+      <li>Scop: Descoperirea contextului, declanșatorilor, soluțiilor alternative și emoțiilor; evitarea prezentării produsului prea devreme</li>
+    </ul>
+
+    <!-- Ghid Elevi -->
+    <div class="interview-guide">
+      <h4>📚 Ghid de interviu — Elevi</h4>
+      <ol class="interview-questions">
+        <li>Povestește-mi despre experiența ta de pregătire pentru examenul de Bacalaureat la Limba și Literatura Română.</li>
+        <li>Care sunt cele mai mari provocări când studiezi literatura română?</li>
+        <li>Descrie-mi cum te pregătești pentru o operă literară specifică (de ex., „Luceafărul" de Eminescu).</li>
+        <li>Ai folosit șabloane de eseu, site-uri de comentarii sau AI/YouTube? Ce resurse folosești în prezent pentru studiu? Cum a fost?</li>
+        <li>Ai simțit vreodată că memorezi fără să înțelegi? Povestește-mi despre asta.</li>
+        <li>Ce se întâmplă când primești o întrebare despre un text pe care nu l-ai memorat perfect?</li>
+        <li>Dacă ai putea schimba un singur lucru la felul în care studiezi literatura, care ar fi?</li>
+        <li>Când ai folosi un asistent ca LitBot? Ce funcționalități ar fi cele mai valoroase pentru tine?</li>
+        <li>Cum ai prefera să îl accesezi? (Aplicație mobilă, site web, etc.)</li>
+        <li>Ai plăti pentru ceva de genul? Cât?</li>
+      </ol>
+    </div>
+
+    <!-- Ghid Profesori -->
+    <div class="interview-guide">
+      <h4>👨‍🏫 Ghid de interviu — Profesori</h4>
+      <ol class="interview-questions">
+        <li>Care sunt cele mai mari provocări cu care se confruntă elevii tăi când se pregătesc pentru Bacalaureatul la Limba și Literatura Română?</li>
+        <li>Poți estima ce procent din elevii tăi înțeleg cu adevărat textele literare versus cei care memorează în principal?</li>
+        <li>Observi o diferență în performanța la examen între elevii care înțeleg versus cei care memorează?</li>
+        <li>Din experiența ta, de ce recurg elevii la memorare în loc de înțelegere?</li>
+        <li>Ce ar face ca acest instrument să fie aliniat la programă și de încredere pentru tine?</li>
+        <li>Ce i-ar ajuta pe elevii tăi să înțeleagă literatura mai bine în loc să memoreze?</li>
+        <li>Ce îngrijorări ai despre folosirea AI de către elevi pentru învățarea literaturii?</li>
+        <li>Ce funcționalități ar face LitBot cel mai valoros pentru elevii tăi?</li>
+      </ol>
+    </div>
+
+    <!-- Ghid Părinți -->
+    <div class="interview-guide">
+      <h4>👪 Ghid de interviu — Părinți</h4>
+      <ol class="interview-questions">
+        <li>Care sunt cele mai mari îngrijorări ale tale în legătură cu pregătirea copilului tău pentru Literatură?</li>
+        <li>Ce resurse folosește copilul tău în prezent? Cât de mulțumit ești de ele?</li>
+        <li>Cât timp și bani investești în prezent în pregătirea copilului tău pentru Literatură?</li>
+        <li>Cum ar arăta o soluție ideală pentru tine ca părinte?</li>
+        <li>Ce îngrijorări ai despre folosirea AI de către copilul tău pentru învățare?</li>
+        <li>Dacă LitBot ar fi verificat de profesori universitari și ar costa mai puțin decât meditațiile, ai vrea ca copilul tău să-l folosească?</li>
+        <li>Cât ai fi dispus să plătești lunar pentru ceva de genul?</li>
+      </ol>
+    </div>
+  </div>
+
+  <!-- Chestionare -->
+  <div class="method-block">
+    <h4>B) Chestionare (cuantificare)</h4>
+    
+    <div class="questionnaire">
+      <h4>📊 Chestionar Elevi</h4>
+      
+      <div class="question-group">
+        <p class="question-label"><strong>Întrebări pe scală 1-5:</strong></p>
+        <ul class="scale-questions">
+          <li>Mă bazez pe eseuri memorate când mă pregătesc pentru Bacalaureatul la Literatură.</li>
+          <li>Mă simt încrezător/încrezătoare când explic propria interpretare a unui text.</li>
+          <li>Înțeleg operele literare în profunzime, nu doar la nivel superficial.</li>
+          <li>Pot scrie un eseu bun despre un text pe care nu l-am pregătit în mod special.</li>
+          <li>Adesea memorez fără să înțeleg ceea ce învăț.</li>
+          <li>Mă simt stresat/ă și anxios/anxioasă în legătură cu examenul de Bacalaureatul la Literatură.</li>
+          <li>Există prea mult conținut de memorat pentru examen.</li>
+          <li>Sunt mulțumit/ă de resursele mele actuale de studiu.</li>
+          <li>Cât de interesat/ă ai fi să folosești LitBot?</li>
+          <li>Ai fi interesat/ă să participi la testarea LitBot?</li>
+        </ul>
       </div>
-    </article>
+
+      <div class="question-group">
+        <p class="question-label"><strong>Principalele instrumente pe care le folosesc în prezent:</strong> (Bifează tot ce se aplică)</p>
+        <ul class="checkbox-list">
+          <li>☐ Meditații private</li>
+          <li>☐ Videoclipuri YouTube</li>
+          <li>☐ Site-uri de comentarii (Referat.ro)</li>
+          <li>☐ AI general (ChatGPT, Claude)</li>
+          <li>☐ Doar materiale școlare</li>
+          <li>☐ Grupuri de studiu</li>
+          <li>☐ Altele: ___________</li>
+        </ul>
+      </div>
+
+      <div class="question-group">
+        <p class="question-label"><strong>În propriile tale cuvinte, care este cea mai mare provocare cu care te confrunți în pregătirea pentru Bacalaureatul la Literatură?</strong> (Răspuns liber)</p>
+      </div>
+      <div class="question-group">
+        <p class="question-label"><strong>Care sunt caracteristicile pe care le consideri cele mai valoroase?</strong> (top 3)</p>
+          <ul class="ranking-results">
+            <li>Întrebări și răspunsuri interactive despre texte literare</li>
+            <li>Verificarea conținutului aliniat la curriculum</li>
+            <li>Exersarea scrierii eseului cu feedback</li>
+            <li>Analize detaliate ale personajelor/temelor</li>
+            <li>Chestionare și autoevaluare</li>
+            <li>Urmărirea progresului în studiu</li>
+          </ul>
+      </div>
+
+      <div class="question-group">
+        <p class="question-label"><strong> Cum ai prefera să accesezi LitBot?</strong></p>
+          <ul class="preffered-access-results">
+          <li>Aplicație mobilă</li>
+          <li>Website</li>
+          <li>Amandouă</li>
+          <li>WhatsApp</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</article>
     
 
     <article class="section-card" id="findings" style="--grad:linear-gradient(135deg, #f97316, #eab308)">
@@ -321,87 +391,119 @@ li{margin:6px 0}
         <a class="chip" href="#top" title="Înapoi sus">↑</a>
       </div>
       <div class="section-body">
-        <p><em><strong>Dovezi colectate între </strong></em><strong>16</strong><em><strong>–23 Oct 2025</strong></em><em><strong> (</strong></em>8<em><strong> zile) din interviuri rapide și chestionare scurte</strong></em>.</p>
-<h3 id="51-interview-insights-students">5.1 Constatări din interviuri — Elevi</h3>
-<h3 id="emstrongtop-painsstrongem"><em><strong>Principalele probleme:</strong></em></h3>
+        <p>Dovezi colectate între 16–23 Oct 2025 (8 zile) din interviuri rapide și chestionare scurte.</p>
+<h3 id="51-interview-insights-students">Constatări din interviuri — Elevi</h3>
 <ul>
-<li><em><strong>Memorarea eseurilor/șabloanelor în loc de înțelegere (</strong></em>25<em><strong>/28).</strong></em></li>
-<li><em><strong>Dificultăți în structurarea propriei analize sub presiunea timpului (</strong></em>22<em><strong>/28).</strong></em></li>
-<li><em><strong>Anxietate și încredere scăzută în </strong></em>propriile abilități<em><strong> (</strong></em>18<em><strong>/28).</strong></em></li>
-<li><em><strong>Alternative actuale:</strong></em><em><strong> </strong></em></li>
-<li><em><strong>site-uri de comentarii/PDF-uri (</strong></em>22<em><strong>/28)</strong></em></li>
-<li><em><strong>explicații pe YouTube (17/28)</strong></em></li>
-<li><em><strong>chat-uri AI generale (</strong></em>10<em><strong>/28)</strong></em></li>
-<li><em><strong>meditații particulare (22/28).</strong></em></li>
-<li><em><strong>Citate:</strong></em></li>
-<li><em><strong>"</strong></em>Este foarte stresant. Am 20 de opere de învățat și simt că nu am timp să le înțeleg pe toate. Doar învăț comentarii găsite pe internet.<em><strong> — </strong></em><em><strong>S3</strong></em></li>
-<li><em><strong>"Aș vrea să mă ghideze pas cu pas, nu să-mi dea eseul gata. Ceva interactiv, nu doar să citesc text" — </strong></em><em><strong>S6</strong></em></li>
+<li><strong>Probleme principale identificate:</strong></li>
+<ul>
+<li>Memorarea eseurilor/șabloanelor în loc de înțelegere (25/28).</li>
+<li>Dificultăți în structurarea propriei analize sub presiunea timpului (22/28).</li>
+<li>Anxietate și încredere scăzută în propriile abilități (18/28).</li>
+</ul>
+<li><strong>Alternative actuale: </strong></li>
+<ul>
+<li>site-uri de comentarii/PDF-uri (22/28)</li>
+<li>explicații pe YouTube (17/28)</li>
+<li>chat-uri AI generale (10/28)</li>
+<li>meditații particulare (22/28).</li>
+</ul>
 <li><strong>Disponibilitate de a încerca LitBot:</strong></li>
+<ul>
 <li>Ar încerca săptămâna aceasta dacă e gratuit: 21/28</li>
 <li>Ar încerca chiar și cu limite de utilizare: 9/28</li>
 </ul>
-<h3 id="52-interview-insights-teachers">5.2 Constatări din interviuri — Profesori</h3>
+<li><strong>Citate:</strong></li>
+<ul>
+<li>"Este foarte stresant. Am 20 de opere de învățat și simt că nu am timp să le înțeleg pe toate. Doar învăț comentarii găsite pe internet. — S3</li>
+<li>"Aș vrea să mă ghideze pas cu pas, nu să-mi dea eseul gata. Ceva interactiv, nu doar să citesc text" — S6</li>
+</ul>
+</ul>
+<h3 id="52-interview-insights-teachers">Constatări din interviuri — Profesori</h3>
 <ul>
 <li><strong>Principalele probleme:</strong> </li>
+<ul>
 <li>Elevii prioritizează memorarea în fața înțelegerii</li>
 <li>Timp limitat pentru feedback individualizat în timpul orelor</li>
-<li>Implicare scăzută a elevilor cu textele literare</li>
+<li>Implicare scăzută a elevilor în înțelegerea textelor literare</li>
+</ul>
 <li><strong>Condiții de adoptare:</strong> </li>
+<ul>
 <li>Trebuie să fie aliniat la cerințele programei pentru Bac</li>
 <li>Ar trebui să stimuleze raționamentul elevilor în loc să ofere răspunsuri complete</li>
 <li>Necesită controale pentru profesori (fără generare de eseuri complete)</li>
+</ul>
 <li><strong>Îngrijorări:</strong> </li>
+<ul>
 <li>Potențial de trișare/necinste academică (2/4)</li>
 <li>Acuratețea explicațiilor generate de AI (2/4)</li>
-<li><strong>Citat:</strong> "La subiectul III (eseu), se vede clar. Cei care înțeleg scriu fluid și adaptat la cerință. Cei care memorează scriu rigid și des irelevant." — <strong>T2</strong></li>
+</ul>
 <li><strong>Susținere pentru concept:</strong></li>
+<ul>
 <li>Ar recomanda elevilor: 3/4 (75%)</li>
 <li>Văd valoare într-un instrument ghidat, aliniat la programă: 3/4 (75%)</li>
 </ul>
-<h3 id="53-interview-insights-parents">5.3 Constatări din interviuri — Părinți</h3>
+<li><strong>Citat:</strong> "La subiectul III (eseu), se vede clar. Cei care înțeleg scriu fluid și adaptat la cerință. Cei care memorează scriu rigid și des irelevant." — <strong>T2</strong></li>
+</ul>
+<h3 id="53-interview-insights-parents">Constatări din interviuri — Părinți</h3>
 <ul>
 <li><strong>Rezultate dorite:</strong> </li>
+<ul>
 <li>Rezultate și note mai bune la examen</li>
 <li>Încredere crescută în abilitățile copilului</li>
 <li>Alternativă mai accesibilă la meditațiile particulare</li>
+</ul>
 <li><strong>Disponibilitate de plată (preț lunar):</strong> </li>
+<ul>
 <li>Ar plăti ceva: 6/10</li>
 <li>Interval de preț preferat: 20–30 RON/lună</li>
 <li>Interes pentru reducere anuală: 5/10</li>
+</ul>
 <li><strong>Analiză de preț Van Westendorp (preliminar, eșantion mic):</strong></li>
+<ul>
 <li>Prea ieftin: &lt;15 RON</li>
 <li>Valoare bună: 19–25 RON</li>
 <li>Scump dar acceptabil: 29–39 RON</li>
 <li>Prea scump: &gt;49 RON</li>
 <li>Preț optim: ~25 RON/lună</li>
 </ul>
-<h3 id="54-student-survey-highlights">5.4 Rezultate relevante din chestionarul pentru elevi</h3>
+</ul>
+<h3 id="54-student-survey-highlights">Rezultate relevante din chestionarul pentru elevi</h3>
 <ul>
 <li><strong>Validarea problemei:</strong></li>
+<ul>
 <li>Se bazează pe memorare des sau foarte des: 69/86 (80%)</li>
 <li>Nu se simt încrezători în formularea propriei interpretări: 52/86 (60%)</li>
 <li>Se simt stresați/anxioși de examenul de Bac la literatură: 71/86 (83%)</li>
+</ul>
 <li><strong>Utilizarea instrumentelor actuale (alegere multiplă):</strong></li>
+<ul>
 <li>Videoclipuri YouTube: 61%</li>
-<li>Site-uri de comentarii (Referat.ro, CoolReferat): 54%</li>
+<li>Site-uri de comentarii (Referat.ro): 54%</li>
 <li>AI general (ChatGPT, Claude): 39%</li>
 <li>Meditații particulare: 24%</li>
 <li>Doar materiale școlare: 18%</li>
+</ul>
 <li><strong>Interes pentru LitBot:</strong></li>
+<ul>
 <li>Ar încerca un asistent AI săptămâna aceasta: 58/86 (67%)</li>
 <li>Ar încerca chiar și cu limite de utilizare gratuită: 27/86 (31%)</li>
 <li>Nivel de interes 4–5 (pe scala de 5 puncte): 71/86 (83%)</li>
+</ul>
 <li><strong>Funcționalități cele mai apreciate (clasate în top 3):</strong></li>
+<ul>
 <li>Întrebări și răspunsuri interactive despre texte literare: 89%</li>
 <li>Conținut verificat aliniat la programă: 67%</li>
 <li>Practică de scriere a eseurilor cu feedback: 59%</li>
 <li>Analize detaliate ale personajelor/temelor: 52%</li>
 <li>Teste și autoevaluare: 43%</li>
+</ul>
 <li><strong>Metoda preferată de acces:</strong></li>
+<ul>
 <li>Aplicație mobilă: 46%</li>
 <li>Atât web cât și mobil: 35%</li>
 <li>Doar site web: 14%</li>
-<li>Bot WhatsApp/Telegram: 5%</li>
+<li>WhatsApp: 5%</li>
+</ul>
 </ul>
       </div>
     </article>
@@ -413,8 +515,8 @@ li{margin:6px 0}
         <a class="chip" href="#top" title="Înapoi sus">↑</a>
       </div>
       <div class="section-body">
-        <h3 id="strong61-core-functionality-changesstrong"><strong>6.1 Modificări ale funcționalității de bază</strong></h3>
-<p><strong>1. Flux cu schița întâi, înainte de elaborare</strong></p>
+        <h3 id="strong61-core-functionality-changesstrong"><strong>Modificări ale funcționalității de bază</strong></h3>
+<p><strong>1. Flow bazat pe schiță, urmat de elaborare</strong></p>
 <ul>
 <li><strong>Motivație:</strong> Elevii (22/28) au dificultăți în structurarea analizei; profesorii vor ghidaj nu răspunsuri</li>
 <li><strong>Modificare:</strong></li>
@@ -429,7 +531,7 @@ li{margin:6px 0}
 <p><strong>3. Funcționalitatea Mod Examen</strong></p>
 <ul>
 <li><strong>Motivație:</strong> Elevii (18/28) au menționat anxietatea de examen și presiunea timpului ca probleme majore</li>
-<li><strong>Modificare:</strong> Cronometru de 60 de minute, solicitări ghidate de rubrica, posibilitatea de export a eseului în .docx</li>
+<li><strong>Modificare:</strong> Cronometru de 60 de minute, solicitări ghidate de rubrică</li>
 <li><strong>Status:</strong> De făcut • Responsabil: Alexandru</li>
 </ul>
 <p><strong>4. „Arată-ți raționamentul" + citări</strong></p>
@@ -438,17 +540,11 @@ li{margin:6px 0}
 <li><strong>Modificare:</strong> Buton pentru a arăta pașii de raționament; citare din surse curriculare și interpretări critice</li>
 <li><strong>Status:</strong> De făcut • Responsabil: Alexandru</li>
 </ul>
-<h3 id="strong62-business-model-amp-growthstrong"><strong>6.2 Model de afaceri și creștere</strong></h3>
-<p><strong>5</strong><strong>. Test de preț bazat pe cercetarea WTP</strong></p>
+<h3 id="strong62-business-model-amp-growthstrong"><strong>Model de afacere și creștere</strong></h3>
+<p><strong>Test de preț bazat pe cercetarea WTP</strong></p>
 <ul>
 <li><strong>Motivație:</strong> Interviurile cu părinții au sugerat intervalul optim de 20–30 RON; trebuie să testăm sensibilitatea la preț</li>
 <li><strong>Modificare:</strong> Testarea prețului lunar la 25 RON vs 29 RON; ofertă anuală early-bird la 249 RON (vs 348 RON)</li>
-<li><strong>Status:</strong> Planificat • Responsabil: Anca</li>
-</ul>
-<p><strong>6. Program de recomandări pentru elevi</strong></p>
-<ul>
-<li><strong>Motivație:</strong> Elevii au sugerat un mecanism de creștere virală; reduce costul de achiziție</li>
-<li><strong>Modificare:</strong></li>
 <li><strong>Status:</strong> Planificat • Responsabil: Anca</li>
 </ul>
       </div>
@@ -457,7 +553,7 @@ li{margin:6px 0}
 
     <article class="section-card" id="are-we-ready-to-move-to-customer-validation-test-selling" style="--grad:linear-gradient(135deg, #2563eb, #06b6d4)">
       <div class="section-header">
-        <h2>Suntem pregătiți pentru Validarea Clienților (test de vânzare)?</h2>
+        <h2>Suntem pregătiți pentru Validarea Clienților?</h2>
         <a class="chip" href="#top" title="Înapoi sus">↑</a>
       </div>
       <div class="section-body">
@@ -487,8 +583,8 @@ li{margin:6px 0}
     </main>
   </div>
 
-  <footer class="footer">
-    @2025 LitBot
+   <footer class="footer">
+    © 2025 LitBot · <a href="../home.html">Pagina principală</a> · <a href="m4.html">M4</a> · <a href="m5.html">M5</a> · <a href="m6.html">M6</a> · <a href="m7.html">M7</a> · <a href="m8.html">M8</a>
   </footer>
 </body>
 </html>
