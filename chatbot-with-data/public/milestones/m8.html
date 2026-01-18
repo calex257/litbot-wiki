@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>LitBot – Etapa M8: Prima Vânzare</title>
+  <title>LitBot - Etapa M8: Prima Vânzare</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
@@ -50,19 +50,57 @@
     table th{background:#f8fafc; font-weight:600;}
     .quote-box{background:#f8fafc; border-left:4px solid #2563eb; padding:12px 16px; margin:12px 0; font-style:italic;}
     .highlight-stat{background:#dbeafe; padding:8px 12px; border-radius:8px; display:inline-block; margin:4px 0; font-weight:600;}
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 6%;
+      backdrop-filter: blur(10px);
+      background: rgba(255,255,255,.96);
+      border-bottom: 1px solid #f3f4f6;
+    }
+    .brand {
+      font-weight: 800;
+      font-size: 1.5rem;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 18px;
+      margin: 0;
+      padding: 0;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    nav ul a {
+      color: #111827;
+      padding-bottom: 2px;
+    }
+    nav ul a:hover {
+      color: var(--accent1);
+    }
+    article:first-child{
+      margin-top: 0 !important;
+    }
   </style>
 </head>
 <body>
-  <nav class="nav">
-    <div class="nav-inner">
-      <div class="brand">LitBot</div>
-      <a class="button" href="#top">Înapoi sus</a>
+  <nav>
+    <div class="brand">
+      <span style="background: linear-gradient(135deg, #7c3aed, #2563eb); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+        <a href="./home.html" style="text-decoration:none">
+          LitBot 📚
+        </a>
+      </span>
     </div>
+    <a href="#top" class="btn btn-primary">Inapoi sus</a>
   </nav>
 
   <header class="header" id="top">
-    <span class="badge">Etapa M8</span>
-    <h1>LitBot – Prima Vânzare</h1>
+    <h1>Prima Vânzare</h1>
     <p>Un prototip funcțional care demonstrează propunerea de valoare de bază cu feedback real de la utilizatori</p>
   </header>
 
@@ -85,12 +123,12 @@
         </div>
         <div class="section-body">
           
-          <h3>Cohorta de test</h3>
-          <p><strong>17 participanți:</strong> 14 elevi (clasele 10-12), 2 profesori, 1 utilizator curios ne-elev</p>
-          <p><strong>Metoda de colectare:</strong> Formular de feedback structurat după utilizarea LitBot pentru teme reale/sarcini de studiu</p>
+          <h3>Grupul de test</h3>
+          <p><strong>17 participanți:</strong> 14 elevi (clasele 10-12), 2 profesori, 1 utilizator curios care nu e elev</p>
+          <p><strong>Cum am colectat feedback-ul:</strong> Participanții au folosit LitBot pentru teme reale și apoi au completat un formular de feedback structurat</p>
           
           <div class="metric-box">
-            <strong>Calitatea răspunsurilor pe tipul de utilizator</strong>
+            <strong>Evaluare pe tip de utilizator</strong>
             <table>
               <thead>
                 <tr>
@@ -123,7 +161,7 @@
             </table>
           </div>
 
-          <h3>Teme principale de feedback pozitiv</h3>
+          <h3>Aspecte apreciate(feedback pozitiv)</h3>
           
           <div class="quote-box">
             <strong>Claritate și înțelegere (11 mențiuni):</strong>
@@ -151,14 +189,14 @@
           </div>
 
           <div class="quote-box">
-            <strong>Acoperire cuprinzătoare (4 mențiuni):</strong>
+            <strong>Acoperire largă (4 mențiuni):</strong>
             <ul>
               <li>"Pot sa intreb orice, nu trebuie sa caut pe 10 site-uri diferite"</li>
               <li>"Imi place ca intra in detalii si in acelasi timp explica opera pe intelesul meu, nu cu cuvinte complicate ca in unele comentarii de pe net"</li>
             </ul>
           </div>
 
-          <h3>Cereri critice de îmbunătățire</h3>
+          <h3>Aspecte de îmbunătățit</h3>
           <table>
             <thead>
               <tr>
@@ -184,7 +222,7 @@
                 <td>🟡 Medie</td>
               </tr>
               <tr>
-                <td><strong>Formatare mai bună (liste cu buline)</strong></td>
+                <td><strong>Formatare mai bună (liste cu bullet points)</strong></td>
                 <td>2</td>
                 <td>🟡 Medie</td>
               </tr>
@@ -199,7 +237,7 @@
                 <td>🟢 Scăzută</td>
               </tr>
               <tr>
-                <td><strong>Mod voce/vorbitor</strong></td>
+                <td><strong>Mod vocal</strong></td>
                 <td>1</td>
                 <td>🟢 Scăzută</td>
               </tr>
@@ -207,24 +245,24 @@
             </tbody>
           </table>
 
-          <h3>Povești remarcabile de la utilizatori</h3>
+          <h3>Exemple concrete de feedback</h3>
           
           <div class="validation-evidence">
-            <strong>Poveste de succes – Elev recuperează după o absență:</strong>
+            <strong>Poveste de succes - Elev recuperează după o absență:</strong>
             <p><em>"Am lipsit la ora in care s-a predat Ion si a doua zi am avut test din el. Am folosit LitBotul ca sa imi explice ce se intampla si am reusit sa iau nota destul de buna"</em></p>
-            <p><strong>Insight:</strong> LitBot permite învățarea independentă, validând cazul de utilizare dincolo de suplimentul tradițional pentru clasă.</p>
+            <p><strong>Insight:</strong> LitBot susține învățarea independentă și funcționează util și în situații „de urgență” pe termen scurt, nu doar ca supliment pentru ore.</p>
           </div>
 
           <div class="validation-evidence">
-            <strong>Recomandare de la profesor – Gândire critică:</strong>
+            <strong>Recomandare de la profesor - Gândire critică:</strong>
             <p><em>"In sfarsit un instrument care promoveaza intelegerea, nu copiatul. Elevii care l-au folosit vin la ore cu intrebari mai bune si pot sa discute despre opere."</em></p>
-            <p><strong>Insight:</strong> Abordarea conversațională abordează cu succes îngrijorările profesorilor despre copiat, permițând parteneriate instituționale.</p>
+            <p><strong>Insight:</strong> Abordarea conversațională îi face pe profesori mai puțin îngrijorați legat de copiat și mai deschiși la a folosi produsul, deschizându-se astfel ușa pentru parteneriate oficiale cu instituțiile de învățământ.</p>
           </div>
 
           <div class="validation-evidence">
-            <strong>Feedback critic – Îngrijorări privind acuratețea:</strong>
+            <strong>Feedback critic - Îngrijorări privind acuratețea:</strong>
             <p><em>"Sunt ingrijorat de acuratetea informatiilor pe termen lung. Cum garantati ca raspunsurile sunt mereu corecte si actualizate? As vrea sa vad surse si bibliografie pentru fiecare explicatie."</em></p>
-            <p><strong>Acțiune necesară:</strong> Implementarea sistemului de citări și procesului de revizuire de către experți pentru adoptare instituțională.</p>
+            <p><strong>Acțiune necesară:</strong> Trebuie introdus unui sistem de citări/surse și un proces de revizuire (de către experți) pentru a susține adopția în mediul instituțional.</p>
           </div>
         </div>
       </article>
@@ -238,8 +276,8 @@
         <div class="section-body">
 
           <p>
-            Succesul MVP-ului este evaluat folosind <strong>17 răspunsuri reale de la utilizatori</strong> colectate după utilizarea autentică a produsului.
-            Indicatorii oferă dovezi ale potrivirii problemă-soluție, valorii de învățare și disponibilității de plată.
+            Succesul MVP-ului este evaluat folosind <strong>17 răspunsuri reale de la utilizatori</strong> colectate după utilizarea LitBot pentru teme și alte situații din viața reală.
+            Din indicatorii de mai jos se observă gradul de potrivire a soluției cu problema și valoarea pe  care produsul nostru o aduce. De asemenea, se reflectă și intenția de plată a utilizatorilor.
           </p>
 
           <h3>Indicatori primari de validare</h3>
@@ -254,12 +292,12 @@
               <li><span class="highlight-stat">2 / 17 (11.8%)</span> — La fel/neclar</li>
             </ul>
             <p><b>Răspunsuri pozitive: 88.2%</b></p>
-            <p><b>✅ Validare:</b> Depășește pragul de 80%. Confirmă că majoritatea utilizatorilor experimentează înțelegere îmbunătățită, validând propunerea de valoare de bază.</p>
+            <p><b>✅ Validare:</b> Depășește pragul de 80%, ceea ce arată că, pentru majoritatea utilizatorilor, LitBot chiar ajută la o înțelegere mai bună a literaturii și confirmă valoarea de bază a produsului.</p>
           </div>
 
           <div class="metric-box">
             <strong>2. Satisfacția generală cu produsul</strong>
-            <p><b>Indicator:</b> Evaluarea experienței generale (1–5)</p>
+            <p><b>Indicator:</b> Evaluarea experienței generale (1-5)</p>
             <ul>
               <li>⭐⭐⭐⭐⭐ (5/5) — 7 utilizatori (41.2%)</li>
               <li>⭐⭐⭐⭐ (4/5) — 5 utilizatori (29.4%)</li>
@@ -267,12 +305,12 @@
             </ul>
             <p><span class="highlight-stat">Utilizatori care au evaluat cu 4 sau 5: 12 / 17 (70.6%)</span></p>
             <p><b>Scor mediu:</b> 4.1 / 5</p>
-            <p><b>✅ Validare:</b> Depășește pragul de 70%. Calitatea MVP-ului este suficientă pentru utilizare continuă în ciuda limitărilor de stadiu incipient.</p>
+            <p><b>✅ Validare:</b> Trece de pragul de 70%, fapt care sugerează că MVP-ul este deja suficient de bun încât oamenii să îl folosească în continuare, chiar dacă încă are limitările așteptate de la o versiune la început.</p>
           </div>
 
           <div class="metric-box">
             <strong>3. Probabilitatea de recomandare (stil NPS)</strong>
-            <p><b>Indicator:</b> „Cât de probabil este să recomanzi LitBot unui coleg de clasă?" (1–10)</p>
+            <p><b>Indicator:</b> „Cât de probabil este să recomanzi LitBot unui coleg de clasă?" (1-10)</p>
             <p><b>Distribuție:</b></p>
             <ul>
               <li>Promotori (9-10): 6 utilizatori (35.3%)</li>
@@ -280,7 +318,7 @@
               <li>Detractori (6 sau mai puțin): 3 utilizatori (17.6%)</li>
             </ul>
             <p><b>Scor mediu:</b> <span class="highlight-stat">7.9 / 10</span></p>
-            <p><b>✅ Validare:</b> Potențial puternic de partajare organică. 82,4% ar recomanda activ sau pasiv.</p>
+            <p><b>✅ Validare:</b> Există un potențial bun de recomandări naturale. 82,4% au dat un scor între 7 și 10, lucru care arată că ar fi deschiși să recomande LitBot la colegi și prieteni.</p>
           </div>
 
           <div class="metric-box">
@@ -317,7 +355,7 @@
                 </tr>
               </tbody>
             </table>
-            <p><b>✅ Validare:</b> 47.1% disponibilitate certă de plată depășește cu mult pragul minim de 25%. Potențial puternic de monetizare confirmat.</p>
+            <p><b>✅ Validare:</b> Aproape jumătate dintre utilizatori (47,1%) spun că ar plăti sigur, ceea ce este mult peste pragul minim de 25%. Acest lucru indică un potențial solid de monetizare.</p>
           </div>
 
           <div class="metric-box">
@@ -350,7 +388,7 @@
               </tbody>
             </table>
             <p><b>Preț corect mediu:</b> <span class="highlight-stat">19.4 RON/lună</span></p>
-            <p><b>✅ Validare:</b> Confirmă prețul de 20-25 RON/lună din cercetarea M6. 88% dispuși să plătească cel puțin 10 RON.</p>
+            <p><b>✅ Validare:</b> Confirmă intervalul de 20-25 RON/lună identificat în etapa 6, iar 88% dintre respondenți sunt dispuși să plătească cel puțin 10 RON pe lună.</p>
           </div>
 
           <div class="metric-box">
@@ -394,18 +432,18 @@
             <p><b>Criterii GO (Toate îndeplinite ✅):</b></p>
             <ul>
               <li>✅ ≥80% raportează înțelegere îmbunătățită → <strong>Realizat: 88.2%</strong></li>
-              <li>✅ ≥25% disponibilitate certă de plată → <strong>Realizat: 58.8%</strong></li>
-              <li>✅ ≥70% satisfacție (4–5/5) → <strong>Realizat: 76.5%</strong></li>
-              <li>✅ Valoare calitativă clară de învățare identificată → <strong>Confirmată prin citatele utilizatorilor</strong></li>
+              <li>✅ ≥25% sunt dispuși să plătească cu certitudine → <strong>Realizat: 58.8%</strong></li>
+              <li>✅ ≥70% satisfacție (4-5/5) → <strong>Realizat: 76.5%</strong></li>
+              <li>✅ Se observă că utilizatorii consideră produsul valoros → <strong>Confirmată prin citatele utilizatorilor</strong></li>
             </ul>
 
-            <p><b>🚀 Decizie: PROCEDĂM LA BETA</b></p>
-            <p>Toate pragurile minime de validare depășite. MVP-ul demonstrează potrivire puternică problemă-soluție și justifică:</p>
+            <p><b>Decizie: continuăm cu faza BETA</b></p>
+            <p>Pragurile minime au fost depășite, iar MVP-ul arată o potrivire bună între problemă și soluție. Avem în vedere următoarele obiective:</p>
             <ul>
-              <li>Construirea nivelului premium</li>
-              <li>Implementarea sistemului de citări/citate (cererea principală de îmbunătățire)</li>
+              <li>Realizarea nivelului premium</li>
+              <li>Implementarea unui sistem de citări/citate (cea mai importantă funcționalitate cerută)</li>
               <li>Extinderea testării beta la 50+ utilizatori</li>
-              <li>Pregătirea pilotului de parteneriat cu profesori</li>
+              <li>Pregătirea parteneriatului cu profesori</li>
             </ul>
           </div>
 
@@ -419,49 +457,35 @@
         </div>
         <div class="section-body">
 
-          <h3>1. Formatarea răspunsurilor este critică</h3>
+          <h3>1. Formatarea răspunsurilor este foarte importantă</h3>
           <div class="validation-evidence">
-            <strong>Constatare:</strong> 2 utilizatori au cerut explicit liste cu buline și paragrafe mai scurte: <em>"Uneori răspunsurile sunt prea lungi, ar ajuta niște bullet point-uri, sau mai multe paragrafe"</em>
+            <strong>Constatare:</strong> 2 utilizatori au cerut explicit liste cu bullet points și paragrafe mai scurte: <em>"Uneori răspunsurile sunt prea lungi, ar ajuta niște bullet point-uri, sau mai multe paragrafe"</em>
             <br><br>
-            <strong>Acțiune luată:</strong> Am ajustat prompt-urile AI pentru a favoriza explicații concise cu pauze clare de paragraf. Vom testa A/B formatarea cu liste în următoarea iterație.
+            <strong>Integrarea feedback-ului:</strong> Am ajustat prompt-urile astfel încât AI-ul să răspundă mai concis și să structureze mai clar textul. În următoarea iterație vrem să facem A/B testing și pentru variante cu liste cu bullet points.
             <br><br>
-            <strong>Insight:</strong> Elevii vor profunzime dar nu verbozitate. Formatarea clară îmbunătățește valoarea percepută.
+            <strong>Insight:</strong> Elevii vor explicații cu substanță, dar nu vor texte greoaie. O structură clară crește vizibil valoarea percepută.
           </div>
 
-          <h3>2. Citările creează credibilitate academică</h3>
+          <h3>2. Citatele și sursele cresc credibilitatea (și utilitatea practică)</h3>
           <div class="validation-evidence">
             <strong>Constatare:</strong> 5 utilizatori au cerut citate din opere. Unul a declarat: <em>"Profu voia citate și nu am știut niciunul, ar fi ajutat dacă mi-ar fi dat mai multe citate memorabile"</em>
             <br><br>
-            <strong>Implicație strategică:</strong> Adăugarea citărilor servește unui scop dublu:
+            <strong>De ce e important:</strong> Adăugarea citărilor servește unui scop dublu:
             <ul>
               <li>Ajută elevii la examene (valoare practică)</li>
-              <li>Crește încrederea profesorilor (adoptare instituțională)</li>
-              <li>Justifică prețul premium (funcționalitate intensivă în resurse)</li>
+              <li>Crește încrederea profesorilor, deci ajută la adopția în școli</li>
+              <li>Justifică prețul premium (este o funcționalitate care cere muncă de curare și structurare)</li>
             </ul>
-            <strong>Pași următori:</strong> Construirea bazei de date de citate pentru 20 de opere, implementare în nivelul Premium.
+            <strong>Următorii pași:</strong> Construirea bazei de date de citate pentru 20 de opere și integrarea ei în nivelul Premium.
           </div>
 
-          <h3>3. Acceptul profesorilor necesită transparență</h3>
-          <div class="validation-evidence">
-            <strong>Constatare:</strong> Un profesor și-a exprimat îngrijorarea: <em>"Sunt îngrijorat de acuratețea informațiilor pe termen lung. Cum garantați că răspunsurile sunt mereu corecte și actualizate?"</em>
-            <br><br>
-            <strong>Acțiune necesară:</strong>
-            <ul>
-              <li>Adăugarea secțiunii „Surse" la răspunsuri cu bibliografie</li>
-              <li>Crearea unui panou pentru profesori care arată utilizarea elevilor (fără a dezvălui conținutul întrebărilor)</li>
-              <li>Implementarea procesului de revizuire de către experți pentru alinierea la programă</li>
-              <li>Oferirea „modului școală" cu acces controlat la funcționalități</li>
-            </ul>
-            <strong>Insight:</strong> Vânzările instituționale necesită mai mult decât dragostea elevilor — au nevoie de mecanisme de control pentru profesori.
-          </div>
-
-          <h3>4. Caz de utilizare neașteptat: Roleplay cu personaje</h3>
+          <h3>3. Caz de utilizare neașteptat: „joc de rol” cu personaje</h3>
           <div class="quote-box">
-            <strong>Cerere creativă:</strong> <em>"Sincer mi s-ar părea interesant și fun să pot să vorbesc cu personajele din opere, gen să răspundă LitBot ca și cum ar fi Ghiță din Moara cu Noroc de exemplu"</em>
+            <strong>Un utilizator a propus o idee creativă:</strong> <em>"Sincer mi s-ar părea interesant și fun să pot să vorbesc cu personajele din opere, gen să răspundă LitBot ca și cum ar fi Ghiță din Moara cu Noroc de exemplu"</em>
             <br><br>
-            <strong>Potențial:</strong> Unghi de gamificare pentru elevii mai tineri (clasele 9-10). Ar putea fi o alternativă captivantă la întrebările și răspunsurile tradiționale pentru anumite stiluri de învățare.
+            <strong>Potențial:</strong> Ar putea fi o componentă de gamificare utilă mai ales pentru elevii mai tineri (clasele IX-X) și, pentru unii, o alternativă mai atractivă la formatul clasic de întrebări și răspunsuri.
             <br><br>
-            <strong>Prioritate:</strong> Scăzută pentru MVP, dar validează oportunități de pedagogie creativă.
+            <strong>Prioritate:</strong> Nu este o funcționalitate esențială dar este o direcție promițătoare și care merită luată în calcul.
           </div>
 
         </div>
@@ -479,57 +503,41 @@
           <div class="feature-list">
             <div class="feature-item">
               <strong>1. Implementarea sistemului de citări și lansarea nivelului Premium</strong>
-              <p><b>De ce:</b> Cererea principală de îmbunătățire (5 utilizatori) + permite parteneriate cu profesori</p>
-              <p><b>Domeniu:</b> Adăugarea a 3-5 citate memorabile per operă cu context</p>
+              <p><b>De ce:</b> Este cea mai frecventă cerere de îmbunătățire (5 utilizatori) și ajută direct la credibilitate, inclusiv în relația cu profesorii</p>
+              <p><b>Ce includem:</b> Pentru fiecare operă, adăugăm 3–5 citate memorabile, însoțite de context (unde apar și ce susțin în analiză).</p>
               <p><b>Indicator de succes:</b> 80% dintre utilizatorii Premium folosesc citate în eseuri</p>
             </div>
 
             <div class="feature-item">
               <strong>2. Optimizarea formatării răspunsurilor</strong>
-              <p><b>De ce:</b> Îmbunătățirea clarității și reducerea plângerilor de „prea lung"</p>
-              <p><b>Test A/B:</b> Stil paragraf vs. liste cu buline</p>
+              <p><b>De ce:</b> Vrem răspunsuri mai ușor de parcurs și mai puține plângeri legate de sinteze „prea lungi”</p>
+              <p><b>Cum testăm</b> A/B testing între răspunsuri normale cu paragrafe versus liste cu bullet points.</p>
               <p><b>Indicator de succes:</b> Creșterea evaluării medii de la 4.3 la 4.5+</p>
             </div>
 
             <div class="feature-item">
               <strong>3. Extinderea testării beta</strong>
               <p><b>Țintă:</b> 50 utilizatori (actual: 17)</p>
-              <p><b>Focus:</b> Recrutare din lista de email M5 + recomandări de la profesori</p>
-              <p><b>Obiectiv:</b> Validarea conversiei premium și a indicatorilor de retenție</p>
+              <p><b>Cum recrutăm:</b> din lista de email (etapa 5) și prin recomandări venite de la profesori</p>
+              <p><b>Obiectiv:</b> Validarea conversiei la premium și a indicatorilor de retenție</p>
             </div>
           </div>
 
           <h3>Termen mediu (2-3 luni)</h3>
           <ul>
-            <li><strong>Mod quiz/test:</strong> Construirea funcționalității de autoevaluare pentru pregătirea examenului (3 cereri de la utilizatori)</li>
-            <li><strong>Panou pentru profesori:</strong> Activarea parteneriatelor cu școli cu vizibilitate asupra utilizării</li>
-            <li><strong>Aplicație mobilă:</strong> iOS/Android nativ dacă retenția se dovedește puternică (4 cereri de la utilizatori)</li>
-            <li><strong>Istoric conversații:</strong> Permite utilizatorilor să revadă sesiunile anterioare</li>
+            <li><strong>Mod quiz/test:</strong> Funcționalitatea de autoevaluare pentru pregătirea examenului (cerută de 3 utilizatori)</li>
+            <li><strong>Ecran pentru profesori:</strong> Un ecran în care profesorii să aibă acces la statistici legate de utilizarea LitBot, element care ar facilita parteneriatele cu școlile</li>
+            <li><strong>Aplicație mobilă:</strong> Dezvoltarea unei aplicații iOS/Android native dacă retenția se dovedește puternică (cerută de 4 utilizatori)</li>
+            <li><strong>Istoric conversații:</strong> Posibilitatea de a reveni la sesiunile anterioare și de a continua ușor studiul</li>
           </ul>
 
           <h3>Viziune pe termen lung (6+ luni)</h3>
           <ul>
-            <li>Licențiere instituțională pentru școli (model de preț în bloc)</li>
-            <li>Mod roleplay cu personaje (funcționalitate experimentală de implicare)</li>
-            <li>Mod voce/vorbitor pentru accesibilitate</li>
+            <li>Licențiere pentru școli</li>
+            <li>Mod „joc de rol” cu personaje (funcționalitate experimentală)</li>
+            <li>Mod vocal pentru accesibilitate</li>
           </ul>
 
-        </div>
-      </article>
-
-      <article class="section-card" id="conclusion" style="--grad:linear-gradient(135deg, #2563eb, #7c3aed)">
-          <h3>Link-uri și resurse</h3>
-          <ul>
-            <li><a href="../index.html">← Înapoi la prezentarea LitBot</a></li>
-            <li><a href="m2.html">Milestone M2: Customer Discovery</a></li>
-            <li><a href="m4.html">Milestone M4: User Research</a></li>
-            <li><a href="m5.html">Milestone M5: Lead Generation</a></li>
-            <li><a href="m6.html">Milestone M6: Market Research</a></li>
-            <li><a href="m7.html">Milestone M7: Minimum Viable Product</a></li>
-            <li><a href="../wireframe.html">LitBot Wireframe</a></li>
-            <li><a href="../landing.html">Product Landing Page</a></li>
-            <li><a href="feedback_form.html">User Feedback Form</a></li>
-          </ul>
         </div>
       </article>
 
@@ -537,7 +545,7 @@
   </div>
 
   <footer class="footer">
-    © 2025 LitBot · <a href="../index.html">Main Site</a> · <a href="m2.html">M2</a> · <a href="m4.html">M4</a> · <a href="m5.html">M5</a> · <a href="m6.html">M6</a> · <a href="m7.html">M7</a>
+    © 2025 LitBot · <a href="../home.html">Pagina principală</a> · <a href="m2.html">M2</a> · <a href="m4.html">M4</a> · <a href="m5.html">M5</a> · <a href="m6.html">M6</a> · <a href="m7.html">M7</a>
   </footer>
 </body>
 </html>
